@@ -32,8 +32,8 @@ const HomePage = () => {
         <Typography className={classes.homePageMainBlockTitle}>
           Доступні курси
         </Typography>
-
-        {isCourseAvailable ? (
+        <div>У вас немає доступних курсів</div>
+        {/* {isCourseAvailable ? (
           <div>У вас немає доступних курсів</div>
         ) : (
           <div className={classes.cardWrapper}>
@@ -41,7 +41,7 @@ const HomePage = () => {
               <ProgressCard key={card.name} {...card} />
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

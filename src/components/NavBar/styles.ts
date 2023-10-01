@@ -3,10 +3,11 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   navBar: {
     display: "flex",
-    position: "sticky",
-    backgroundColor: "#FFFFFF !important",
+    position: "fixed",
+    top: 0,
+    backgroundColor: "transparent !important",
     lineHeight: "28.6px",
-    boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.07) !important",
+    boxShadow: "none !important",
     textDecoration: "none",
     textTransform: "uppercase",
     color: "#000000",
@@ -101,7 +102,8 @@ const useStyles = makeStyles({
     },
   },
   logo: {
-    width: 100,
+    marginTop: 50,
+    width: 200,
   },
 });
 

@@ -1,5 +1,8 @@
 body {
-  background-color: #e6ecff;
+  background: var(
+    --BG_ALL,
+    linear-gradient(17deg, #292929 -10.12%, #38281d 66.27%)
+  );
   margin: 0;
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Noto Serif", sans-serif !important;
 }

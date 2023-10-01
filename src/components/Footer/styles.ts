@@ -3,13 +3,14 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   footerWrapper: {
     position: "relative",
-    backgroundColor: "#6F97CC",
-    height: 199,
-    width: "100%",
+    backgroundColor: "transparent",
+    height: 100,
+
     color: "white",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    padding: "0 7%",
   },
   linksWrapper: {
     display: "flex",
@@ -25,26 +26,27 @@ const useStyles = makeStyles({
   downloadWrapper: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "end",
+    alignItems: "start",
     flexDirection: "column",
-    marginLeft: 100,
+
+    fontSize: 21,
     "@media (max-width:550)": {
       marginLeft: "0 !important",
     },
 
     "&>button": {
       textAlign: "right",
-      color: "#FFF",
-      fontFamily: `"Open Sans", sans-serif !important`,
+      backgroundImage: "linear-gradient(104deg, #ffd7bb -10.85%, #fff 102.7%)",
+      "-webkit-background-clip": "text",
+      color: "transparent",
+      fontFamily: `"Noto Serif", sans-serif !important`,
       fontWeight: 400,
-      textDecoration: "underline",
-    },
-    "&>div": {
-      textTransform: "uppercase",
+      textTransform: "none !important",
     },
   },
   notAButton: {
     textDecoration: "none !important",
+    width: 180,
   },
 });
 

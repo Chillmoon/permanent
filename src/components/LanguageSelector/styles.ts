@@ -5,10 +5,14 @@ const useStyles = makeStyles({
     marginRight: 10,
 
     "& .MuiOutlinedInput-notchedOutline": {
-      border: "2px solid #004AAD",
+      border: "none",
       borderRadius: 100,
       "&:hover": {
         cursor: "pointer",
+        border: "none",
+      },
+      "&:active": {
+        border: "none",
       },
     },
     "&>div": {

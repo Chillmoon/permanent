@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -31,6 +31,8 @@ const NavBar = () => {
   // ];
 
   const classes = useStyles();
+
+  const { courseId } = useParams();
 
   const dispatch = useDispatch();
 
@@ -88,6 +90,9 @@ const NavBar = () => {
   };
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
+  console.log(courseId);
+  const logoUrl =
+    "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
 
   // const getDisplayCondition = (
   //   user: {
@@ -114,11 +119,7 @@ const NavBar = () => {
           href="/"
           className={classes.navBarTitle}
         >
-          <img
-            alt="logo"
-            className={classes.logo}
-            src="https://firebasestorage.googleapis.com/v0/b/kovalevskayaplatform-39007.appspot.com/o/Dev.%20svg%2Flogo.jpg?alt=media&token=1635cb32-e801-4a0b-a72d-a2b0ff3aac47"
-          />
+          <img alt="logo" className={classes.logo} src={logoUrl} />
         </Typography>
         <Box className={classes.menu}>
           <IconButton
