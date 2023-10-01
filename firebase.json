@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "https://github.com/Chillmoon/permanent",
+    "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
