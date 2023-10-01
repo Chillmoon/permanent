@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useStyles from "./styles";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "@mui/material";
 
 interface TimerProps {
   initialTimeInSeconds: number;
@@ -39,6 +40,8 @@ const Timer: React.FC<TimerProps> = ({ initialTimeInSeconds }) => {
     )}`;
   };
 
+  const isMobileScreen = useMediaQuery("(max-width:1000px)");
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.timerWrapper}>
@@ -47,7 +50,9 @@ const Timer: React.FC<TimerProps> = ({ initialTimeInSeconds }) => {
         <div className={classes.decorativeLine} />
       </div>
       <div className={classes.timeDescription}>
-        <span style={{ marginLeft: 13, marginRight: 30 }}>{t("дні")}</span>
+        <span style={{ marginLeft: isMobileScreen ? 0 : 13, marginRight: 30 }}>
+          {t("дні")}
+        </span>
         <span style={{ marginRight: 25 }}>{t("годин")}</span>
         <span style={{ marginRight: 17 }}>{t("хвилин")}</span>
         <span>{t("секунд")}</span>

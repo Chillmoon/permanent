@@ -16,6 +16,11 @@ const useStyles = makeStyles({
     "& :visited": {
       color: "#000000",
     },
+    "@media (max-width:1000px)": {
+      height: 100,
+      marginTop: "-1px",
+      backgroundColor: "#38281D !important",
+    },
   },
   navBarTitle: {
     position: "absolute",
@@ -104,6 +109,10 @@ const useStyles = makeStyles({
   logo: {
     marginTop: 50,
     width: 200,
+    display: "flex",
+    "@media (max-width:1000px)": {
+      marginLeft: "30%",
+    },
   },
 });
 

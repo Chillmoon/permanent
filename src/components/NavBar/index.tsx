@@ -4,7 +4,14 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
+import {
+  Avatar,
+  IconButton,
+  Menu,
+  MenuItem,
+  Tooltip,
+  useMediaQuery,
+} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { signOut } from "@firebase/auth";
 import NavBarSkeleton from "../Skeletons/NavBarSkeleton";
@@ -29,16 +36,14 @@ const NavBar = () => {
   //   { name: t("Курси"), id: "courses" },
   //   { name: t("Кабінет"), id: "home" },
   // ];
-
   const classes = useStyles();
-
   const { courseId } = useParams();
-
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const user = useSelector((state: RootState) => state.user.user);
+
+  const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -91,8 +96,9 @@ const NavBar = () => {
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
   console.log(courseId);
-  const logoUrl =
-    "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
+  const logoUrl = isMobileScreen
+    ? "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Flogo.svg?alt=media&token=d3fe9092-2b8c-4ada-8fdc-62ccf9bea6fb&_gl=1*1fdu7wi*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE5MTA1MS40OS4xLjE2OTYxOTM2OTcuNjAuMC4w"
+    : "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
 
   // const getDisplayCondition = (
   //   user: {
@@ -146,7 +152,10 @@ const NavBar = () => {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none" },
+              display: {
+                xs: "block",
+                md: "none",
+              },
             }}
           >
             <MenuItem key="language" onClick={handleCloseNavMenu}>
