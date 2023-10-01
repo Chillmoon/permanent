@@ -1,0 +1,127 @@
+import { Typography } from "@mui/material";
+import { useParams } from "react-router-dom";
+import ReactPlayer from "react-player";
+import { useTranslation } from "react-i18next";
+
+import { courses } from "../../app/features/AllCourses";
+import findBlockLabelById from "../../app/functions/findBlockLabelById";
+import getLessonById from "../../app/functions/getLessonById";
+
+import SideBar from "../../components/SideBar";
+import MobileLesson from "./MobileLesson";
+import HomeworkUploader from "../../components/HomeworkUploader";
+
+import useStyles from "./styles";
+
+const LessonPage = () => {
+  const classes = useStyles();
+  const { t } = useTranslation();
+
+  const { lessonNumber } = useParams();
+
+  const blockLabel = findBlockLabelById(
+    courses,
+    lessonNumber || "block0-lesson1"
+  );
+
+  const lesson = getLessonById(courses, lessonNumber || "block0-lesson1");
+
+  const handleDownloadFile = (fileUrl: string, fileName: string) => {
+    window.open(fileUrl, "_blank");
+  };
+
+  return (
+    <>
+      <div className={classes.smallScreenLessonPage}>
+        <MobileLesson courses={courses} />
+      </div>
+      <div className={classes.lessonPageWrapper}>
+        <SideBar />
+        <div className={classes.lessonPageMainBlock}>
+          <Typography className={classes.moduleLabel}>{blockLabel}</Typography>
+          <Typography className={classes.lessonLabel} variant="h5">
+            {lesson?.label}
+          </Typography>
+          <div className={classes.lessonInfo}>
+            {lesson?.info?.map((section, index) => (
+              <div key={index}>
+                {section.title && (
+                  <Typography variant="h6">{section.title}</Typography>
+                )}
+
+                {section.content && <Typography>{section.content}</Typography>}
+                {section.image && (
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    width={section.imageWidth}
+                  />
+                )}
+              </div>
+            ))}
+            {lesson?.video && (
+              <div className={classes.videoPlayerWrapper}>
+                {lesson?.video && (
+                  <div className={classes.videoPlayerWrapper}>
+                    {lesson.video.map(
+                      (
+                        video: {
+                          video: string;
+                          cover?: string;
+                          text?: string | JSX.Element;
+                        },
+                        index: number
+                      ) => (
+                        <>
+                          <div className={classes.videoPlayerWrapper}>
+                            <ReactPlayer
+                              key={index}
+                              onContextMenu={(e: {
+                                preventDefault: () => any;
+                              }) => e.preventDefault()}
+                              controls={true}
+                              url={video.video}
+                              className={classes.videoPlayer}
+                              config={{
+                                file: {
+                                  attributes: {
+                                    controlsList: "nodownload",
+                                  },
+                                },
+                              }}
+                              light={video.cover}
+                            />
+                          </div>
+                          <span>{video.text}</span>
+                        </>
+                      )
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+            {lesson?.file && (
+              <div className={classes.fileWrapper}>
+                <Typography> {t("Матеріали уроку")}:</Typography>
+                {lesson.file.map((file, index) => (
+                  <button
+                    key={index}
+                    className={classes.button}
+                    onClick={() =>
+                      handleDownloadFile(file.file as string, file.name)
+                    }
+                  >
+                    {file.name}
+                  </button>
+                ))}
+              </div>
+            )}
+            {lesson?.homework && <HomeworkUploader lessonID={lesson?.id} />}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default LessonPage;
