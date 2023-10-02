@@ -154,10 +154,10 @@ const useStyles = makeStyles({
   photo: {
     width: 600,
     zIndex: 1000,
-    marginTop: "-50px",
+    marginTop: "-61px",
     marginRight: "-7%",
     "@media (max-width:1000px)": {
-      marginTop: "-30px",
+      marginTop: "-33px",
       width: "100%",
       marginRight: 0,
     },

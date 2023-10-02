@@ -2,16 +2,16 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   wrapper: {
-    height: "100vh",
+    height: "100%",
     width: "auto",
     flexDirection: "column",
     justifyContent: "start",
     alignItems: "center",
     display: "flex",
-    marginBottom: 150,
     padding: "0 7%",
 
     "@media (max-width:1000px)": {
+      marginBottom: 150,
       padding: 0,
       marginLeft: "7.69%",
       width: "100%",
@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   photo: {
     position: "absolute",
     left: 100,
-    top: 1600,
+    top: 1550,
     width: 500,
     transform: "scaleX(-1)",
     zIndex: 2,
@@ -87,7 +87,7 @@ const useStyles = makeStyles({
   },
   bottle: {
     position: "absolute",
-    top: 1600,
+    top: 1550,
     right: 0,
     width: 250,
     zIndex: 1,

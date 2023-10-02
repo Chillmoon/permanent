@@ -49,12 +49,12 @@ const ForWho = () => {
   return (
     <div className={classes.forWhoErapper}>
       <img
-        alt="background image"
+        alt="background"
         className={classes.backgroundImage}
         src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fbackground%20image.svg?alt=media&token=68cb4618-de30-49c9-ab20-c3b630f632c7&_gl=1*1d8ntaq*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjI0NTE1NC41Mi4xLjE2OTYyNDUxODUuMjkuMC4w"
       />
       <img
-        alt="background image light"
+        alt="background light"
         className={classes.backgroundImageLight}
         src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fbackground%20image%20light.svg?alt=media&token=33614c98-6e91-4dc6-b497-9caa3bdb0f9b&_gl=1*rz196j*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjI0NTE1NC41Mi4xLjE2OTYyNDUzMDguMzMuMC4w"
       />
