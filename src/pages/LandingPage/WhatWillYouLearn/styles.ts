@@ -70,7 +70,7 @@ const useStyles = makeStyles({
     "&>li": {
       color: "#FFF1E8",
       fontFamily: `"Exo 2", sans-serif !important`,
-      fontSize: 20,
+      fontSize: 16,
       fontWeight: 200,
       listStyle: "none",
       display: "flex",

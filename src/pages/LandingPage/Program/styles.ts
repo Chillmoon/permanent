@@ -80,7 +80,7 @@ const useStyles = makeStyles({
       display: "flex",
       flexDirection: "column",
       gap: 16,
-      fontSize: 18,
+      fontSize: 16,
     },
   },
 });

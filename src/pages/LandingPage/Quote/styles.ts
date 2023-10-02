@@ -20,6 +20,10 @@ const useStyles = makeStyles({
     position: "absolute",
     zIndex: 4,
     width: "100%",
+    "@media (max-width:1000px)": {
+      width: "115.38%",
+      marginTop: "-150px",
+    },
   },
   text: {
     marginTop: 190,
@@ -35,12 +39,22 @@ const useStyles = makeStyles({
     fontFamily: `"Exo 2", sans-serif !important`,
     gap: 20,
     textAlign: "center",
+    "@media (max-width:1000px)": {
+      marginTop: "-650px",
+      fontSize: 16,
+      width: 330,
+    },
   },
   quotes: {
     zIndex: 5,
     position: "absolute",
     left: 330,
     width: 130,
+    "@media (max-width:1000px)": {
+      top: 0,
+      width: 80,
+      left: 0,
+    },
   },
   quotes2: {
     zIndex: 5,
@@ -49,6 +63,11 @@ const useStyles = makeStyles({
     bottom: 0,
     right: 330,
     width: 130,
+    "@media (max-width:1000px)": {
+      width: 80,
+      right: 0,
+      top: 150,
+    },
   },
 });
 

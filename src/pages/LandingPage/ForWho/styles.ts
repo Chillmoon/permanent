@@ -62,7 +62,7 @@ const useStyles = makeStyles({
     marginBottom: 5,
   },
   blockCardDescription: {
-    fontSize: 18,
+    fontSize: 16,
     color: "#FFF",
     fontFamily: `"Exo 2", sans-serif !important`,
     fontWeight: 300,
