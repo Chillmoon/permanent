@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     transform: "scaleX(-1)",
     zIndex: 2,
     "@media (max-width:1000px)": {
-      top: 4000,
+      top: 3970,
       left: 0,
       transform: "scaleX(1)",
       width: 400,
@@ -57,8 +57,8 @@ const useStyles = makeStyles({
     width: 500,
     zIndex: 1,
     "@media (max-width:1000px)": {
-      top: 3900,
-      left: 0,
+      top: 3870,
+      left: 20,
       width: 400,
     },
   },
