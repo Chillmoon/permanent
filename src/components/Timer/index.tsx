@@ -46,15 +46,24 @@ const Timer: React.FC<TimerProps> = ({ initialTimeInSeconds }) => {
     <div className={classes.wrapper}>
       <div className={classes.timerWrapper}>
         <div className={classes.decorativeLine} />
-        <h1>{formatTime(timeRemaining)}</h1>
+        <div className={classes.time}>{formatTime(timeRemaining)}</div>
         <div className={classes.decorativeLine} />
       </div>
       <div className={classes.timeDescription}>
-        <span style={{ marginLeft: isMobileScreen ? 0 : 13, marginRight: 30 }}>
+        <span
+          style={{
+            marginLeft: isMobileScreen ? 17 : 13,
+            marginRight: isMobileScreen ? 45 : 30,
+          }}
+        >
           {t("дні")}
         </span>
-        <span style={{ marginRight: 25 }}>{t("годин")}</span>
-        <span style={{ marginRight: 17 }}>{t("хвилин")}</span>
+        <span style={{ marginRight: isMobileScreen ? 30 : 25 }}>
+          {t("годин")}
+        </span>
+        <span style={{ marginRight: isMobileScreen ? 33 : 17 }}>
+          {t("хвилин")}
+        </span>
         <span>{t("секунд")}</span>
       </div>
     </div>

@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     width: 350,
     zIndex: 999,
     "@media (max-width:1000px)": {
-      width: 500,
+      width: "100%",
       top: "-60px",
       marginLeft: 0,
     },
@@ -26,11 +26,10 @@ const useStyles = makeStyles({
     position: "absolute",
     top: 0,
     zIndex: 999,
-    width: 700,
+    width: 600,
     marginRight: "-7%",
     "@media (max-width:1000px)": {
-      width: 600,
-      top: 250,
+      display: "none",
     },
   },
 
@@ -43,17 +42,23 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
+    marginBottom: 20,
   },
   headerMobile: {
-    marginTop: 120,
+    // backgroundColor: "red",
+    height: "100vh",
+    marginTop: 100,
     width: "100% !important",
+    marginRight: 0,
+    marginLeft: "7.69%",
     backgroundImage: "linear-gradient(104deg, #ffd7bb -10.85%, #fff 102.7%)",
     "-webkit-background-clip": "text",
     color: "transparent",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 50,
   },
   headerText: {
     zIndex: 1000,
@@ -71,14 +76,12 @@ const useStyles = makeStyles({
     padding: "4px 16px",
     textTransform: "uppercase",
     fontSize: 16,
+    textAlign: "center",
     fontWeight: "300 !important",
     backgroundColor: "#B7703D", // Установите цвет фона
     color: "white", // Наследование цвета текста от родительского элемента (body)
     width: 150,
     zIndex: 1000,
-    "@media (max-width:1000px)": {
-      marginLeft: "60px",
-    },
   },
   boldText: {
     fontWeight: 600,
@@ -88,9 +91,6 @@ const useStyles = makeStyles({
     width: 300,
     height: 60.6,
     marginBottom: 10,
-    "@media (max-width:1000px)": {
-      marginLeft: "60px",
-    },
   },
   courseDescription: {
     fontSize: 40,
@@ -100,10 +100,10 @@ const useStyles = makeStyles({
     width: 700,
     marginBottom: 20,
     "@media (max-width:1000px)": {
-      fontSize: 25,
+      fontSize: 27,
       width: "auto",
       fontWeight: 900,
-      marginLeft: "60px",
+      marginBottom: 7,
     },
   },
   counterDescription: {
@@ -112,6 +112,7 @@ const useStyles = makeStyles({
     lineHeight: "125%",
     textTransform: "uppercase",
     fontSize: 14,
+    marginBottom: 15,
     "@media (max-width:1000px)": {
       fontSize: 18,
     },
@@ -128,19 +129,19 @@ const useStyles = makeStyles({
     borderRadius: 15,
     border: "none",
     color: "#FFF",
-    borderBottom: "3px solid #754929;",
+    borderBottom: "5px solid #754929;",
     width: 215,
     zIndex: 1000,
     textTransform: "uppercase",
+    fontWeight: 700,
     "&:hover": {
       cursor: "pointer",
     },
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (max-width:1000px)": {
-      width: 380,
+      width: 350,
       fontSize: 25,
       marginTop: "-5px",
-      marginLeft: "60px",
       marginBottom: 40,
     },
   },
@@ -156,8 +157,9 @@ const useStyles = makeStyles({
     marginTop: "-50px",
     marginRight: "-7%",
     "@media (max-width:1000px)": {
-      marginTop: "-40px",
-      width: 500,
+      marginTop: "-30px",
+      width: "100%",
+      marginRight: 0,
     },
   },
   photoDescription: {
@@ -172,11 +174,12 @@ const useStyles = makeStyles({
     marginLeft: 50,
     marginTop: "-20px",
     "@media (max-width:1000px)": {
+      position: "absolute",
       borderRadius: "0",
       fontSize: 20,
-      width: "414px",
-      position: "absolute",
-      top: 650,
+      width: "100%",
+      top: "67%",
+      margin: 0,
       background: "rgba(255, 255, 255, 0.82)",
       fontWeight: 500,
       fontFamily: `"Exo 2", sans-serif !important`,

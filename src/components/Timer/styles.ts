@@ -22,22 +22,24 @@ const useStyles = makeStyles({
       fontSize: 30,
     },
   },
-  decorativeLine: {
-    width: 25,
+  time: {
     margin: "0px 7px",
+    fontSize: "2em",
+  },
+  decorativeLine: {
+    width: 35,
     borderTop: "0.5px solid #FFF5EE",
     "@media (max-width:1000px)": {
       width: 40,
     },
   },
   timeDescription: {
-    marginTop: "-30px",
     fontSize: 9,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    width: "215px",
     textTransform: "uppercase",
+    marginTop: "-7px",
     "@media (max-width:1000px)": {
       fontSize: 14,
     },
