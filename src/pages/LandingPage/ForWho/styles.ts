@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     justifyContent: "start",
     alignItems: "center",
     display: "flex",
-    marginBottom: 150,
+    marginBottom: 100,
     padding: "0 7%",
 
     "@media (max-width:1000px)": {

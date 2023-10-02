@@ -63,7 +63,9 @@ const ForWho = () => {
         {forWhoList.map((el: { id: number; description: string }) => (
           <div className={classes.blockCard}>
             <div className={classes.blockCardNumber}>{el.id}</div>
-            <div className={classes.blockCardDescription}>{el.description}</div>
+            <div className={classes.blockCardDescription}>
+              {t(el.description)}
+            </div>
           </div>
         ))}
       </div>
