@@ -1,0 +1,86 @@
+import { useTranslation } from "react-i18next";
+import useStyles from "./styles";
+
+const Rates = () => {
+  const classes = useStyles();
+  const { t } = useTranslation();
+
+  return (
+    <div className={classes.wrapper}>
+      <div className={classes.blockName}>{t("Тарифи")}</div>
+      <div className={classes.cardsWrapper}>
+        <div className={classes.cardWrapper}>
+          <div className={classes.card}>
+            <div className={classes.cardTitle}>{t("Classic")}</div>
+            <ul className={classes.cardList}>
+              <li>{t("Практичні демонстраціі")}</li>
+              <li>{t("Теоретичний блок")}</li>
+              <li>{t("Пігметнологія пігментів для очей")}</li>
+              <li>{t("Доступ на платформі 3 місяці")}</li>
+              <li>
+                <div className={classes.cardListItemLined}>
+                  {t("Zoom з Вікторією питання/відповіді")}
+                </div>
+              </li>
+              <li>
+                <div className={classes.cardListItemLined}>
+                  {t("Чат-підтримка протягом 3х місяців")}
+                </div>
+              </li>
+            </ul>
+            <div className={classes.originalPrice}>$180</div>
+            <div className={classes.discountedPrice}>$150</div>
+            <div className={classes.priceDescription}>{t("до 14 жовтня")}</div>
+            <button
+              className={classes.button}
+              onClick={() => console.log("button")}
+            >
+              {t("Придбати зараз")}
+            </button>
+          </div>
+        </div>
+        <div className={classes.cardWrapper1}>
+          <div className={classes.card}>
+            <div className={classes.label}>
+              {t("залишилось")}
+              <div>{t("11 місць")}</div>
+            </div>
+            <div className={classes.cardTitle}>{t("Advanced")}</div>
+            <ul className={classes.cardList}>
+              <li>{t("Практичні демонстраціі")}</li>
+              <li>{t("Теоретичний блок")}</li>
+              <li>{t("Пігметнологія пігментів для очей")}</li>
+              <li>
+                <div>
+                  {t("Доступ на платформі")} <strong>{t("6 місяці")}</strong>
+                </div>
+              </li>
+              <li>
+                <strong>{t("Zoom з Вікторією питання/відповіді")}</strong>
+              </li>
+              <li>
+                <strong>{t("Чат-підтримка протягом 3х місяців")}</strong>
+              </li>
+            </ul>
+            <div className={classes.originalPrice}>$250</div>
+            <div className={classes.discountedPrice}>$190</div>
+            <div className={classes.priceDescription}>{t("до 14 жовтня")}</div>
+            <button
+              className={classes.button}
+              style={{
+                background: "#FFF",
+                color: "#000",
+                borderBottom: "5px solid #5F5F5F",
+              }}
+              onClick={() => console.log("button")}
+            >
+              {t("Придбати зараз")}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Rates;

@@ -8,11 +8,13 @@ const useStyles = makeStyles({
     height: "100%",
     flexDirection: "column",
     position: "relative",
+    marginBottom: 170,
     "@media (max-width:1000px)": {
       height: "100vh",
       padding: 0,
       marginLeft: "7.69%",
       width: "100%",
+      marginBottom: 0,
     },
   },
   brownBackground: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
     },
   },
   text: {
-    marginTop: 190,
+    marginTop: 160,
     color: "#FFFFFF",
     width: 500,
     zIndex: 5,
@@ -35,7 +37,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexDirection: "column",
     fontStyle: "italic",
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: `"Exo 2", sans-serif !important`,
     gap: 20,
     textAlign: "center",
@@ -67,6 +69,26 @@ const useStyles = makeStyles({
       width: 80,
       right: 0,
       top: 150,
+    },
+  },
+  quotesLine: {
+    zIndex: 6,
+    position: "absolute",
+    top: 100,
+    width: 550,
+    "@media (max-width:1000px)": {
+      width: 350,
+      top: "-60px",
+    },
+  },
+  quotesLine2: {
+    zIndex: 6,
+    position: "absolute",
+    top: 450,
+    width: 550,
+    "@media (max-width:1000px)": {
+      width: 350,
+      top: 245,
     },
   },
 });

@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     height: "100%",
     flexDirection: "column",
-    marginBottom: 100,
+    marginBottom: 30,
     "@media (max-width:1000px)": {
       height: "100vh",
       padding: 0,

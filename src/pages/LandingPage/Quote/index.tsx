@@ -42,6 +42,16 @@ const Quote = () => {
         </div>
       </div>
       <img
+        className={classes.quotesLine}
+        alt="quotes line"
+        src="../../assets/quotesLine.svg"
+      />
+      <img
+        className={classes.quotesLine2}
+        alt="quotes line"
+        src="../../assets/quotesLine.svg"
+      />
+      <img
         className={classes.quotes}
         alt="quotes"
         src="../../assets/quotes.svg"
