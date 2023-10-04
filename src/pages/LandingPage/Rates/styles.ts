@@ -13,7 +13,8 @@ const useStyles = makeStyles({
       padding: 0,
       marginLeft: "7.69%",
       width: "100%",
-      marginTop: "-300px",
+      marginTop: "-350px",
+      marginBottom: 300,
     },
   },
   cardsWrapper: {
@@ -163,7 +164,7 @@ const useStyles = makeStyles({
     zIndex: 4,
     marginBottom: 50,
     "@media (max-width:1000px)": {
-      marginBottom: 50,
+      marginBottom: 30,
     },
   },
 });

@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     height: "100%",
     flexDirection: "column",
     position: "relative",
-    marginBottom: 170,
+    marginBottom: 150,
     "@media (max-width:1000px)": {
       height: "100vh",
       padding: 0,

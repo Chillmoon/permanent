@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     height: "100%",
     flexDirection: "column",
-    marginBottom: 30,
+    marginBottom: 10,
     "@media (max-width:1000px)": {
       height: "100vh",
       padding: 0,
@@ -26,6 +26,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       width: "115.38%",
       marginTop: "-270px",
+      height: "6000",
     },
   },
   blockName: {
@@ -39,8 +40,8 @@ const useStyles = makeStyles({
     zIndex: 4,
     marginBottom: 50,
     "@media (max-width:1000px)": {
-      marginBottom: 100,
-      marginTop: "-100px",
+      marginBottom: 10,
+      marginTop: "-160px",
       marginRight: "-15%",
     },
   },

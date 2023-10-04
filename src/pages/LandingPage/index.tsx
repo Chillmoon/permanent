@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import ForWho from "./ForWho";
 import Header from "./Header";
 import Program from "./Program";
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <Program />
       <Quote />
       <Rates />
+      <Footer />
     </>
   );
 };

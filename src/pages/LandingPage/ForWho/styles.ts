@@ -15,6 +15,7 @@ const useStyles = makeStyles({
       padding: 0,
       marginLeft: "7.69%",
       width: "100%",
+      marginBottom: 50,
     },
   },
   blockName: {

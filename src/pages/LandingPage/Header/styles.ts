@@ -29,7 +29,8 @@ const useStyles = makeStyles({
     width: 600,
     marginRight: "-7%",
     "@media (max-width:1000px)": {
-      display: "none",
+      width: 400,
+      top: 350,
     },
   },
 
