@@ -19,7 +19,7 @@ const ProgressCard: FC<ProgressCardType> = ({ name, progress, image, id }) => {
   return (
     <Grid container className={classes.progressCard}>
       <Grid item xs={12} md={5} className={classes.progressCardImage}>
-        <img height="100" src={image} alt={name} />
+        <img height="335" src={image} alt={name} />
       </Grid>
       <Grid item xs={12} md={7} className={classes.progressCardContent}>
         <Typography

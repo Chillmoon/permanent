@@ -13,12 +13,11 @@ import { useNavigate } from "react-router-dom";
 
 const cardData = [
   {
-    name: "ГРУПОВЕ НАСТАВНИЦТВО",
+    name: "Курс EYELINER",
     id: "course1",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed doeiusmod tempor incididunt ut labore et dolore magna aliqua",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/kovalevskayaplatform-39007.appspot.com/o/Dev.%20svg%2Flogo.jpg?alt=media&token=1635cb32-e801-4a0b-a72d-a2b0ff3aac47",
+    image: "",
   },
   {
     name: "Скоро",

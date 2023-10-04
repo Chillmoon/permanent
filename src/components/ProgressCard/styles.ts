@@ -24,7 +24,6 @@ const useStyles = makeStyles({
     display: "flex",
     paddingLeft: 20,
     paddingRight: 20,
-    justifyContent: "center",
     paddingTop: "15px !important",
     paddingBottom: "30px !important",
     "&.MuiGrid-root": {
@@ -36,10 +35,11 @@ const useStyles = makeStyles({
     },
   },
   progressCardTitle: {
-    color: "#004AAD",
+    color: "#39291D",
     fontWeight: "700 !important",
     fontSize: "32px !important",
     marginBottom: 15,
+    marginTop: "50px !important",
     display: "flex",
     textTransform: "uppercase",
     fontFamily: "'Montserrat', sans-serif !important",

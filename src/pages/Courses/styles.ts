@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     boxShadow: "4px 4px 20px rgba(0, 0, 0, 0.19) !important",
   },
   cardTitle: {
-    color: "#004AAD",
+    color: "#39291D",
     fontWeight: "700 !important",
     fontSize: 32,
     fontFamily: "'Montserrat', sans-serif !important",

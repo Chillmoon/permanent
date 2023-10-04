@@ -8,11 +8,11 @@ const useStyles = makeStyles({
     fontWeighn: 700,
     border: "none",
     padding: "17px 33px",
-    backgroundColor: "#004AAD",
+    backgroundColor: "#39291D",
     textTransform: "none",
     "&:hover": {
       cursor: "pointer",
-      background: "#013C8A",
+      background: "#39291D",
     },
     "@media (max-width:1089px)": {
       "&>span": {
