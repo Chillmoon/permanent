@@ -4,6 +4,7 @@ const useStyles = makeStyles({
   lessonPageWrapper: {
     display: "flex",
     minHeight: "100vh",
+    backgroundColor: "#FFF",
     "@media (max-width:900px)": {
       display: "none",
     },
@@ -12,10 +13,8 @@ const useStyles = makeStyles({
     display: "none",
     "@media (max-width:900px)": {
       display: "flex !important",
-      width: "100%",
-      height: "100%",
 
-      backgroundColor: "#EBEBEB",
+      height: "100%",
     },
   },
   lessonPageMainBlock: {
@@ -38,22 +37,27 @@ const useStyles = makeStyles({
     gap: "20px",
   },
   courseLabel: {
-    color: "#004AAD",
+    color: "#FFFFFF",
     fontWeight: "700 !important",
     display: "flex",
     marginTop: 20,
     justifyContent: "center",
     fontSize: 32,
     maxWidth: 805,
-    fontFamily: "'Montserrat', sans-serif !important",
+    fontFamily: `"Noto Serif", sans-serif !important`,
     padding: "0 20px",
   },
   moduleLabel: {
-    fontSize: 18,
-    color: "#8A8A8A",
+    fontSize: "18px !important",
+    fontWeight: "700 !important",
+    color: "rgba(117, 73, 41, 0.50)",
+    fontFamily: `"Noto Serif", sans-serif !important`,
   },
   lessonLabel: {
     maxWidth: 805,
+    color: "#3B2616",
+    fontFamily: `"Noto Serif", sans-serif !important`,
+    fontWeight: "700 !important",
   },
   videoPlayerWrapper: {
     marginBottom: 20,
@@ -89,10 +93,11 @@ const useStyles = makeStyles({
     width: 244,
   },
   mobileLessonWrapper: {
-    paddingTop: 64,
-    width: "100vw",
+    marginTop: 80,
+
+    marginLeft: "6%",
     height: "100%",
-    backgroundColor: "#EBEBEB",
+    backgroundColor: "transparent",
     "& a": {
       textDecoration: "underline",
       fontWeight: "400 !important",
@@ -124,8 +129,8 @@ const useStyles = makeStyles({
     padding: "0 20px",
   },
   mobileLessonLabel: {
-    fontFamily: "'Montserrat', sans-serif",
-    color: "#004AAD",
+    fontFamily: `"Noto Serif", sans-serif !important`,
+    color: "#FFFFFF",
     fontWeight: 700,
     fontSize: 24,
     paddingTop: 20,
@@ -133,7 +138,7 @@ const useStyles = makeStyles({
   },
   horizontalLine: {
     border: "none",
-    borderTop: "1px solid #000000",
+    borderTop: "1px solid #FFF",
     width: "100%",
   },
   mobileLessonAccordion: {
@@ -149,7 +154,7 @@ const useStyles = makeStyles({
     },
   },
   mobileLessonAccordionSummary: {
-    fontFamily: "'Montserrat', sans-serif",
+    fontFamily: `"Exo 2", sans-serif !important`,
     fontWeight: 400,
     fontSize: 18,
     overflow: "hidden",
@@ -171,13 +176,15 @@ const useStyles = makeStyles({
     fontSize: 16,
     lineHeight: "22px",
     color: "rgba(0, 0, 0, 0.5)",
+    display: "flex",
+    padding: "0px 32px  !important",
   },
   lessonInfo: {
     marginTop: "16px",
     marginBottom: "32px",
     maxWidth: 805,
     textAlign: "justify",
-    marginRight: 40,
+
     "& > div": {
       marginBottom: "16px",
       "& h6": {
@@ -196,19 +203,24 @@ const useStyles = makeStyles({
   button: {
     marginTop: 20,
     borderRadius: 6,
-    border: "2.364px solid #004AAD",
+    border: "none",
     background: "#FFF",
-    padding: "10px 20px",
-    color: "#004AAD",
+    padding: 0,
+    color: "#B7703D",
     fontWeight: 700,
-    fontFamily: `"Open Sans", sans-serif !important`,
+    textAlign: "left",
+    fontFamily: `"Exo 2", sans-serif !important`,
     cursor: "pointer",
     transition: "background-color 0.3s, color 0.3s",
+    textDecoration: "underline",
     "&:hover": {
       cursor: "pointer",
-      borderColor: "blue",
-      color: "blue",
+      color: "#38281D",
     },
+  },
+  saveIcon: {
+    width: 14,
+    marginRight: 5,
   },
   fileWrapper: {
     display: "flex",

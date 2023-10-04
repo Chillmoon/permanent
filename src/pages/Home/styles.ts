@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     fontFamily: "'Montserrat', sans-serif !important",
     fontSize: "30px !important",
     fontWeight: "700 !important",
-    color: "rgba(0, 0, 0, 0.7)",
+    color: "#FFF",
   },
   coursePageMobile: {
     display: "none",

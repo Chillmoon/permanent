@@ -153,7 +153,18 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                 )
                               }
                             >
-                              {file.name}
+                              <div
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                }}
+                              >
+                                <img
+                                  className={classes.saveIcon}
+                                  src={"../../assets/saveIcon.svg"}
+                                />
+                                {file.name}
+                              </div>
                             </button>
                           ))}
                         </div>

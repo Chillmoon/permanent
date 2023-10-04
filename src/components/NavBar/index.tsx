@@ -125,7 +125,11 @@ const NavBar = () => {
           href="/"
           className={classes.navBarTitle}
         >
-          <img alt="logo" className={classes.logo} src={logoUrl} />
+          <img
+            alt="logo"
+            className={isMobileScreen ? classes.mobileLogo : classes.logo}
+            src={logoUrl}
+          />
         </Typography>
         <Box className={classes.menu}>
           <IconButton

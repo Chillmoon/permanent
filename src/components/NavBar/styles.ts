@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     display: "flex",
     position: "fixed",
     top: 0,
-    backgroundColor: "transparent !important",
+    backgroundColor: "#39291D !important",
     lineHeight: "28.6px",
     boxShadow: "none !important",
     textDecoration: "none",
@@ -107,11 +107,15 @@ const useStyles = makeStyles({
     },
   },
   logo: {
-    marginTop: 50,
-    width: 200,
+    marginTop: 5,
+    width: 150,
     display: "flex",
+  },
+  mobileLogo: {
+    width: 200,
+    marginTop: 50,
     "@media (max-width:1000px)": {
-      marginLeft: "30%",
+      marginLeft: "33%",
     },
   },
 });

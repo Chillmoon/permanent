@@ -10,17 +10,18 @@ const useStyles = makeStyles({
     height: "100%",
     overflowY: "auto",
     paddingLeft: 25,
-    backgroundColor: "#FFFFFF",
     boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.07);",
     textDecoration: "none",
-    color: "#000000",
+    color: "#FFF",
+    background:
+      "var( --BG_ALL, linear-gradient(17deg, #292929 -10.12%, #38281d 66.27%))",
     fontWeight: "400 !important",
 
     "& :visited": {
-      color: "#000000",
+      color: "#FFF",
     },
     "&>a": {
-      color: "blue",
+      color: "#FFF",
     },
 
     "&::-webkit-scrollbar": {
@@ -36,11 +37,12 @@ const useStyles = makeStyles({
   },
   sideBarMenu: {},
   sideBarCourseName: {
-    marginTop: "150px !important",
+    marginTop: "100px !important",
     marginBottom: "20px !important",
     marginLeft: "20px !important",
     fontWeight: 400,
     fontSize: "20px !important",
+    fontFamily: `"Noto Serif", sans-serif !important`,
   },
   sideBarTitle: {
     position: "absolute",
@@ -52,7 +54,8 @@ const useStyles = makeStyles({
     textDecoration: "none ",
   },
   logo: {
-    width: 100,
+    marginTop: 10,
+    width: 130,
   },
 });
 

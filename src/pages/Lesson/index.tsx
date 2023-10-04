@@ -111,7 +111,13 @@ const LessonPage = () => {
                       handleDownloadFile(file.file as string, file.name)
                     }
                   >
-                    {file.name}
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <img
+                        className={classes.saveIcon}
+                        src={"../../assets/saveIcon.svg"}
+                      />
+                      {file.name}
+                    </div>
                   </button>
                 ))}
               </div>

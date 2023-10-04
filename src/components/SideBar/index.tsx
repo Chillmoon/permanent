@@ -29,7 +29,7 @@ const SideBar = () => {
           <img
             alt="logo"
             className={classes.logo}
-            src="https://firebasestorage.googleapis.com/v0/b/kovalevskayaplatform-39007.appspot.com/o/Dev.%20svg%2Flogo.jpg?alt=media&token=1635cb32-e801-4a0b-a72d-a2b0ff3aac47"
+            src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*mhscj2*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjQyMTc4OS42MC4xLjE2OTY0MjE4MTEuMzguMC4w"
           />
         </Typography>
         <Typography className={classes.sideBarCourseName}>
