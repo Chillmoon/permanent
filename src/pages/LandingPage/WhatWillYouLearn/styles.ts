@@ -117,6 +117,16 @@ const useStyles = makeStyles({
       right: "-70px",
     },
   },
+  ribbon: {
+    position: "absolute",
+    top: 1720,
+    left: 35,
+    width: 600,
+    zIndex: 1,
+    "@media (max-width:1000px)": {
+      display: "none",
+    },
+  },
 });
 
 export default useStyles;

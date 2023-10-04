@@ -33,6 +33,11 @@ const WhatWillYouLearn = () => {
         src="../../assets/bottleLight.svg"
         alt="Light"
       />
+      <img
+        className={classes.ribbon}
+        src="../../assets/ribbon.svg"
+        alt="Ribbon"
+      />
       {isMobileScreen ? (
         <div className={classes.mobileWrapper}>
           <ul className={classes.list}>
