@@ -35,8 +35,8 @@ const useStyles = makeStyles({
     zIndex: 5,
     width: 500,
     "@media (max-width:1000px)": {
-      width: 380,
-      marginTop: "-400px",
+      maxWidth: 350,
+      top: 0,
     },
   },
   textWrapper: {

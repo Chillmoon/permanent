@@ -57,7 +57,7 @@ const useStyles = makeStyles({
     width: 500,
     zIndex: 1,
     "@media (max-width:1000px)": {
-      top: 3870,
+      top: "60%",
       left: 20,
       width: 400,
     },

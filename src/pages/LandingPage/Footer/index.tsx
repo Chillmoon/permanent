@@ -14,7 +14,7 @@ const Footer = () => {
         <img
           className={classes.photo}
           alt="Viktoria"
-          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FViktoria%20gradient.png?alt=media&token=65a19795-8c43-44dc-9b12-25450c09308c&_gl=1*1pxiros*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjQxMzA3Ny41Ny4xLjE2OTY0MTMwOTMuNDQuMC4w"
+          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Ftransparent%20Viktoria.png?alt=media&token=ed6491ab-bb3d-425c-8873-75d16a9e2d75&_gl=1*zdtqxb*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjUzMTI3OS42NC4xLjE2OTY1MzEyOTQuNDUuMC4w"
         />
         <img
           className={classes.lightPhoto}
@@ -81,7 +81,7 @@ const Footer = () => {
         <img
           className={classes.photo}
           alt="Viktoria"
-          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fviktoria.svg?alt=media&token=edd328dd-5a5b-4242-b598-b9ec4d1241af&_gl=1*68ngw4*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjI0NTE1NC41Mi4xLjE2OTYyNDY4NTguNTcuMC4w"
+          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Ftransparent%20Viktoria.png?alt=media&token=ed6491ab-bb3d-425c-8873-75d16a9e2d75&_gl=1*zdtqxb*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjUzMTI3OS42NC4xLjE2OTY1MzEyOTQuNDUuMC4w"
         />
         <img
           className={classes.lightPhoto}
