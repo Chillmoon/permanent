@@ -4,11 +4,11 @@ const useStyles = makeStyles({
   footerWrapper: {
     position: "relative",
     backgroundColor: "transparent",
-    height: 100,
-
+    height: "100%",
     color: "white",
     display: "flex",
     flexDirection: "row",
+    bottom: 0,
     justifyContent: "space-between",
     padding: "0 7%",
   },
