@@ -9,13 +9,13 @@ const useStyles = makeStyles({
     alignItems: "center",
     display: "flex",
     padding: "0 7%",
-
     "@media (max-width:1000px)": {
       marginBottom: 150,
       padding: 0,
       marginLeft: "7.69%",
-      width: "100%",
+      width: "100vw !important",
       paddingBottom: 500,
+      position: "relative",
     },
   },
   blockName: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles({
     transform: "scaleX(-1)",
     zIndex: 2,
     "@media (max-width:1000px)": {
-      top: 3970,
+      top: "67%",
       left: 0,
       transform: "scaleX(1)",
       width: 400,
@@ -85,17 +85,7 @@ const useStyles = makeStyles({
       marginRight: 15,
     },
   },
-  bottle: {
-    position: "absolute",
-    top: 1550,
-    right: 0,
-    width: 250,
-    zIndex: 1,
-    "@media (max-width:1000px)": {
-      top: 2150,
-      right: "-70px",
-    },
-  },
+
   lightBottle: {
     position: "absolute",
     top: 1550,
@@ -112,9 +102,10 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       display: "flex",
       position: "absolute",
-      top: 3200,
+      top: "10%",
       width: 70,
-      right: "-70px",
+      right: 0,
+      zIndex: 10,
     },
   },
   ribbon: {

@@ -14,8 +14,9 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       padding: 0,
       marginLeft: "7.69%",
-      width: "100%",
+      width: "100vw !important",
       marginBottom: 50,
+      position: "relative",
     },
   },
   blockName: {
@@ -88,6 +89,17 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       width: 200,
       top: 900,
+    },
+  },
+  bottle: {
+    position: "absolute",
+    top: 1550,
+    right: 0,
+    width: 250,
+    zIndex: 1,
+    "@media (max-width:1000px)": {
+      top: 0,
+      right: 0,
     },
   },
 });

@@ -49,7 +49,7 @@ const useStyles = makeStyles({
     // backgroundColor: "red",
     height: "100vh",
     marginTop: 100,
-    width: "100% !important",
+    width: "100vw !important",
     marginRight: 0,
     marginLeft: "7.69%",
     backgroundImage: "linear-gradient(104deg, #ffd7bb -10.85%, #fff 102.7%)",
