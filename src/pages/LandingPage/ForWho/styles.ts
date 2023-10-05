@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       padding: 0,
       marginLeft: "7.69%",
-      width: "100vw !important",
+      width: "100% !important",
       marginBottom: 50,
       position: "relative",
     },

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
       height: "100vh",
       padding: 0,
       marginLeft: "7.69%",
-      width: "100vw !important",
+      width: "100% !important",
       marginBottom: 0,
     },
   },

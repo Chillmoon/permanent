@@ -49,7 +49,7 @@ const useStyles = makeStyles({
     // backgroundColor: "red",
     height: "100vh",
     marginTop: 100,
-    width: "100vw !important",
+    width: "100% !important",
     marginRight: 0,
     marginLeft: "7.69%",
     backgroundImage: "linear-gradient(104deg, #ffd7bb -10.85%, #fff 102.7%)",
@@ -159,7 +159,7 @@ const useStyles = makeStyles({
     marginRight: "-7%",
     "@media (max-width:1000px)": {
       marginTop: "-33px",
-      width: "100%",
+      width: "100% !important",
       marginRight: 0,
     },
   },

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
       marginBottom: 150,
       padding: 0,
       marginLeft: "7.69%",
-      width: "100vw !important",
+      width: "100% !important",
       paddingBottom: 500,
       position: "relative",
     },
@@ -94,7 +94,7 @@ const useStyles = makeStyles({
     zIndex: 2,
     "@media (max-width:1000px)": {
       top: 2150,
-      right: "-70px",
+      right: 0,
     },
   },
   blob: {
