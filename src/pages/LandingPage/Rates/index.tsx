@@ -52,7 +52,7 @@ const Rates = () => {
               <li>{t("Пігметнологія пігментів для очей")}</li>
               <li>
                 <div>
-                  {t("Доступ на платформі")} <strong>{t("6 місяці")}</strong>
+                  {t("Доступ на платформі")} <strong>{t("6 місяців")}</strong>
                 </div>
               </li>
               <li>
@@ -66,12 +66,7 @@ const Rates = () => {
             <div className={classes.discountedPrice}>$190</div>
             <div className={classes.priceDescription}>{t("до 14 жовтня")}</div>
             <button
-              className={classes.button}
-              style={{
-                background: "#FFF",
-                color: "#000",
-                borderBottom: "5px solid #5F5F5F",
-              }}
+              className={classes.blackButton}
               onClick={() => console.log("button")}
             >
               {t("Придбати зараз")}
