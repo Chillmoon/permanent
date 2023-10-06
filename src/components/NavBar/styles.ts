@@ -16,10 +16,20 @@ const useStyles = makeStyles({
     "& :visited": {
       color: "#000000",
     },
+    "&>div": {
+      "@media (max-width:1000px)": {
+        display: "flex !important",
+        justifyContent: "center",
+        alignContent: "center",
+      },
+    },
     "@media (max-width:1000px)": {
       height: 100,
       marginTop: "-1px",
       backgroundColor: "#38281D !important",
+      display: "flex !important",
+      justifyContent: "center",
+      alignContent: "center",
     },
   },
   navBarTitle: {
@@ -29,11 +39,8 @@ const useStyles = makeStyles({
     left: 50,
     padding: 0,
     textDecoration: "none ",
-    "@media (max-width:600px)": {
-      left: "15%",
-    },
-    "@media (max-width:376px)": {
-      left: "5%",
+    "@media (max-width:1000px)": {
+      left: "25%",
     },
   },
   link: {
@@ -113,10 +120,6 @@ const useStyles = makeStyles({
   },
   mobileLogo: {
     width: 200,
-    marginTop: 50,
-    "@media (max-width:1000px)": {
-      marginLeft: "33%",
-    },
   },
 });
 

@@ -11,7 +11,9 @@ const useStyles = makeStyles({
     bottom: 0,
     justifyContent: "space-between",
     padding: "0 7%",
+    width: "100%",
   },
+  mobileWrapper: {},
   linksWrapper: {
     display: "flex",
     justifyContent: "center",

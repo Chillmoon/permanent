@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 
     "@media (max-width:1000px)": {
       padding: 0,
-      marginLeft: "7.69%",
+
       width: "100% !important",
       marginBottom: 50,
       position: "relative",
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
   blockName: {
     color: "#FFF",
-    fontSize: 40,
+    fontSize: 34,
     fontWeight: 600,
     textTransform: "uppercase",
     marginBottom: 70,
@@ -74,10 +74,11 @@ const useStyles = makeStyles({
     width: 300,
     left: 0,
     top: 600,
-    zIndex: 2,
+    zIndex: 1,
     "@media (max-width:1000px)": {
-      width: 200,
-      top: 950,
+      width: 250,
+      top: 0,
+      marginLeft: "-20px",
     },
   },
   backgroundImageLight: {
@@ -85,21 +86,36 @@ const useStyles = makeStyles({
     width: 300,
     left: 0,
     top: 500,
-    zIndex: 1,
+    zIndex: 2,
     "@media (max-width:1000px)": {
-      width: 200,
-      top: 900,
+      width: "100%",
+      top: 0,
+      marginTop: "-100px",
+      marginLeft: "-20px",
     },
   },
   bottle: {
     position: "absolute",
-    top: 1550,
+    top: 1510,
     right: 0,
     width: 250,
     zIndex: 1,
     "@media (max-width:1000px)": {
-      top: 0,
+      top: "70rem",
       right: 0,
+      marginRight: "-20px",
+    },
+  },
+  lightBottle: {
+    position: "absolute",
+    top: 1530,
+    right: 0,
+    width: 250,
+    zIndex: 2,
+    "@media (max-width:1000px)": {
+      top: "65rem",
+      right: 0,
+      marginRight: "-20px",
     },
   },
 });

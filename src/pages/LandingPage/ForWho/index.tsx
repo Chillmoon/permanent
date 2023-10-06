@@ -63,6 +63,11 @@ const ForWho = () => {
         alt="Bottle"
         src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fbottle.svg?alt=media&token=b9da3c1d-bd21-4b8b-9a48-037b3b279c5f&_gl=1*agjvm1*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjI0OTM3MS41My4xLjE2OTYyNDk0MjMuOC4wLjA."
       />
+      <img
+        className={classes.lightBottle}
+        src="../../assets/bottleLight.svg"
+        alt="Light"
+      />
       <div className={classes.blockName}>{t("Для кого")}</div>
       <div className={classes.blockCardWrapper}>
         {forWhoList.map((el: { id: number; description: string }) => (

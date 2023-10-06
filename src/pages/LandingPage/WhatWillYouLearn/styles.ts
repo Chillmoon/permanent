@@ -10,9 +10,8 @@ const useStyles = makeStyles({
     display: "flex",
     padding: "0 7%",
     "@media (max-width:1000px)": {
-      marginBottom: 150,
+      marginBottom: 100,
       padding: 0,
-      marginLeft: "7.69%",
       width: "100% !important",
       paddingBottom: 500,
       position: "relative",
@@ -27,6 +26,7 @@ const useStyles = makeStyles({
     textAlign: "center",
     "@media (max-width:1000px)": {
       marginBottom: 40,
+      fontSize: 34,
     },
   },
   mobileWrapper: {
@@ -44,10 +44,10 @@ const useStyles = makeStyles({
     transform: "scaleX(-1)",
     zIndex: 2,
     "@media (max-width:1000px)": {
-      top: "67%",
+      top: "64%",
       left: 0,
       transform: "scaleX(1)",
-      width: 400,
+      width: "100%",
     },
   },
   lightPhoto: {
@@ -57,9 +57,9 @@ const useStyles = makeStyles({
     width: 500,
     zIndex: 1,
     "@media (max-width:1000px)": {
-      top: "60%",
-      left: 20,
-      width: 400,
+      top: "50%",
+      width: "100%",
+      left: 0,
     },
   },
   list: {
@@ -68,7 +68,8 @@ const useStyles = makeStyles({
     flexDirection: "column",
     gap: 40,
     "&>li": {
-      color: "#FFF1E8",
+      color: "#C3B1A4",
+      gap: 16,
       fontFamily: `"Exo 2", sans-serif !important`,
       fontSize: 16,
       fontWeight: 200,
@@ -86,17 +87,6 @@ const useStyles = makeStyles({
     },
   },
 
-  lightBottle: {
-    position: "absolute",
-    top: 1550,
-    right: 0,
-    width: 250,
-    zIndex: 2,
-    "@media (max-width:1000px)": {
-      top: 2150,
-      right: 0,
-    },
-  },
   blob: {
     display: "none",
     "@media (max-width:1000px)": {
@@ -106,6 +96,7 @@ const useStyles = makeStyles({
       width: 70,
       right: 0,
       zIndex: 10,
+      marginRight: "-20px",
     },
   },
   ribbon: {

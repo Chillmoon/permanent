@@ -25,11 +25,6 @@ const WhatWillYouLearn = () => {
       <img className={classes.blob} src="../../assets/blob.svg" alt="Figure" />
 
       <img
-        className={classes.lightBottle}
-        src="../../assets/bottleLight.svg"
-        alt="Light"
-      />
-      <img
         className={classes.ribbon}
         src="../../assets/ribbon.svg"
         alt="Ribbon"
@@ -45,7 +40,9 @@ const WhatWillYouLearn = () => {
               />
               <div>
                 {t(`Виконувати процедуру`)}{" "}
-                <strong>{t("швидше ніж за 20 хвилин")}.</strong>
+                <strong style={{ color: "#FFE5D1" }}>
+                  {t("швидше ніж за 20 хвилин")}.
+                </strong>
               </div>
             </li>
             <li>
@@ -68,7 +65,9 @@ const WhatWillYouLearn = () => {
               />
               <div>
                 {t("Правильно фіксувати, щоб виконати процедуру")}{" "}
-                <strong>{t("безпечно і зручно")}.</strong>
+                <strong style={{ color: "#FFE5D1" }}>
+                  {t("безпечно і зручно")}.
+                </strong>
               </div>
             </li>
             <li>
@@ -114,7 +113,10 @@ const WhatWillYouLearn = () => {
                 src="../../assets/checkIcon.svg"
               />
               <div>
-                {t("Працювати ")} <strong>{t("з усіма типами повік")}</strong>
+                {t("Працювати ")}{" "}
+                <strong style={{ color: "#FFE5D1" }}>
+                  {t("з усіма типами повік")}
+                </strong>
               </div>
             </li>
             <li>
@@ -142,7 +144,9 @@ const WhatWillYouLearn = () => {
                 />
                 <div>
                   {t(`Виконувати процедуру`)}{" "}
-                  <strong>{t("швидше ніж за 20 хвилин")}.</strong>
+                  <strong style={{ color: "#FFE5D1" }}>
+                    {t("швидше ніж за 20 хвилин")}.
+                  </strong>
                 </div>
               </li>
               <li>
@@ -165,7 +169,9 @@ const WhatWillYouLearn = () => {
                 />
                 <div>
                   {t("Правильно фіксувати, щоб виконати процедуру")}{" "}
-                  <strong>{t("безпечно і зручно")}.</strong>
+                  <strong style={{ color: "#FFE5D1" }}>
+                    {t("безпечно і зручно")}.
+                  </strong>
                 </div>
               </li>
               <li>

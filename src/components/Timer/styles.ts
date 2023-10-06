@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     color: "transparent",
     "@media (max-width:1000px)": {
       fontSize: 30,
+      maxWidth: "100%",
     },
   },
   time: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles({
     width: 35,
     borderTop: "0.5px solid #FFF5EE",
     "@media (max-width:1000px)": {
-      width: 40,
+      maxWidth: 25,
     },
   },
   timeDescription: {

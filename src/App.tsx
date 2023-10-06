@@ -77,7 +77,7 @@ function App() {
         </Route>
         <Route path="/paymentSuccess" element={<PaymentSuccessPage />} />
       </Routes>
-      {["/login", "/signup"].includes(location.pathname) ? null : <Footer />}
+      {/* {["/login", "/signup"].includes(location.pathname) ? null : <Footer />} */}
     </>
   );
 }

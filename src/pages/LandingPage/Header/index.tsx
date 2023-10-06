@@ -41,6 +41,7 @@ const Header = () => {
             alt="Viktoria"
             src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fviktoria.svg?alt=media&token=edd328dd-5a5b-4242-b598-b9ec4d1241af&_gl=1*1ypcyqb*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE5MTA1MS40OS4xLjE2OTYxOTQ5MjQuNTcuMC4w"
           />
+
           <div className={classes.photoDescription}>
             {t(
               "Ідеальна нетравматична техніка, яку після вивчення освоїли 99% учнів, і отримали круті результати."

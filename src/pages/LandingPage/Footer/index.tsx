@@ -81,7 +81,7 @@ const Footer = () => {
         <img
           className={classes.photo}
           alt="Viktoria"
-          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Ftransparent%20Viktoria.png?alt=media&token=ed6491ab-bb3d-425c-8873-75d16a9e2d75&_gl=1*zdtqxb*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjUzMTI3OS42NC4xLjE2OTY1MzEyOTQuNDUuMC4w"
+          src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fviktoria.svg?alt=media&token=edd328dd-5a5b-4242-b598-b9ec4d1241af&_gl=1*ll42eo*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjYwNDIzOS42Ni4xLjE2OTY2MDQyNTEuNDguMC4w"
         />
         <img
           className={classes.lightPhoto}
@@ -93,17 +93,15 @@ const Footer = () => {
             <div className={classes.textBlockWrapper}>
               <div>
                 {t("Досвід роботи")}{" "}
-                <strong style={{ color: "#FFF", opacity: 1 }}>
-                  {t("9 років")}
-                </strong>
-                , {t("пройшла всі техніки, від трешу до шикарних робіт")}
+                <strong style={{ color: "#FFE5D1" }}>{t("9 років")}</strong>,{" "}
+                {t("пройшла всі техніки, від трешу до шикарних робіт")}
               </div>
               <span className={classes.lineLong} />
             </div>
             <div className={classes.textBlockWrapper}>
               <div>
                 {t("Переможниця чемпіонатів")},{" "}
-                <strong style={{ color: "#FFF1E8", opacity: 1 }}>
+                <strong style={{ color: "#FFE5D1" }}>
                   {t("спікер та суддя")}
                 </strong>{" "}
                 {t("українських та міжнародних конференцій")}.
@@ -116,17 +114,15 @@ const Footer = () => {
               <span className={classes.lineLong} />
               <div>
                 {t("Досвід роботи")}{" "}
-                <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                  {t("9 років")}
-                </strong>
-                , {t("пройшла всі техніки, від трешу до шикарних робіт")}
+                <strong style={{ color: "#FFE5D1" }}>{t("9 років")}</strong>,{" "}
+                {t("пройшла всі техніки, від трешу до шикарних робіт")}
               </div>
             </div>
             <div className={classes.textBlockWrapper}>
               <span className={classes.lineShort} />
               <div>
                 {t("Переможниця чемпіонатів")},{" "}
-                <strong style={{ color: "#FFF1E8", opacity: 1 }}>
+                <strong style={{ color: "#FFE5D1" }}>
                   {t("спікер та суддя")}
                 </strong>{" "}
                 {t("українських та міжнародних конференцій")}.

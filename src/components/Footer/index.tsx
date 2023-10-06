@@ -1,4 +1,4 @@
-import { Button, IconButton } from "@mui/material";
+import { Button, IconButton, useMediaQuery } from "@mui/material";
 import { Telegram, Instagram } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -9,6 +9,8 @@ const Footer = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
+
+  const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
   const handleDownloadFile = (fileUrl: string, fileName: string) => {
     const anchor = document.createElement("a");
@@ -29,7 +31,32 @@ const Footer = () => {
     );
   };
 
-  return (
+  return isMobileScreen ? (
+    <div className={classes.mobileWrapper}>
+      <div className={classes.downloadWrapper}>
+        <Button
+        // onClick={() =>
+        //   handleDownloadFile(
+        //     `${process.env.PUBLIC_URL}/docs/terms-of-service.docx`,
+        //     "Terms-of-service.docx"
+        //   )
+        // }
+        >
+          {t("Публічна оферта")}
+        </Button>
+        <Button
+        // onClick={() =>
+        //   handleDownloadFile(
+        //     `${process.env.PUBLIC_URL}/docs/privacy-policy.docx`,
+        //     "Privacy-policy.docx"
+        //   )
+        // }
+        >
+          {t("Політика конфіденційності")}
+        </Button>
+      </div>
+    </div>
+  ) : (
     <div className={classes.footerWrapper}>
       <div className={classes.downloadWrapper}>
         <Button
@@ -51,6 +78,9 @@ const Footer = () => {
         // }
         >
           {t("Політика конфіденційності")}
+        </Button>
+        <Button onClick={handleCopyText} className={classes.notAButton}>
+          {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
         </Button>
       </div>
       <div className={classes.linksWrapper}>

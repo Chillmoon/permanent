@@ -9,11 +9,11 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexDirection: "column",
     "@media (max-width:1000px)": {
-      height: "100vh",
+      height: "100%",
       padding: 0,
-      marginLeft: "7.69%",
       width: "100% !important",
       alignItems: "center",
+      marginTop: 0,
     },
   },
 
@@ -26,8 +26,9 @@ const useStyles = makeStyles({
     zIndex: 6,
     width: 430,
     "@media (max-width:1000px)": {
-      width: 350,
-      marginTop: "-400px",
+      position: "relative",
+      width: "100%",
+      top: 0,
     },
   },
   lightPhoto: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles({
     zIndex: 5,
     width: 500,
     "@media (max-width:1000px)": {
-      maxWidth: 350,
+      width: "100%",
       top: 0,
     },
   },
@@ -46,11 +47,15 @@ const useStyles = makeStyles({
     top: 330,
     left: 0,
     fontFamily: `"Exo 2", sans-serif !important`,
+
     "@media (max-width:1000px)": {
-      width: 450,
+      justifyContent: "space-between",
+      marginTop: 10,
+      width: "100%",
       flexDirection: "column",
-      marginTop: "-330px",
+      top: 0,
       gap: 25,
+      marginLeft: "-20px",
     },
     "&>div": {
       display: "flex",
@@ -63,10 +68,9 @@ const useStyles = makeStyles({
     },
     "&>div>div": {
       fontSize: 14,
-      color: "#FFF",
+      color: "#F5DBC8",
       fontWeight: 300,
       lineHeight: "125%",
-      opacity: "0.7",
       zIndex: 5,
       "@media (max-width:1000px)": {
         fontSize: 16,
@@ -89,6 +93,9 @@ const useStyles = makeStyles({
     width: 150,
     marginTop: 5,
     zIndex: 7,
+    "@media (max-width:1000px)": {
+      width: 100,
+    },
   },
   lineShort: {
     height: 1,
@@ -97,7 +104,7 @@ const useStyles = makeStyles({
     marginTop: 5,
     zIndex: 7,
     "@media (max-width:1000px)": {
-      width: 50,
+      width: 70,
       marginTop: 10,
     },
   },
@@ -138,7 +145,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       width: 160,
       padding: "6px 20px",
-      marginTop: 50,
+      marginTop: 0,
       marginBottom: 5,
     },
   },
@@ -146,8 +153,7 @@ const useStyles = makeStyles({
     width: 180,
     display: "block",
     margin: "0 auto",
-    marginTop: 100,
-    marginBottom: 27,
+    paddingLeft: 40,
   },
 });
 

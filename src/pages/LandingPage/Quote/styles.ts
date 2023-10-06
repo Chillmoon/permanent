@@ -10,11 +10,11 @@ const useStyles = makeStyles({
     position: "relative",
     marginBottom: 150,
     "@media (max-width:1000px)": {
-      height: "100vh",
+      height: "331px",
       padding: 0,
-      marginLeft: "7.69%",
       width: "100% !important",
-      marginBottom: 0,
+      justifyContent: "center",
+      marginBottom: 50,
     },
   },
   brownBackground: {
@@ -23,8 +23,8 @@ const useStyles = makeStyles({
     zIndex: 4,
     width: "100%",
     "@media (max-width:1000px)": {
-      width: "115.38%",
-      marginTop: "-150px",
+      width: "calc(100% + 40px)",
+      top: 0,
     },
   },
   text: {
@@ -42,9 +42,9 @@ const useStyles = makeStyles({
     gap: 20,
     textAlign: "center",
     "@media (max-width:1000px)": {
-      marginTop: "-650px",
       fontSize: 16,
-      width: 330,
+      width: "100%",
+      marginTop: 0,
     },
   },
   quotes: {
@@ -53,7 +53,7 @@ const useStyles = makeStyles({
     left: 330,
     width: 130,
     "@media (max-width:1000px)": {
-      top: 0,
+      top: 30,
       width: 80,
       left: 0,
     },
@@ -68,7 +68,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       width: 80,
       right: 0,
-      top: 150,
+      bottom: 30,
     },
   },
   quotesLine: {
@@ -77,8 +77,8 @@ const useStyles = makeStyles({
     top: 100,
     width: 550,
     "@media (max-width:1000px)": {
-      width: 350,
-      top: "-60px",
+      width: "100%",
+      top: 20,
     },
   },
   quotesLine2: {
@@ -87,8 +87,8 @@ const useStyles = makeStyles({
     top: 450,
     width: 550,
     "@media (max-width:1000px)": {
-      width: 350,
-      top: 245,
+      width: "100%",
+      top: "90%",
     },
   },
 });

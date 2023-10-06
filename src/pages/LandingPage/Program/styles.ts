@@ -12,9 +12,8 @@ const useStyles = makeStyles({
     flexDirection: "column",
     marginBottom: 10,
     "@media (max-width:1000px)": {
-      height: "100vh",
+      height: "100%",
       padding: 0,
-      marginLeft: "7.69%",
       width: "100% !important",
     },
   },
@@ -24,9 +23,11 @@ const useStyles = makeStyles({
     marginTop: "-150px",
     zIndex: 3,
     "@media (max-width:1000px)": {
-      width: "115.38%",
+      width: "calc(100% + 40px)",
       marginTop: "-270px",
       height: "6000",
+      marginLeft: "-20px",
+      marginRight: "-20px",
     },
   },
   blockName: {
@@ -40,9 +41,9 @@ const useStyles = makeStyles({
     zIndex: 4,
     marginBottom: 50,
     "@media (max-width:1000px)": {
-      marginBottom: 10,
+      marginBottom: 20,
+      fontSize: 34,
       marginTop: "-160px",
-      marginRight: "-15%",
     },
   },
   table: {
@@ -59,6 +60,7 @@ const useStyles = makeStyles({
     marginBottom: 40,
     "@media (max-width:1000px)": {
       width: "100%",
+      marginBottom: 20,
     },
   },
   tableHeader: {
@@ -71,13 +73,16 @@ const useStyles = makeStyles({
     borderRadius: "16px 16px 0px 0px",
     "@media (max-width:1000px)": {
       fontSize: 20,
+      padding: "10px 0px",
     },
   },
   tableBody: {
     padding: 20,
     fontFamily: `"Exo 2", sans-serif !important`,
     "&>ul": {
-      paddingLeft: 20,
+      color: "#8D7467",
+      padding: "0px 0px 0px 20px",
+      margin: 0,
       display: "flex",
       flexDirection: "column",
       gap: 16,

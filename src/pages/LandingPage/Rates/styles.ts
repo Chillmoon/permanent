@@ -9,12 +9,10 @@ const useStyles = makeStyles({
     flexDirection: "column",
     position: "relative",
     "@media (max-width:1000px)": {
-      height: "100vh",
+      height: "100%",
       padding: 0,
-      marginLeft: "7.69%",
       width: "100% !important",
-      marginTop: "-350px",
-      marginBottom: 300,
+      marginBottom: 30,
     },
   },
   cardsWrapper: {
@@ -26,8 +24,8 @@ const useStyles = makeStyles({
     gap: 100,
     "@media (max-width:1000px)": {
       flexDirection: "column",
-      marginTop: 200,
       gap: 50,
+      width: "100%",
     },
   },
   cardWrapper: {
@@ -64,7 +62,8 @@ const useStyles = makeStyles({
     padding: "40px 20px",
     "@media (max-width:1000px)": {
       margin: 5,
-      padding: "35px 20px",
+      padding: "35px 20px 20px 20px",
+      height: "100%",
     },
   },
 
@@ -82,6 +81,10 @@ const useStyles = makeStyles({
     padding: 0,
     gap: 20,
     marginBottom: 40,
+    "@media (max-width:1000px)": {
+      marginBottom: 30,
+      gap: 15,
+    },
     "&>li": {
       fontSize: 16,
       textDecoration: "none",
@@ -129,7 +132,7 @@ const useStyles = makeStyles({
     },
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (max-width:1000px)": {
-      marginBottom: 40,
+      marginBottom: 0,
     },
   },
   label: {
@@ -150,14 +153,15 @@ const useStyles = makeStyles({
       fontSize: 25,
     },
     "@media (max-width:1000px)": {
-      top: 580,
+      top: 660,
       right: 0,
+      marginRight: "-5px",
     },
   },
   blockName: {
     position: "relative",
     color: "#482B19",
-    fontSize: 40,
+    fontSize: 34,
     fontWeight: 600,
     textTransform: "uppercase",
     textAlign: "center",

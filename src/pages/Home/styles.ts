@@ -13,11 +13,11 @@ const useStyles = makeStyles({
   },
   coursePageMobile: {
     display: "none",
-    "@media (max-width:900px)": {
+    "@media (max-width:1000px)": {
       display: "flex",
       justifyContent: "center",
       alignContent: "center",
-      width: "100vw",
+      width: "100%",
       height: "100vh",
       paddingTop: 100,
     },
@@ -44,15 +44,16 @@ const useStyles = makeStyles({
     flexWrap: "wrap",
     justifyContent: "center",
     gap: "20px",
+    width: "100%",
   },
   myCoursePageWideScreen: {
     display: "block",
-    "@media (max-width:900px)": {
+    "@media (max-width:1000px)": {
       display: "none",
     },
   },
   myCoursePageSmallScreen: {
-    "@media (min-width:900px)": {
+    "@media (min-width:1000px)": {
       display: "none",
     },
   },

@@ -6,9 +6,13 @@ import Quote from "./Quote";
 import Rates from "./Rates";
 import WhatWillYouLearn from "./WhatWillYouLearn";
 
+import useStyles from "./styles";
+
 const LandingPage = () => {
+  const classes = useStyles();
+
   return (
-    <>
+    <div className={classes.wrapper}>
       <Header />
       <ForWho />
       <WhatWillYouLearn />
@@ -16,7 +20,7 @@ const LandingPage = () => {
       <Quote />
       <Rates />
       <Footer />
-    </>
+    </div>
   );
 };
 
