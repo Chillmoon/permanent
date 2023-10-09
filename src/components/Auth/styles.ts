@@ -106,6 +106,9 @@ const useStyles = makeStyles({
         backgroundColor: "inherit",
         borderRadius: "12px !important",
       },
+      "&:active": {
+        background: "transparent",
+      },
     },
     "@media (max-width:1000px)": {
       width: 332,

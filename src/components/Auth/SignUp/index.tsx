@@ -52,7 +52,7 @@ const SignUp = () => {
             }
           })
           .then(() => {
-            navigate("/home");
+            navigate("/platform");
           })
       )
 

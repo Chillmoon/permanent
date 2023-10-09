@@ -165,7 +165,7 @@ const NavBar = () => {
             <MenuItem key="language" onClick={handleCloseNavMenu}>
               <LanguageSelector />
             </MenuItem>
-            <MenuItem key="settings" onClick={() => navigate("/home")}>
+            <MenuItem key="settings" onClick={() => navigate("/platform")}>
               <Typography className={classes.menuLink}>
                 {t("Кабінет")}
               </Typography>
@@ -266,7 +266,10 @@ const NavBar = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  <MenuItem key="settings" onClick={() => navigate("/home")}>
+                  <MenuItem
+                    key="settings"
+                    onClick={() => navigate("/platform")}
+                  >
                     <Typography className={classes.menuLink}>
                       {t("Кабінет")}
                     </Typography>

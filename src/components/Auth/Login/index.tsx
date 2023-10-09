@@ -47,7 +47,7 @@ const Login = () => {
         console.log("Данные об оплате найдены");
         dispatch(
           userSlice.actions.setIsPayed({
-            course1: { isPayed: true, ...paymentData },
+            eyeliner: { isPayed: true, ...paymentData },
           })
         );
       } else {
@@ -70,7 +70,7 @@ const Login = () => {
         const loggedInUserId = userCredential.user.uid;
         checkPaymentData(loggedInUserId);
 
-        navigate("/home");
+        navigate("/platform");
       }
     } catch (error) {
       alert(error);

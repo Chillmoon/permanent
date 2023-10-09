@@ -5,7 +5,7 @@ const initialState = {
   isLoading: true,
   language: "ua",
   isPayed: {
-    course1: {
+    eyeliner: {
       isPayed: false,
       orderId: "",
       merchantId: "1528075",

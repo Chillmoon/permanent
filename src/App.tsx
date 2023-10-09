@@ -19,11 +19,8 @@ import LandingPage from "./pages/LandingPage";
 import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import PaymentSuccessPage from "./pages/PaymentSuccess";
 
-import Footer from "./components/Footer";
-
 function App() {
   const dispatch = useDispatch();
-  const location = useLocation();
   const user = useSelector((state: RootState) => state.user.user);
 
   useEffect(() => {
@@ -56,10 +53,10 @@ function App() {
         <Route path="/" element={<Courses />} />
         <Route path="/courses/:courseId" element={<LandingPage />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/platform" element={<HomePage />} />
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}
           <Route
-            path="/home/:courseId/:lessonNumber"
+            path="/platform/:courseId/:lessonNumber"
             element={<LessonPage />}
           />
           {isAccessToStudentsAllowed && (
@@ -69,7 +66,7 @@ function App() {
                 isAccessToStudentsAllowed ? (
                   <Students />
                 ) : (
-                  <Navigate to="/home" />
+                  <Navigate to="/platform" />
                 )
               }
             />

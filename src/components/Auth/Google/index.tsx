@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import GoogleIcon from "@mui/icons-material/Google";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useTranslation } from "react-i18next";
 import { get, ref } from "firebase/database";
@@ -28,7 +27,7 @@ const GoogleAuth = () => {
         console.log("Данные об оплате найдены");
         dispatch(
           userSlice.actions.setIsPayed({
-            course1: { isPayed: true, ...paymentData },
+            eyeliner: { isPayed: true, ...paymentData },
           })
         );
       } else {
@@ -48,7 +47,7 @@ const GoogleAuth = () => {
 
         checkPaymentData(userID);
 
-        navigate("/home");
+        navigate("/platform");
       })
       .catch((error) => {
         alert(error);
@@ -57,7 +56,11 @@ const GoogleAuth = () => {
   return (
     <>
       <div className={classes.googleWrapper}>
-        <Button onClick={handleGoogle} className={classes.googlelinkWrapper}>
+        <Button
+          disableRipple
+          onClick={handleGoogle}
+          className={classes.googlelinkWrapper}
+        >
           <img src="../../assets/GoogleIcon.svg" />
           <Typography>{t("Увійти за допомогою GOOGLE")}</Typography>
         </Button>

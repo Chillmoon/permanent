@@ -47,7 +47,7 @@ const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
         ) : (
           <Link
             key={node.id}
-            to={`/home/${selectedCourse?.id}/${node.id}`}
+            to={`/platform/${selectedCourse?.id}/${node.id}`}
             data-id={node.id}
             className={classes.accordionLinks}
           >

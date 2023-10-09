@@ -1,6 +1,30 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    width: "100%",
+    overflow: "hidden",
+  },
+  backgroundDetails: {
+    position: "absolute",
+    zIndex: 1,
+    right: 0,
+    top: 0,
+    height: "100%",
+    transform: "scaleX(1) scaleY(-1);",
+  },
+  backgroundDetails1: {
+    position: "absolute",
+    zIndex: 1,
+    left: 0,
+    transform: "scaleX(-1) scaleY(1);",
+    height: "100%",
+  },
   homePageWrapper: {
     display: "flex",
   },
@@ -38,14 +62,6 @@ const useStyles = makeStyles({
     justifyContent: "center",
     height: "100vh",
   },
-  cardWrapper: {
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: "20px",
-    width: "100%",
-  },
   myCoursePageWideScreen: {
     display: "block",
     "@media (max-width:1000px)": {
@@ -55,6 +71,109 @@ const useStyles = makeStyles({
   myCoursePageSmallScreen: {
     "@media (min-width:1000px)": {
       display: "none",
+    },
+  },
+  cardWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    marginLeft: 20,
+    marginRight: 20,
+    zIndex: 7,
+    gap: 20,
+    "@media (max-width:1000px)": {
+      gap: 40,
+    },
+  },
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    background:
+      "var(--BG_PODL, linear-gradient(141deg, #FFE1E1 -1.82%, #FFEBDC 86.55%))",
+
+    width: 280,
+    height: 165,
+    borderRadius: 16,
+    padding: "40px 35px",
+  },
+  cardName: {
+    marginBottom: 10,
+    "&>img": {
+      width: "250px",
+    },
+  },
+  courseDescription: {
+    color: "#3B2616",
+    textAlign: "center",
+  },
+  button: {
+    position: "relative",
+    background:
+      "var(--BTN_MAIN, radial-gradient(29.03% 41.72% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%))",
+    padding: "19px 25px 18px 25px",
+    borderRadius: 15,
+    border: "none",
+    color: "#FFF",
+    borderBottom: "5px solid #482B19",
+    width: 250,
+    zIndex: 1000,
+    textTransform: "uppercase",
+    fontWeight: 600,
+    fontSize: 18,
+    marginTop: 20,
+    "&:hover": {
+      marginTop: 22,
+      cursor: "pointer",
+      borderBottom: "none",
+      filter: "drop-shadow(0px 0px 40px #B7703D)",
+      transition: "all 0.3s ease",
+      background:
+        "radial-gradient(69.13% 99.35% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%)",
+    },
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    "@media (max-width:1000px)": {
+      marginBottom: 0,
+    },
+  },
+  coursePlaceholder: {
+    width: 280,
+    height: 165,
+    borderRadius: 16,
+    padding: "40px 35px",
+    background:
+      "linear-gradient(141deg, rgba(255, 225, 225, 0.03) -1.82%, rgba(255, 235, 220, 0.03) 86.55%)",
+
+    "&>div": {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
+      height: "100%",
+      color: "rgba(255, 255, 255, 0.20)",
+      fontFamily: "Noto Serif",
+      fontSize: 47,
+      fontWeight: 600,
+      letterSpacing: "3.42px",
+      textTransform: "uppercase",
+    },
+  },
+  blockTitle: {
+    fontFamily: `"Noto Serif", sans-serif !important`,
+    textTransform: "uppercase",
+    fontSize: 36,
+    lineHeight: "46px",
+    fontWeight: "600 !important",
+    marginBottom: "40px !important",
+    paddingTop: "70px",
+    color: "#FFF",
+    zIndex: 7,
+    "@media (max-width:600px)": {
+      fontSize: 28,
+      "@media (max-width:1000px)": {
+        paddingTop: 0,
+      },
     },
   },
 });

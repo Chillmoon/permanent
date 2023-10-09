@@ -45,7 +45,7 @@ const ProgressCard: FC<ProgressCardType> = ({ name, progress, image, id }) => {
         <CardActions className={classes.progressButton}>
           <CustomButton
             children="Перейти до уроків"
-            handleClick={() => navigate(`/home/${id}/block0-lesson1`)}
+            handleClick={() => navigate(`/platform/${id}/block0-lesson1`)}
           />
         </CardActions>
       </Grid>

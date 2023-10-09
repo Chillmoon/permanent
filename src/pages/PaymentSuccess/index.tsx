@@ -41,7 +41,7 @@ const PaymentSuccessPage = () => {
 
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);
-      if (payedCourse === "course1") {
+      if (payedCourse === "eyeliner") {
         const paymentData = {
           rate: paymentRate,
           orderId: paramsObject.order_id,
@@ -49,7 +49,7 @@ const PaymentSuccessPage = () => {
         };
         dispatch(
           setIsPayed({
-            course1: paymentData,
+            eyeliner: paymentData,
           })
         );
         if (userID) {
@@ -70,7 +70,7 @@ const PaymentSuccessPage = () => {
         <p>Помилка під час оплати</p>
       )}
       <CustomButton
-        handleClick={() => navigate("/home")}
+        handleClick={() => navigate("/platform")}
         children={"Доступні курси"}
       />
     </div>
