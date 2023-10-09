@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -11,10 +11,8 @@ import {
 import { auth } from "../../../app/features/firebase";
 
 import GoogleAuth from "../Google";
-import CustomButton from "../../CustomButton";
 
 import useStyles from "../styles";
-import { useTranslation } from "react-i18next";
 
 type SignUpFormValues = {
   name: string;
@@ -64,42 +62,78 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <div className={classes.wrapper}>
+      <img
+        className={classes.backgroundDetails}
+        src="../../assets/loginBackground.png"
+        alt="details"
+      />
+      <img
+        className={classes.backgroundDetails1}
+        src="../../assets/loginBackground.png"
+        alt="details"
+      />
+      <img
+        className={classes.loginBackgroundMobile}
+        src="../../assets/loginBackgroundMobile.svg"
+        alt="details"
+      />
       <div className={classes.mainWrapper}>
         <div className={classes.signUpTitle}>
-          <Typography variant="h4">{t("Реєстрація")}</Typography>
-          <Typography variant="h4">{t("особистого кабінету")}</Typography>
+          {t("Реєстрація")} <br /> {t("особистого кабінету")}
         </div>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          validateOnChange={false}
           onSubmit={handleSubmit}
         >
-          {() => (
+          {({ errors, touched }) => (
             <Form className={classes.inputWrapper}>
-              <Field name="name" placeholder="Ім'я" />
+              <Field
+                name="name"
+                placeholder="Ім'я"
+                className={
+                  errors.name && touched.name
+                    ? classes.inputError
+                    : classes.input
+                }
+              />
               <Field
                 name="email"
                 type="email"
                 placeholder="Електронна адреса"
+                className={
+                  errors.email && touched.email
+                    ? classes.inputError
+                    : classes.input
+                }
               />
-              <Field name="password" type="password" placeholder="Пароль" />
-              <CustomButton children={t("Зареєструватись")} />
+              <Field
+                name="password"
+                type="password"
+                placeholder="Пароль"
+                className={
+                  errors.password && touched.password
+                    ? classes.inputError
+                    : classes.input
+                }
+              />
+              <button className={classes.signUpButton}>
+                {t("Зареєструватись")}
+              </button>
             </Form>
           )}
         </Formik>
         <div className={classes.signUpLoginLinks}>
-          <Link to={"/login"}>
-            <Typography>{t("Вже заєрестрований")}</Typography>
-          </Link>
-          <Typography>/</Typography>
+          <Link to={"/login"}>{t("Вже заєрестрований")}</Link>/
           <Link to={"/signup"} className={classes.disabledLink}>
-            <Typography>{t("Зареєструватись")}</Typography>
+            {t("Зареєструватись")}
           </Link>
         </div>
       </div>
       <GoogleAuth />
-    </>
+    </div>
   );
 };
 

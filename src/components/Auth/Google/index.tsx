@@ -58,7 +58,7 @@ const GoogleAuth = () => {
     <>
       <div className={classes.googleWrapper}>
         <Button onClick={handleGoogle} className={classes.googlelinkWrapper}>
-          <GoogleIcon />
+          <img src="../../assets/GoogleIcon.svg" />
           <Typography>{t("Увійти за допомогою GOOGLE")}</Typography>
         </Button>
       </div>
