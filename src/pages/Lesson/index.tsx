@@ -36,6 +36,11 @@ const LessonPage = () => {
         <MobileLesson courses={courses} />
       </div>
       <div className={classes.lessonPageWrapper}>
+        <img
+          className={classes.backgroundDetails}
+          src="../../assets/backgroundDetails.png"
+          alt="details"
+        />
         <SideBar />
         <div className={classes.lessonPageMainBlock}>
           <Typography className={classes.moduleLabel}>{blockLabel}</Typography>

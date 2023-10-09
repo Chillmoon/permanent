@@ -57,7 +57,12 @@ function App() {
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}
           <Route
             path="/platform/:courseId/:lessonNumber"
-            element={<LessonPage />}
+            element={
+              <>
+                <NavBar isBackground={true} />
+                <LessonPage />
+              </>
+            }
           />
           {isAccessToStudentsAllowed && (
             <Route

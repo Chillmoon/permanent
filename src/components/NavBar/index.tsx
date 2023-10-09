@@ -30,14 +30,14 @@ import LanguageSelector from "../LanguageSelector";
 
 import useStyles from "./styles";
 
-const NavBar = () => {
+const NavBar = ({ isBackground = false }) => {
   const { t } = useTranslation();
   // const pages = [
   //   { name: t("Курси"), id: "courses" },
   //   { name: t("Кабінет"), id: "home" },
   // ];
   const classes = useStyles();
-  const { courseId } = useParams();
+  const { courseId, lessonNumber } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -117,7 +117,12 @@ const NavBar = () => {
   return isLoading ? (
     <NavBarSkeleton />
   ) : (
-    <AppBar className={classes.navBar}>
+    <AppBar
+      sx={{
+        bgcolor: isBackground ? "#3C2E25 !important" : "transparent",
+      }}
+      className={classes.navBar}
+    >
       <Toolbar disableGutters>
         <Typography
           variant="h5"

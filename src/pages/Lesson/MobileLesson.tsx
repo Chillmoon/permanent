@@ -82,14 +82,12 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                         (section: InfoSection, index: number) => (
                           <div key={index}>
                             {section.title && (
-                              <Typography variant="h6">
+                              <div className={classes.textTitle}>
                                 {section.title}
-                              </Typography>
+                              </div>
                             )}
 
-                            {section.content && (
-                              <Typography>{section.content}</Typography>
-                            )}
+                            {section.content && <div>{section.content}</div>}
                             {section.image && (
                               <img
                                 src={section.image}
@@ -141,7 +139,9 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
 
                       {lesson.file && (
                         <div className={classes.fileWrapper}>
-                          <Typography> {t("Матеріали уроку")}:</Typography>
+                          <div className={classes.fileDescription}>
+                            {t("Матеріали до уроку")}:
+                          </div>
                           {lesson.file.map((file, index) => (
                             <button
                               key={index}
@@ -185,7 +185,6 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
 
   return (
     <div className={classes.mobileLessonWrapper}>
-      <div className={classes.courseLabel}>{selectedCourse?.label}</div>
       {selectedCourse && renderTree(selectedCourse.children)}
     </div>
   );

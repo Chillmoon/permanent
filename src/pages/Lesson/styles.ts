@@ -3,6 +3,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   lessonPageWrapper: {
     display: "flex",
+    position: "relative",
     minHeight: "100vh",
     backgroundColor: "#FFF",
     "@media (max-width:900px)": {
@@ -24,6 +25,7 @@ const useStyles = makeStyles({
     width: "80%",
     display: "flex",
     flexGrow: 1,
+    zIndex: 2,
     paddingBottom: 30,
     flexDirection: "column",
     alignItems: "left",
@@ -38,6 +40,7 @@ const useStyles = makeStyles({
   },
   courseLabel: {
     color: "#FFFFFF",
+    zIndex: 2,
     fontWeight: "700 !important",
     display: "flex",
     marginTop: 20,
@@ -48,12 +51,14 @@ const useStyles = makeStyles({
     padding: "0 20px",
   },
   moduleLabel: {
+    zIndex: 2,
     fontSize: "18px !important",
     fontWeight: "700 !important",
     color: "rgba(117, 73, 41, 0.50)",
     fontFamily: `"Noto Serif", sans-serif !important`,
   },
   lessonLabel: {
+    zIndex: 2,
     maxWidth: 805,
     color: "#3B2616",
     fontFamily: `"Noto Serif", sans-serif !important`,
@@ -61,8 +66,11 @@ const useStyles = makeStyles({
   },
   videoPlayerWrapper: {
     marginBottom: 20,
+    zIndex: 2,
   },
   videoPlayer: {
+    zIndex: 2,
+    position: "relative",
     // position: "absolute",
     // top: 0,
     // left: 0,
@@ -78,6 +86,7 @@ const useStyles = makeStyles({
     left: 0,
   },
   materialsLabel: {
+    zIndex: 2,
     fontWeight: 600,
     maxWidth: 640,
     fontSize: 21,
@@ -92,12 +101,24 @@ const useStyles = makeStyles({
   lessonButton: {
     width: 244,
   },
+  textTitle: {
+    fontSize: 18,
+    fontWeight: 600,
+    marginBottom: 20,
+  },
+  backgroundDetails: {
+    position: "absolute",
+    zIndex: 0,
+    right: 0,
+    top: 0,
+    height: "100%",
+    transform: "scaleX(-1) scaleY(-1);",
+  },
   mobileLessonWrapper: {
     marginTop: 80,
-
-    marginLeft: "6%",
-    height: "100%",
-    backgroundColor: "transparent",
+    width: "100%",
+    backgroundRepeat: "repeat",
+    backgroundImage: "url('../../assets/mobileDetails.svg')",
     "& a": {
       textDecoration: "underline",
       fontWeight: "400 !important",
@@ -122,30 +143,36 @@ const useStyles = makeStyles({
     },
   },
   mobileLessonElement: {
+    position: "relative",
+    overflow: "hidden",
     display: "flex",
     justifyContent: "center",
     width: "100% !important",
-    marginBottom: 80,
+    paddingBottom: 50,
     padding: "0 20px",
+    zIndex: 2,
   },
   mobileLessonLabel: {
     fontFamily: `"Noto Serif", sans-serif !important`,
-    color: "#FFFFFF",
+    color: "#FFD7BB",
     fontWeight: 700,
-    fontSize: 24,
+    fontSize: 26,
     paddingTop: 20,
     marginBottom: "20px !important",
+    zIndex: 2,
   },
   horizontalLine: {
     border: "none",
     borderTop: "1px solid #FFF",
     width: "100%",
+    zIndex: 2,
   },
   mobileLessonAccordion: {
     borderRadius: "16px !important",
     display: "flex",
     flexDirection: "column",
     gap: "20px",
+    zIndex: 2,
     "& .MuiPaper-root": {
       borderRadius: "8px !important",
       "&::before": {
@@ -161,9 +188,13 @@ const useStyles = makeStyles({
     padding: 5,
     color: "#000000",
     height: "auto",
-    background: "#FFFFFF",
+    zIndex: 2,
     boxShadow: "2px 2px 12px rgba(0, 0, 0, 0.12)",
     borderRadius: "8px !important",
+    "&.MuiAccordionSummary-root": {
+      background: "#FFF",
+      "&.Mui-expanded": { background: "#FFD7BB" },
+    },
     "& .MuiAccordionSummary-expandIconWrapper": {
       color: "#004AAD",
     },
@@ -177,7 +208,8 @@ const useStyles = makeStyles({
     lineHeight: "22px",
     color: "rgba(0, 0, 0, 0.5)",
     display: "flex",
-    padding: "0px 32px  !important",
+    zIndex: 2,
+    padding: "0px 20px  !important",
   },
   lessonInfo: {
     marginTop: "16px",
@@ -202,17 +234,18 @@ const useStyles = makeStyles({
   },
   button: {
     marginTop: 20,
-    borderRadius: 6,
     border: "none",
-    background: "#FFF",
+    background: "transparent",
     padding: 0,
+    paddingBottom: 3,
     color: "#B7703D",
     fontWeight: 700,
     textAlign: "left",
     fontFamily: `"Exo 2", sans-serif !important`,
     cursor: "pointer",
     transition: "background-color 0.3s, color 0.3s",
-    textDecoration: "underline",
+    borderBottom: "1px solid #B7703D",
+    borderRadius: 0,
     "&:hover": {
       cursor: "pointer",
       color: "#38281D",
@@ -227,6 +260,12 @@ const useStyles = makeStyles({
     flexDirection: "column",
     width: "100%",
     maxWidth: "400px",
+  },
+  fileDescription: {
+    color: "#3B2616",
+    fontFamily: `"Exo 2", sans-serif !important`,
+    fontSize: 18,
+    fontWeight: 600,
   },
 });
 
