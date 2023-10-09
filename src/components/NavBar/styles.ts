@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     display: "flex",
     position: "fixed",
     top: 0,
-    backgroundColor: "#39291D !important",
+    backgroundColor: "transparent !important",
     lineHeight: "28.6px",
     boxShadow: "none !important",
     textDecoration: "none",
@@ -114,7 +114,7 @@ const useStyles = makeStyles({
     },
   },
   logo: {
-    marginTop: 5,
+    marginTop: 10,
     width: 150,
     display: "flex",
   },

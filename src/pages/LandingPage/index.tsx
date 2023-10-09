@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Footer from "./Footer";
 import ForWho from "./ForWho";
 import Header from "./Header";
@@ -10,6 +11,10 @@ import useStyles from "./styles";
 
 const LandingPage = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.wrapper}>

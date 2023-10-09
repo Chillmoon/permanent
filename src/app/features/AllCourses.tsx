@@ -58,7 +58,7 @@ export type AllCourses = Course[];
 
 export const courses: AllCourses = [
   {
-    id: "course1",
+    id: "eyeliner",
     label: "Курс EYELINER",
     targetAudience: [
       {
