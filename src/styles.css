@@ -7,3 +7,17 @@ body {
   font-family: "Noto Serif", sans-serif !important;
   width: 100%;
 }
+
+body::-webkit-scrollbar {
+  width: 12px; /* ширина всей полосы прокрутки */
+}
+
+body::-webkit-scrollbar-track {
+  background: #3c2e25; /* цвет зоны отслеживания */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8d7467; /* цвет бегунка */
+  border-radius: 20px; /* округлось бегунка */
+  border: 3px solid #3c2e25; /* отступ вокруг бегунка */
+}
