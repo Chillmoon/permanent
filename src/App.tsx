@@ -73,7 +73,7 @@ function App() {
           element={
             <>
               <LandingPage />
-              <Footer />
+              <Footer isTransparent={true} />
             </>
           }
         />
@@ -83,7 +83,7 @@ function App() {
             element={
               <>
                 <HomePage />
-                <Footer />
+                <Footer isTransparent={true} />
               </>
             }
           />

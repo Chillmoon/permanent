@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import useStyles from "./styles";
 
-const Footer = ({ isSidebar = false }) => {
+const Footer = ({ isSidebar = false, isTransparent = false }) => {
   const classes = useStyles();
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
@@ -72,10 +72,18 @@ const Footer = ({ isSidebar = false }) => {
         </Button>
         <div className={classes.linksWrapper}>
           <IconButton href="https://www.google.com/" target="_blank">
-            <img style={{ width: 35 }} src="../../assets/insta.svg" />
+            <img
+              style={{ width: 35 }}
+              src="../../assets/insta.svg"
+              alt="Instagram"
+            />
           </IconButton>
           <IconButton href="https://www.google.com/" target="_blank">
-            <img style={{ width: 35 }} src="../../assets/telegram.svg" />
+            <img
+              style={{ width: 35 }}
+              src="../../assets/telegram.svg"
+              alt="Telegram"
+            />
           </IconButton>
         </div>
       </div>
@@ -83,7 +91,11 @@ const Footer = ({ isSidebar = false }) => {
   ) : (
     <div
       className={
-        isSidebar ? classes.footerWrapperSidebar : classes.footerWrapper
+        isSidebar
+          ? classes.footerWrapperSidebar
+          : isTransparent
+          ? classes.footerWrapperTransparent
+          : classes.footerWrapper
       }
     >
       <div className={classes.downloadWrapper}>
@@ -120,10 +132,18 @@ const Footer = ({ isSidebar = false }) => {
       </div>
       <div className={classes.linksWrapper}>
         <IconButton href="https://www.google.com/" target="_blank">
-          <img style={{ width: 35 }} src="../../assets/insta.svg" />
+          <img
+            style={{ width: 35 }}
+            src="../../assets/insta.svg"
+            alt="Instagram"
+          />
         </IconButton>
         <IconButton href="https://www.google.com/" target="_blank">
-          <img style={{ width: 35 }} src="../../assets/telegram.svg" />
+          <img
+            style={{ width: 35 }}
+            src="../../assets/telegram.svg"
+            alt="Telegram"
+          />
         </IconButton>
       </div>
       <div className={classes.downloadWrapper}>

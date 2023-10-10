@@ -11,9 +11,25 @@ const useStyles = makeStyles({
     bottom: 0,
     zIndex: 10,
     justifyContent: "space-between",
-
+    paddingTop: 11,
     alignItems: "center",
-    padding: "0 7%",
+    padding: "0 20px",
+    marginBottom: 20,
+  },
+
+  footerWrapperTransparent: {
+    position: "relative",
+    backgroundColor: "transparent",
+    height: "100%",
+    color: "white",
+    display: "flex",
+    flexDirection: "row",
+    bottom: 0,
+    zIndex: 10,
+    justifyContent: "space-between",
+    paddingTop: 11,
+    alignItems: "center",
+    padding: "0 20px",
     marginBottom: 20,
   },
 
@@ -33,8 +49,8 @@ const useStyles = makeStyles({
     marginBottom: 20,
   },
   mobileWrapper: {
-    marginTop: 50,
     marginBottom: 21,
+    padding: "20px 20px 0px 20px",
   },
   linksWrapper: {
     display: "flex",
