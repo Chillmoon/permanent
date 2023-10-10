@@ -36,8 +36,12 @@ const PaymentSuccessPage = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
 
-    const paymentRate = paramsObject.product_id.slice(-5);
-    const payedCourse = paramsObject.product_id.slice(0, -5);
+    const paymentRate = paramsObject.product_id
+      ? paramsObject.product_id.slice(-5)
+      : "";
+    const payedCourse = paramsObject.product_id
+      ? paramsObject.product_id.slice(0, -5)
+      : "";
 
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);

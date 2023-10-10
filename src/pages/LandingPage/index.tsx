@@ -8,7 +8,6 @@ import Rates from "./Rates";
 import WhatWillYouLearn from "./WhatWillYouLearn";
 
 import useStyles from "./styles";
-import Footer from "../../components/Footer";
 
 const LandingPage = () => {
   const classes = useStyles();
@@ -26,7 +25,6 @@ const LandingPage = () => {
       <Quote />
       <Rates />
       <FooterLanding />
-      <Footer />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import useStyles from "./styles";
 
-const Footer = () => {
+const Footer = ({ isSidebar = false }) => {
   const classes = useStyles();
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
@@ -81,7 +81,11 @@ const Footer = () => {
       </div>
     </div>
   ) : (
-    <div className={classes.footerWrapper}>
+    <div
+      className={
+        isSidebar ? classes.footerWrapperSidebar : classes.footerWrapper
+      }
+    >
       <div className={classes.downloadWrapper}>
         <Button
           onClick={() =>
@@ -126,6 +130,9 @@ const Footer = () => {
         <Button onClick={handleCopyText} className={classes.notAButton}>
           {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
         </Button>
+        <div style={{ fontSize: 14, paddingLeft: 10 }}>
+          permanent.by.kushnir@gmail.com
+        </div>
       </div>
     </div>
   );

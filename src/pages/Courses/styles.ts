@@ -7,6 +7,10 @@ const useStyles = makeStyles({
     alignItems: "center",
     height: "100%",
     position: "relative",
+    marginBottom: 100,
+    "@media (max-width:1000px)": {
+      marginBottom: 50,
+    },
   },
   backgroundDetails: {
     position: "absolute",

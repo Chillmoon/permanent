@@ -3,14 +3,31 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   footerWrapper: {
     position: "relative",
-    backgroundColor: "transparent",
+    backgroundColor: "#2D2927",
     height: "100%",
     color: "white",
     display: "flex",
     flexDirection: "row",
     bottom: 0,
+    zIndex: 10,
     justifyContent: "space-between",
 
+    alignItems: "center",
+    padding: "0 7%",
+    marginBottom: 20,
+  },
+
+  footerWrapperSidebar: {
+    position: "relative",
+    backgroundColor: "#2D2927",
+    height: "100%",
+    color: "white",
+    display: "flex",
+    flexDirection: "row",
+    bottom: 0,
+    zIndex: 10,
+    justifyContent: "space-between",
+    marginLeft: 200,
     alignItems: "center",
     padding: "0 7%",
     marginBottom: 20,

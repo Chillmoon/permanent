@@ -18,6 +18,7 @@ import LandingPage from "./pages/LandingPage";
 
 import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import PaymentSuccessPage from "./pages/PaymentSuccess";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,13 +48,45 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/courses" element={<Courses />} />
+        <Route
+          path="/courses"
+          element={
+            <>
+              <Courses />
+              <Footer />
+            </>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Courses />} />
-        <Route path="/courses/:courseId" element={<LandingPage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Courses />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/courses/:courseId"
+          element={
+            <>
+              <LandingPage />
+              <Footer />
+            </>
+          }
+        />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/platform" element={<HomePage />} />
+          <Route
+            path="/platform"
+            element={
+              <>
+                <HomePage />
+                <Footer />
+              </>
+            }
+          />
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}
           <Route
             path="/platform/:courseId/:lessonNumber"
@@ -61,6 +94,7 @@ function App() {
               <>
                 <NavBar isBackground={true} />
                 <LessonPage />
+                <Footer isSidebar={true} />
               </>
             }
           />
@@ -77,7 +111,15 @@ function App() {
             />
           )}
         </Route>
-        <Route path="/paymentSuccess" element={<PaymentSuccessPage />} />
+        <Route
+          path="/paymentSuccess"
+          element={
+            <>
+              <PaymentSuccessPage />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
       {/* {["/login", "/signup"].includes(location.pathname) ? null : <Footer />} */}
     </>
