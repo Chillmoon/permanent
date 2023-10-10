@@ -14,6 +14,9 @@ const useStyles = makeStyles({
     padding: 20,
     paddingBottom: 15,
     borderRadius: 16,
+    "@media (max-width:1000px)": {
+      padding: "20px 10px",
+    },
   },
   timerWrapper: {
     fontSize: 20,
@@ -35,6 +38,9 @@ const useStyles = makeStyles({
   time: {
     margin: "0px 7px",
     fontSize: "2em",
+  },
+  timeBackground: {
+    fontSize: "1.7em",
   },
   decorativeLine: {
     width: 35,

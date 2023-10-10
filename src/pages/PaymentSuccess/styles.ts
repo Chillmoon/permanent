@@ -7,9 +7,12 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    width: "100%",
+
     overflow: "hidden",
     fontFamily: `"Exo 2", sans-serif !important`,
+    "@media (max-width:1000px)": {
+      margin: "0 20px",
+    },
   },
   backgroundDetails: {
     position: "absolute",
@@ -18,6 +21,9 @@ const useStyles = makeStyles({
     top: 0,
     height: "100%",
     transform: "scaleX(1) scaleY(-1);",
+    "@media (max-width:1000px)": {
+      display: "none",
+    },
   },
   backgroundDetails1: {
     position: "absolute",
@@ -25,6 +31,9 @@ const useStyles = makeStyles({
     left: 0,
     transform: "scaleX(-1) scaleY(1);",
     height: "100%",
+    "@media (max-width:1000px)": {
+      display: "none",
+    },
   },
   text: {
     zIndex: 2,
@@ -34,6 +43,10 @@ const useStyles = makeStyles({
     backgroundClip: "text",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
+    "@media (max-width:1000px)": {
+      fontSize: 40,
+      textAlign: "center",
+    },
   },
   textSmall: {
     zIndex: 2,
@@ -56,6 +69,9 @@ const useStyles = makeStyles({
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
     marginBottom: 10,
+    "@media (max-width:1000px)": {
+      fontSize: 16,
+    },
   },
 });
 
