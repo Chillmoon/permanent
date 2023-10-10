@@ -38,7 +38,6 @@ const useStyles = makeStyles({
   header: {
     padding: "0 7%",
     height: "100vh",
-    marginTop: 40,
     width: "auto",
     flexDirection: "row",
     justifyContent: "center",

@@ -24,11 +24,6 @@ const WhatWillYouLearn = () => {
       />
       <img className={classes.blob} src="../../assets/blob.svg" alt="Figure" />
 
-      <img
-        className={classes.ribbon}
-        src="../../assets/ribbon.svg"
-        alt="Ribbon"
-      />
       {isMobileScreen ? (
         <div className={classes.mobileWrapper}>
           <ul className={classes.list}>
