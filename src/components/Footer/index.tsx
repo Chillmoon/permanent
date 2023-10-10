@@ -48,7 +48,7 @@ const Footer = () => {
           onClick={() =>
             handleDownloadFile(
               `${process.env.PUBLIC_URL}/docs/payment-and-return.docx`,
-              "Terms-of-service.docx"
+              "Payment-and-return.docx"
             )
           }
         >
@@ -97,7 +97,7 @@ const Footer = () => {
           onClick={() =>
             handleDownloadFile(
               `${process.env.PUBLIC_URL}/docs/payment-and-return.docx`,
-              "Terms-of-service.docx"
+              "Payment-and-return.docx"
             )
           }
         >
