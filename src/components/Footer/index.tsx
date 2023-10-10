@@ -35,60 +35,91 @@ const Footer = () => {
     <div className={classes.mobileWrapper}>
       <div className={classes.downloadWrapper}>
         <Button
-        // onClick={() =>
-        //   handleDownloadFile(
-        //     `${process.env.PUBLIC_URL}/docs/terms-of-service.docx`,
-        //     "Terms-of-service.docx"
-        //   )
-        // }
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/terms-of-service.docx`,
+              "Terms-of-service.docx"
+            )
+          }
         >
           {t("Публічна оферта")}
         </Button>
         <Button
-        // onClick={() =>
-        //   handleDownloadFile(
-        //     `${process.env.PUBLIC_URL}/docs/privacy-policy.docx`,
-        //     "Privacy-policy.docx"
-        //   )
-        // }
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/payment-and-return.docx`,
+              "Terms-of-service.docx"
+            )
+          }
+        >
+          {t("Оплата та повернення")}
+        </Button>
+        <Button
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/privacy-policy.docx`,
+              "Privacy-policy.docx"
+            )
+          }
         >
           {t("Політика конфіденційності")}
         </Button>
+      </div>
+
+      <div className={classes.wrapper}>
+        <Button onClick={handleCopyText} className={classes.notAButton}>
+          {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
+        </Button>
+        <div className={classes.linksWrapper}>
+          <IconButton href="https://www.google.com/" target="_blank">
+            <img style={{ width: 35 }} src="../../assets/insta.svg" />
+          </IconButton>
+          <IconButton href="https://www.google.com/" target="_blank">
+            <img style={{ width: 35 }} src="../../assets/telegram.svg" />
+          </IconButton>
+        </div>
       </div>
     </div>
   ) : (
     <div className={classes.footerWrapper}>
       <div className={classes.downloadWrapper}>
         <Button
-        // onClick={() =>
-        //   handleDownloadFile(
-        //     `${process.env.PUBLIC_URL}/docs/terms-of-service.docx`,
-        //     "Terms-of-service.docx"
-        //   )
-        // }
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/terms-of-service.docx`,
+              "Terms-of-service.docx"
+            )
+          }
         >
           {t("Публічна оферта")}
         </Button>
         <Button
-        // onClick={() =>
-        //   handleDownloadFile(
-        //     `${process.env.PUBLIC_URL}/docs/privacy-policy.docx`,
-        //     "Privacy-policy.docx"
-        //   )
-        // }
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/payment-and-return.docx`,
+              "Terms-of-service.docx"
+            )
+          }
+        >
+          {t("Оплата та повернення")}
+        </Button>
+        <Button
+          onClick={() =>
+            handleDownloadFile(
+              `${process.env.PUBLIC_URL}/docs/privacy-policy.docx`,
+              "Privacy-policy.docx"
+            )
+          }
         >
           {t("Політика конфіденційності")}
-        </Button>
-        <Button onClick={handleCopyText} className={classes.notAButton}>
-          {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
         </Button>
       </div>
       <div className={classes.linksWrapper}>
         <IconButton href="https://www.google.com/" target="_blank">
-          <Instagram />
+          <img style={{ width: 35 }} src="../../assets/insta.svg" />
         </IconButton>
         <IconButton href="https://www.google.com/" target="_blank">
-          <Telegram />
+          <img style={{ width: 35 }} src="../../assets/telegram.svg" />
         </IconButton>
       </div>
       <div className={classes.downloadWrapper}>

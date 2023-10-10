@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import useStyles from "./styles";
 import { useMediaQuery } from "@mui/material";
 
-const Footer = () => {
+const FooterLanding = () => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -139,4 +139,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterLanding;

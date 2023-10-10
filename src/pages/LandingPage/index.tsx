@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Footer from "./Footer";
+import FooterLanding from "./Footer";
 import ForWho from "./ForWho";
 import Header from "./Header";
 import Program from "./Program";
@@ -8,6 +8,7 @@ import Rates from "./Rates";
 import WhatWillYouLearn from "./WhatWillYouLearn";
 
 import useStyles from "./styles";
+import Footer from "../../components/Footer";
 
 const LandingPage = () => {
   const classes = useStyles();
@@ -24,6 +25,7 @@ const LandingPage = () => {
       <Program />
       <Quote />
       <Rates />
+      <FooterLanding />
       <Footer />
     </div>
   );
