@@ -5,9 +5,13 @@ import { useMediaQuery } from "@mui/material";
 
 interface TimerProps {
   initialTimeInSeconds: number;
+  isLanding?: boolean;
 }
 
-const Timer: React.FC<TimerProps> = ({ initialTimeInSeconds }) => {
+const Timer: React.FC<TimerProps> = ({
+  initialTimeInSeconds,
+  isLanding = true,
+}) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -43,13 +47,19 @@ const Timer: React.FC<TimerProps> = ({ initialTimeInSeconds }) => {
   const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
   return (
-    <div className={classes.wrapper}>
+    <div className={isLanding ? classes.wrapper : classes.wrapperBackground}>
       <div className={classes.timerWrapper}>
-        <div className={classes.decorativeLine} />
+        {isLanding && <div className={classes.decorativeLine} />}
         <div className={classes.time}>{formatTime(timeRemaining)}</div>
-        <div className={classes.decorativeLine} />
+        {isLanding && <div className={classes.decorativeLine} />}
       </div>
-      <div className={classes.timeDescription}>
+      <div
+        className={
+          isLanding
+            ? classes.timeDescription
+            : classes.timeDescriptionBackground
+        }
+      >
         <span
           style={{
             marginLeft: isMobileScreen ? 17 : 13,

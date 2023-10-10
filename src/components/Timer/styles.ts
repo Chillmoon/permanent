@@ -6,9 +6,18 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
   },
+  wrapperBackground: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#B7703D",
+    padding: 20,
+    paddingBottom: 15,
+    borderRadius: 16,
+  },
   timerWrapper: {
     fontSize: 20,
-    fontWeight: 500,
+    fontWeight: 600,
     marginTop: "-20px",
     display: "flex",
     flexDirection: "row",
@@ -41,6 +50,18 @@ const useStyles = makeStyles({
     alignItems: "center",
     textTransform: "uppercase",
     marginTop: "-7px",
+    "@media (max-width:1000px)": {
+      fontSize: 14,
+    },
+  },
+  timeDescriptionBackground: {
+    fontSize: 9,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    textTransform: "uppercase",
+    marginTop: "-7px",
+    color: "#FFF",
     "@media (max-width:1000px)": {
       fontSize: 14,
     },

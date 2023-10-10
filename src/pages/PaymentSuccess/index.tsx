@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
+import { t } from "i18next";
 
 import { userSlice } from "../../app/features/userSlice";
-import CustomButton from "../../components/CustomButton";
 import { RootState } from "../../app/store";
-import { realtimeDb } from "../../app/features/firebase";
+import { auth, realtimeDb } from "../../app/features/firebase";
 
-import useStyles from "../Home/styles";
+import useStyles from "./styles";
+import Timer from "../../components/Timer";
 
 const PaymentSuccessPage = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const PaymentSuccessPage = () => {
   const { setIsPayed } = userSlice.actions;
   const userID = useSelector((state: RootState) => state.user.user?.uid);
 
-  const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
+  const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(true);
 
   const savePaymentData = async (
     userId: string,
@@ -66,17 +67,37 @@ const PaymentSuccessPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userID]);
 
+  const displayName = auth?.currentUser?.displayName;
+
   return (
-    <div className={classes.homePageMainBlockWithoutSidebar}>
-      {isPaymentSuccessful ? (
-        <p>Оплата пройшла успішно!</p>
-      ) : (
-        <p>Помилка під час оплати</p>
-      )}
-      <CustomButton
-        handleClick={() => navigate("/platform")}
-        children={"Доступні курси"}
+    <div className={classes.wrapper}>
+      <img
+        className={classes.backgroundDetails}
+        src="../../assets/loginBackground.png"
+        alt="details"
       />
+      <img
+        className={classes.backgroundDetails1}
+        src="../../assets/loginBackground.png"
+        alt="details"
+      />
+      {isPaymentSuccessful ? (
+        <>
+          <div className={classes.text}>
+            {t("Вітаю")},{displayName} !
+          </div>
+          <div className={classes.text}>
+            {t("Ти учасниця курсу «EYELINER»")}
+          </div>
+          <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
+          <Timer initialTimeInSeconds={120000} isLanding={false} />
+          <div className={classes.textTiny}>
+            *{t("доступ до уроків відкриється 1.11")}
+          </div>
+        </>
+      ) : (
+        <div className={classes.text}>{t("Помилка під час оплати")}</div>
+      )}
     </div>
   );
 };

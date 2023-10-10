@@ -98,6 +98,15 @@ function App() {
               </>
             }
           />
+          <Route
+            path="/paymentSuccess"
+            element={
+              <>
+                <PaymentSuccessPage />
+                <Footer isTransparent={true} />
+              </>
+            }
+          />
           {isAccessToStudentsAllowed && (
             <Route
               path="/students"
@@ -111,15 +120,6 @@ function App() {
             />
           )}
         </Route>
-        <Route
-          path="/paymentSuccess"
-          element={
-            <>
-              <PaymentSuccessPage />
-              <Footer />
-            </>
-          }
-        />
       </Routes>
       {/* {["/login", "/signup"].includes(location.pathname) ? null : <Footer />} */}
     </>
