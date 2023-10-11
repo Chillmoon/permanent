@@ -29,7 +29,7 @@ const Header = () => {
           <img
             className={classes.eyeliner}
             alt="Name"
-            src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Feyeliner.svg?alt=media&token=01ea8c33-de2d-4ea1-9b87-6c648a22b942&_gl=1*q4lsv3*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3OTI0My40Ny4xLjE2OTYxODA3MDcuNTEuMC4w"
+            src="../../assets/eyeliner.png"
           />
           <img
             className={classes.lightPhoto}
@@ -75,7 +75,7 @@ const Header = () => {
             <img
               className={classes.eyeliner}
               alt="Name"
-              src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Feyeliner.svg?alt=media&token=01ea8c33-de2d-4ea1-9b87-6c648a22b942&_gl=1*q4lsv3*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3OTI0My40Ny4xLjE2OTYxODA3MDcuNTEuMC4w"
+              src="../../assets/eyeliner.png"
             />
             <div className={classes.courseDescription}>
               {t("Курс по виконанню міжвійної зони з ідеальним загоєнням")}

@@ -94,15 +94,17 @@ const useStyles = makeStyles({
       "var(--BG_PODL, linear-gradient(141deg, #FFE1E1 -1.82%, #FFEBDC 86.55%))",
 
     width: 280,
-    height: 165,
+    height: 220,
     borderRadius: 16,
-    padding: "40px 35px",
+    padding: "20px 35px",
   },
   cardName: {
+    fontSize: 40,
+    textAlign: "center",
+    lineHeight: "106%",
+    fontWeight: 900,
+    color: "#3B2616",
     marginBottom: 10,
-    "&>img": {
-      width: "250px",
-    },
   },
   courseDescription: {
     color: "#3B2616",
@@ -139,9 +141,9 @@ const useStyles = makeStyles({
   },
   coursePlaceholder: {
     width: 280,
-    height: 165,
+    height: 220,
     borderRadius: 16,
-    padding: "40px 35px",
+    padding: "20px 35px",
     background:
       "linear-gradient(141deg, rgba(255, 225, 225, 0.03) -1.82%, rgba(255, 235, 220, 0.03) 86.55%)",
 

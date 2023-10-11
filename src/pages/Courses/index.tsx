@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const cardData = [
   {
-    name: "../../assets/eyeliner.png",
+    name: "FAST EYELINER",
     id: "eyeliner",
     description: "Курс по виконанню міжвійної зони з ідеальним загоєнням",
   },
@@ -108,9 +108,7 @@ const Courses = () => {
               {cardData.map((data, index) =>
                 data.name === "Скоро" ? null : (
                   <div className={classes.card}>
-                    <div className={classes.cardName}>
-                      <img src={data.name} alt={data.name} />
-                    </div>
+                    <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>
                       {data.description}
                     </div>
@@ -214,9 +212,7 @@ const Courses = () => {
                   <div className={classes.coursePlaceholder}></div>
                 ) : (
                   <div className={classes.card}>
-                    <div className={classes.cardName}>
-                      <img src={data.name} alt={data.name} />
-                    </div>
+                    <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>
                       {data.description}
                     </div>

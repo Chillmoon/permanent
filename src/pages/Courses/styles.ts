@@ -46,15 +46,17 @@ const useStyles = makeStyles({
     alignItems: "center",
     backgroundColor: "#482B19",
     width: 280,
-    height: 165,
+    height: 220,
     borderRadius: 16,
-    padding: "40px 35px",
+    padding: "20px 35px",
   },
   cardName: {
+    fontSize: 40,
+    textAlign: "center",
+    lineHeight: "106%",
+    fontWeight: 900,
+    color: "#FFF",
     marginBottom: 10,
-    "&>img": {
-      width: "250px",
-    },
   },
   courseDescription: {
     color: "rgba(255, 255, 255, 0.70)",
@@ -91,9 +93,9 @@ const useStyles = makeStyles({
   },
   coursePlaceholder: {
     width: 280,
-    height: 165,
+    height: 220,
     borderRadius: 16,
-    padding: "40px 35px",
+    padding: "20px 35px",
     backgroundColor: "#EBEBEB",
   },
   blockTitle: {

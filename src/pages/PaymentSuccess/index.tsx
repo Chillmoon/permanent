@@ -87,7 +87,7 @@ const PaymentSuccessPage = () => {
             {t("Вітаю")},{displayName} !
           </div>
           <div className={classes.text}>
-            {t("Ти учасниця курсу «EYELINER»")}
+            {t("Ти учасниця курсу «FAST EYELINER»")}
           </div>
           <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
           <Timer initialTimeInSeconds={120000} isLanding={false} />
