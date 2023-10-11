@@ -48,8 +48,10 @@ const useStyles = makeStyles({
     display: "flex",
     "&>a": {
       fontSize: 16,
+      margin: "0px 5px",
       textDecoration: "none",
-      color: "#000000",
+      color: "#FFD7BB !important",
+      fontFamily: `"Noto Serif", sans-serif !important`,
     },
   },
   linkPages: {
@@ -85,9 +87,13 @@ const useStyles = makeStyles({
     },
   },
   menuLink: {
+    display: "flex",
+    justifyContent: "center",
+    fontFamily: `"Exo 2", sans-serif !important`,
     textDecoration: "none !important",
-    color: "#000000",
-    fontSize: 16,
+    color: "#3B2616",
+    fontSize: "14px !important",
+    fontWeight: 600,
     "&>a": {
       textDecoration: "none !important",
     },
@@ -105,7 +111,13 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "row",
     position: "absolute",
-    right: 50,
+    right: 97,
+
+    "&>div>button>div.MuiAvatar-root": {
+      backgroundColor: "#FCF5EF",
+      color: "#3B2616",
+      fontWeight: 700,
+    },
     "@media (max-width:600px)": {
       right: "10%",
     },
@@ -113,6 +125,13 @@ const useStyles = makeStyles({
       display: "none",
     },
   },
+  avatarCircle: {},
+  avatarCircleOpen: {
+    marginTop: 30,
+    paddingBottom: 30,
+    borderRadius: "50px 50px 0px 0px !important",
+  },
+
   logo: {
     marginTop: 10,
     width: 150,
@@ -120,6 +139,21 @@ const useStyles = makeStyles({
   },
   mobileLogo: {
     width: 200,
+  },
+  menuAvatar: {
+    "&>div.MuiPaper-root": {
+      "&.MuiPopover-paper": {
+        "&.MuiMenu-paper": {
+          boxShadow: "none !important",
+          borderRadius: "16px !important",
+          backgroundColor: "#FCF5EF !important",
+          width: 200,
+          "&>ul": {
+            padding: "15px 0px",
+          },
+        },
+      },
+    },
   },
 });
 

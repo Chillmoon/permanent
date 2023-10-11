@@ -175,13 +175,13 @@ const NavBar = ({ isBackground = false }) => {
                 {t("Кабінет")}
               </Typography>
             </MenuItem>
-            <MenuItem key="students" onClick={() => navigate("/students")}>
+            {/* <MenuItem key="students" onClick={() => navigate("/students")}>
               {isAccessToStudentsAllowed && (
                 <Typography className={classes.menuLink}>
                   {t("Студенти")}
                 </Typography>
               )}
-            </MenuItem>
+            </MenuItem> */}
             {/* {pages.map((page) => (
               <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                 <Link to={`/${page.id}`} className={classes.menuLink}>
@@ -246,17 +246,25 @@ const NavBar = ({ isBackground = false }) => {
           ))} */}
         </Box>
         <div className={classes.avatar}>
-          <LanguageSelector />
           {user && user.username ? (
             <>
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar>{user.username.charAt(0)}</Avatar>
+                    <Avatar
+                      sx={{ width: 45, height: 45 }}
+                      className={
+                        anchorElUser
+                          ? classes.avatarCircleOpen
+                          : classes.avatarCircle
+                      }
+                    >
+                      {user.username.charAt(0)}
+                    </Avatar>
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: "45px" }}
+                  sx={{ mt: "35px" }}
                   id="menu-appbar"
                   anchorEl={anchorElUser}
                   anchorOrigin={{
@@ -270,16 +278,21 @@ const NavBar = ({ isBackground = false }) => {
                   }}
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
+                  className={classes.menuAvatar}
                 >
                   <MenuItem
                     key="settings"
                     onClick={() => navigate("/platform")}
                   >
                     <Typography className={classes.menuLink}>
-                      {t("Кабінет")}
+                      <img
+                        style={{ width: 13, marginRight: 10 }}
+                        src="../../assets/menuIcon.svg"
+                      />
+                      {t("Особистий кабінет")}
                     </Typography>
                   </MenuItem>
-                  <MenuItem
+                  {/* <MenuItem
                     key="students"
                     onClick={() => navigate("/students")}
                   >
@@ -288,25 +301,33 @@ const NavBar = ({ isBackground = false }) => {
                         {t("Студенти")}
                       </Typography>
                     )}
-                  </MenuItem>
+                  </MenuItem> */}
                   <MenuItem key="logOut" onClick={handleLogOut}>
-                    <Typography textAlign="center">
+                    <Typography textAlign="center" className={classes.menuLink}>
+                      <img
+                        style={{ width: 13, marginRight: 10 }}
+                        src="../../assets/menuIconExit.svg"
+                      />
                       {t("Вийти з акаунту")}
                     </Typography>
                   </MenuItem>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "end",
+                      marginRight: 15,
+                    }}
+                  >
+                    <LanguageSelector isMenu={true} />
+                  </div>
                 </Menu>
               </Box>
             </>
           ) : (
             <div className={classes.linkWrapper}>
               <Box className={classes.link}>
-                <Link to={"/login"}>
-                  <Typography>{t("Вхід")}</Typography>
-                </Link>
-                <Typography>/</Typography>
-                <Link to={"/signup"}>
-                  <Typography>{t("Реєстрація")}</Typography>
-                </Link>
+                <Link to={"/login"}>{t("Вхід")}</Link>/
+                <Link to={"/signup"}>{t("Реєстрація")}</Link>
               </Box>
             </div>
           )}

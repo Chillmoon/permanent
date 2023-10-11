@@ -1,29 +1,33 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
-  select: {
-    marginRight: 10,
-
-    "& .MuiOutlinedInput-notchedOutline": {
-      border: "none",
-      borderRadius: 100,
-      "&:hover": {
-        cursor: "pointer",
-        border: "none",
-      },
-      "&:active": {
-        border: "none",
-      },
+  link: {
+    backgroundColor: "transparent",
+    color: "#FFD7BB",
+    border: "none",
+    boxShadow: "none",
+    fontWeight: 700,
+    fontFamily: `"Exo 2", sans-serif !important`,
+    padding: 0,
+    fontSize: 16,
+    margin: "0px 5px",
+    "&:hover": {
+      cursor: "pointer",
     },
-    "&>div": {
-      color: "#000",
-      fontWeight: 600,
-      padding: "5px 27px 4px 11px !important",
-      borderRadius: "20px !important",
-    },
-    "&>svg": {
-      color: "#000",
-      width: 20,
+  },
+  menuLink: {
+    backgroundColor: "transparent",
+    color: "#000",
+    border: "none",
+    boxShadow: "none",
+    fontWeight: 700,
+    fontFamily: `"Exo 2", sans-serif !important`,
+    padding: 0,
+    fontSize: 16,
+    margin: "0px 5px",
+    textTransform: "lowercase",
+    "&:hover": {
+      cursor: "pointer",
     },
   },
 });

@@ -1,4 +1,4 @@
-import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { Button, ButtonGroup } from "@mui/material";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../app/features/i118n/i18n";
@@ -7,7 +7,7 @@ import useStyles from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 
-function LanguageSelect() {
+function LanguageSelect({ isMenu = false }) {
   const { t } = useTranslation();
   const classes = useStyles();
   const { setLanguage } = userSlice.actions;
@@ -22,22 +22,30 @@ function LanguageSelect() {
     i18n.changeLanguage(language);
   }, [dispatch, setLanguage]);
 
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    const language = event.target.value;
+  const changeLanguage = (language: string) => {
     dispatch(setLanguage(language));
     i18n.changeLanguage(language);
     localStorage.setItem("language", language);
   };
 
   return (
-    <Select
-      value={currentLanguage}
-      onChange={handleChange}
-      className={classes.select}
-    >
-      <MenuItem value="ua">{t("UA")}</MenuItem>
-      <MenuItem value="ru">{t("RU")}</MenuItem>
-    </Select>
+    <ButtonGroup>
+      <button
+        style={{ fontWeight: currentLanguage === "ua" ? 700 : 300 }}
+        className={isMenu ? classes.menuLink : classes.link}
+        onClick={() => changeLanguage("ua")}
+      >
+        UA
+      </button>
+      /
+      <button
+        style={{ fontWeight: currentLanguage === "ru" ? 700 : 300 }}
+        className={isMenu ? classes.menuLink : classes.link}
+        onClick={() => changeLanguage("ru")}
+      >
+        RU
+      </button>
+    </ButtonGroup>
   );
 }
 
