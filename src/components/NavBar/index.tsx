@@ -250,7 +250,11 @@ const NavBar = ({ isBackground = false }) => {
             <>
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <IconButton
+                    disableRipple
+                    onClick={handleOpenUserMenu}
+                    sx={{ p: 0 }}
+                  >
                     <Avatar
                       sx={{ width: 45, height: 45 }}
                       className={
