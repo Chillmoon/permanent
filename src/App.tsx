@@ -44,10 +44,17 @@ function App() {
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 
+  const now = new Date();
+  const redirectDate = new Date("2023-11-01");
+  const shouldRedirect = now < redirectDate;
+
   return (
     <>
       <NavBar />
       <Routes>
+        {shouldRedirect && (
+          <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
+        )}
         <Route
           path="/courses"
           element={

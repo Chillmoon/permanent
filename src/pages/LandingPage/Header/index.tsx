@@ -1,5 +1,6 @@
 import { useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-scroll";
 
 import Timer from "../../../components/Timer";
 
@@ -24,7 +25,7 @@ const Header = () => {
           </div>
           <div className={classes.orangeText}>
             {t("Старт")}{" "}
-            <span className={classes.boldText}>{t("16 жовтня")}</span>
+            <span className={classes.boldText}>{t("1 листопада")}</span>
           </div>
           <img
             className={classes.eyeliner}
@@ -53,12 +54,21 @@ const Header = () => {
               src="../../assets/lightButton.svg"
               alt="Light"
             />
-            <button
+            <Link
+              to="programBlock"
+              spy={true}
+              smooth={true}
+              duration={500}
+              className={classes.button}
+            >
+              {t("Придбати курс")}
+            </Link>
+            {/* <button
               className={classes.button}
               onClick={() => console.log("button")}
             >
               {t("Придбати курс")}
-            </button>
+            </button> */}
           </div>
           <div className={classes.counterDescription}>
             {t("до кінця знижки залишилось")}
@@ -70,7 +80,7 @@ const Header = () => {
           <div className={classes.headerText}>
             <div className={classes.orangeText}>
               {t("Старт")}{" "}
-              <span className={classes.boldText}>{t("16 жовтня")}</span>
+              <span className={classes.boldText}>{t("1 листопада")}</span>
             </div>
             <img
               className={classes.eyeliner}
@@ -90,12 +100,15 @@ const Header = () => {
                 src="../../assets/lightButton.svg"
                 alt="Light"
               />
-              <button
+              <Link
+                to="programBlock"
+                spy={true}
+                smooth={true}
+                duration={500}
                 className={classes.button}
-                onClick={() => console.log("button")}
               >
                 {t("Приєднатись зараз")}
-              </button>
+              </Link>
             </div>
           </div>
           <div className={classes.headerPhoto}>

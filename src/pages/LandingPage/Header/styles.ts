@@ -80,7 +80,7 @@ const useStyles = makeStyles({
     fontWeight: "300 !important",
     backgroundColor: "#B7703D", // Установите цвет фона
     color: "white", // Наследование цвета текста от родительского элемента (body)
-    width: 150,
+    width: 155,
     zIndex: 1000,
   },
   boldText: {
@@ -129,7 +129,8 @@ const useStyles = makeStyles({
     marginTop: 20,
     background:
       "var(--BTN_MAIN, radial-gradient(29.03% 41.72% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%))",
-    padding: "19px 25px 18px 25px",
+    padding: "19px 0px 18px 0px",
+    textAlign: "center",
     borderRadius: 15,
     border: "none",
     color: "#FFF",
@@ -155,6 +156,16 @@ const useStyles = makeStyles({
       fontSize: 25,
       marginTop: "-5px",
       marginBottom: 40,
+
+      display: "block",
+      "&:hover": {
+        marginTop: "-5px !important",
+        cursor: "pointer",
+        filter: "none",
+        borderBottom: "5px solid #754929;",
+        background:
+          "var(--BTN_MAIN, radial-gradient(29.03% 41.72% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%))",
+      },
     },
   },
   headerPhoto: {

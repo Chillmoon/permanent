@@ -59,9 +59,7 @@ const HomePage = () => {
             </div>
           )
         )}
-        <div className={classes.coursePlaceholder}>
-          <div>Скоро</div>
-        </div>
+        <div className={classes.coursePlaceholder} />
       </div>
     </div>
   ) : (
@@ -82,9 +80,7 @@ const HomePage = () => {
       <div className={classes.cardWrapper}>
         {cardData.map((data, index) =>
           data.name === "Скоро" ? (
-            <div className={classes.coursePlaceholder}>
-              <div>{data.name}</div>
-            </div>
+            <div className={classes.coursePlaceholder} />
           ) : (
             <div className={classes.card}>
               <div className={classes.cardName}>{data.name}</div>

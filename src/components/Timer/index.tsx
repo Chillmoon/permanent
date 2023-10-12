@@ -15,7 +15,7 @@ const Timer: React.FC<TimerProps> = ({ isLanding = true }) => {
 
   useEffect(() => {
     const targetDate = isLanding
-      ? new Date("2023-10-16")
+      ? new Date("2023-10-19")
       : new Date("2023-11-01");
     const now = new Date();
     const differenceInSeconds = Math.floor(

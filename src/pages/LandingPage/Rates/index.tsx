@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { Element } from "react-scroll";
+
 import useStyles from "./styles";
 
 const Rates = () => {
@@ -7,7 +9,9 @@ const Rates = () => {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.blockName}>{t("Тарифи")}</div>
+      <Element name="programBlock" className={classes.blockName}>
+        {t("Тарифи")}
+      </Element>
       <div className={classes.cardsWrapper}>
         <div className={classes.cardWrapper}>
           <div className={classes.card}>
@@ -28,9 +32,9 @@ const Rates = () => {
                 </div>
               </li>
             </ul>
-            <div className={classes.originalPrice}>$180</div>
+            <div className={classes.originalPrice}>$190</div>
             <div className={classes.discountedPrice}>$150</div>
-            <div className={classes.priceDescription}>{t("до 14 жовтня")}</div>
+            <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.button}
               onClick={() => console.log("button")}
@@ -64,7 +68,7 @@ const Rates = () => {
             </ul>
             <div className={classes.originalPrice}>$250</div>
             <div className={classes.discountedPrice}>$190</div>
-            <div className={classes.priceDescription}>{t("до 14 жовтня")}</div>
+            <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.blackButton}
               onClick={() => console.log("button")}
