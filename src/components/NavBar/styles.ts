@@ -130,6 +130,7 @@ const useStyles = makeStyles({
     marginTop: 30,
     paddingBottom: 30,
     borderRadius: "50px 50px 0px 0px !important",
+    transition: "height 300ms ease-in, border-radius 300ms ease-in",
   },
 
   logo: {
@@ -154,6 +155,24 @@ const useStyles = makeStyles({
         },
       },
     },
+  },
+  menuEnter: {
+    opacity: 0,
+    transform: "scale(0.8)",
+    transition: "opacity 300ms ease, transform 300ms ease",
+  },
+  menuEnterActive: {
+    opacity: 1,
+    transform: "scale(1)",
+  },
+  menuExit: {
+    opacity: 1,
+    transform: "scale(1)",
+    transition: "opacity 300ms ease, transform 300ms ease",
+  },
+  menuExitActive: {
+    opacity: 0,
+    transform: "scale(0.8)",
   },
 });
 

@@ -90,7 +90,7 @@ const PaymentSuccessPage = () => {
             {t("Ти учасниця курсу «FAST EYELINER»")}
           </div>
           <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
-          <Timer initialTimeInSeconds={120000} isLanding={false} />
+          <Timer isLanding={false} />
           <div className={classes.textTiny}>
             *{t("доступ до уроків відкриється 1.11")}
           </div>

@@ -5,7 +5,6 @@ body {
   );
   margin: 0;
   font-family: "Noto Serif", sans-serif !important;
-  width: 100%;
 }
 
 body::-webkit-scrollbar {

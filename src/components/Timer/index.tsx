@@ -4,20 +4,30 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "@mui/material";
 
 interface TimerProps {
-  initialTimeInSeconds: number;
   isLanding?: boolean;
 }
 
-const Timer: React.FC<TimerProps> = ({
-  initialTimeInSeconds,
-  isLanding = true,
-}) => {
+const Timer: React.FC<TimerProps> = ({ isLanding = true }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
-  const [timeRemaining, setTimeRemaining] = useState(initialTimeInSeconds);
+  const [timeRemaining, setTimeRemaining] = useState(0); // Обновленное начальное значение времени
 
   useEffect(() => {
+    const targetDate = new Date("2023-10-16"); // Целевая дата: 16 октября 2023
+    const now = new Date();
+    const differenceInSeconds = Math.floor(
+      (targetDate.getTime() - now.getTime()) / 1000
+    );
+
+    if (differenceInSeconds > 0) {
+      // Если разница положительная, обновляем время в секундах
+      setTimeRemaining(differenceInSeconds);
+    } else {
+      // Если целевая дата уже прошла, устанавливаем время в 0 секунд
+      setTimeRemaining(0);
+    }
+
     const interval = setInterval(() => {
       if (timeRemaining > 0) {
         setTimeRemaining((prevTime) => prevTime - 1);

@@ -47,7 +47,7 @@ const GoogleAuth = () => {
 
         checkPaymentData(userID);
 
-        navigate("/platform");
+        navigate(-1 || "/");
       })
       .catch((error) => {
         alert(error);

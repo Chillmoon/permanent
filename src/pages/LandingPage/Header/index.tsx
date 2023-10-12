@@ -63,7 +63,7 @@ const Header = () => {
           <div className={classes.counterDescription}>
             {t("до кінця знижки залишилось")}
           </div>
-          <Timer initialTimeInSeconds={112352} />
+          <Timer />
         </div>
       ) : (
         <div className={classes.header}>
@@ -83,7 +83,7 @@ const Header = () => {
             <div className={classes.counterDescription}>
               {t("до кінця знижки залишилось")}
             </div>
-            <Timer initialTimeInSeconds={112352} />
+            <Timer />
             <div className={classes.buttonWrapper}>
               <img
                 className={classes.lightButton}

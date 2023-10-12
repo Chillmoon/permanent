@@ -70,7 +70,7 @@ const Login = () => {
         const loggedInUserId = userCredential.user.uid;
         checkPaymentData(loggedInUserId);
 
-        navigate("/platform");
+        navigate(-1 || "/");
       }
     } catch (error) {
       alert(error);

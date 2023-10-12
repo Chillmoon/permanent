@@ -264,7 +264,13 @@ const NavBar = ({ isBackground = false }) => {
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: "35px" }}
+                  sx={{
+                    mt: "35px",
+                    "&.menu-enter": classes.menuEnter,
+                    "&.menu-enter-active": classes.menuEnterActive,
+                    "&.menu-exit": classes.menuExit,
+                    "&.menu-exit-active": classes.menuExitActive,
+                  }}
                   id="menu-appbar"
                   anchorEl={anchorElUser}
                   anchorOrigin={{
