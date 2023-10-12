@@ -11,20 +11,20 @@ const Timer: React.FC<TimerProps> = ({ isLanding = true }) => {
   const classes = useStyles();
   const { t } = useTranslation();
 
-  const [timeRemaining, setTimeRemaining] = useState(0); // Обновленное начальное значение времени
+  const [timeRemaining, setTimeRemaining] = useState(0);
 
   useEffect(() => {
-    const targetDate = new Date("2023-10-16"); // Целевая дата: 16 октября 2023
+    const targetDate = isLanding
+      ? new Date("2023-10-16")
+      : new Date("2023-11-01");
     const now = new Date();
     const differenceInSeconds = Math.floor(
       (targetDate.getTime() - now.getTime()) / 1000
     );
 
     if (differenceInSeconds > 0) {
-      // Если разница положительная, обновляем время в секундах
       setTimeRemaining(differenceInSeconds);
     } else {
-      // Если целевая дата уже прошла, устанавливаем время в 0 секунд
       setTimeRemaining(0);
     }
 
