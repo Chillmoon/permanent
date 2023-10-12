@@ -64,11 +64,12 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
         >
           {t("Політика конфіденційності")}
         </Button>
+        <Button>{t("permanent.by.kushnir@gmail.com")}</Button>
       </div>
 
       <div className={classes.wrapper}>
         <Button onClick={handleCopyText} className={classes.notAButton}>
-          {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
+          {t("ФОП Вікторія Кушнір")}
         </Button>
         <div className={classes.linksWrapper}>
           <IconButton href="https://www.google.com/" target="_blank">
@@ -153,7 +154,13 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
         <Button onClick={handleCopyText} className={classes.notAButton}>
           {copied ? t("Скопійовано!") : t("ФОП Вікторія Кушнір")}
         </Button>
-        <div style={{ fontSize: 14, paddingLeft: 10 }}>
+        <div
+          style={{
+            fontSize: 14,
+            paddingLeft: 10,
+            color: "#C7B2A3",
+          }}
+        >
           permanent.by.kushnir@gmail.com
         </div>
       </div>

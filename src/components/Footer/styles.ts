@@ -87,7 +87,7 @@ const useStyles = makeStyles({
 
     fontSize: 21,
     "@media (max-width:1000px)": {
-      marginBottom: 22,
+      marginBottom: 7,
       flexDirection: "column",
     },
 
@@ -104,6 +104,7 @@ const useStyles = makeStyles({
   notAButton: {
     textDecoration: "none !important",
     width: 180,
+    display: "flex",
   },
 });
 
