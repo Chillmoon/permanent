@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
 import { t } from "i18next";
+import emailjs from "@emailjs/browser";
 
 import { userSlice } from "../../app/features/userSlice";
 import { RootState } from "../../app/store";
@@ -17,7 +18,7 @@ const PaymentSuccessPage = () => {
 
   const dispatch = useDispatch();
   const { setIsPayed } = userSlice.actions;
-  const userID = useSelector((state: RootState) => state.user.user?.uid);
+  const user = useSelector((state: RootState) => state.user.user);
 
   const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(true);
 
@@ -33,10 +34,26 @@ const PaymentSuccessPage = () => {
     }
   };
 
+  const sendEmail = () => {
+    const templateParams = {
+      to_email: user?.email,
+      to_name: user?.username,
+    };
+    console.log("hello2");
+    emailjs
+      .send("service_n51bus2", "template_1iak6uu_ukr", templateParams)
+      .then((response) => {
+        console.log("Email sent:", response);
+      })
+      .catch((error) => {
+        console.error("Email not sent:", error);
+      });
+  };
+
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
-
+    console.log("hello");
     const paymentRate = paramsObject.product_id
       ? paramsObject.product_id.slice(-5)
       : "";
@@ -45,6 +62,8 @@ const PaymentSuccessPage = () => {
       : "";
 
     if (paramsObject.order_status === "approved") {
+      console.log("hello1");
+      sendEmail();
       setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
         const paymentData = {
@@ -58,15 +77,15 @@ const PaymentSuccessPage = () => {
             fastEyeliner: paymentData,
           })
         );
-        if (userID) {
-          savePaymentData(userID, paymentData);
+        if (user?.uid) {
+          savePaymentData(user?.uid, paymentData);
         } else {
           console.log("userID is undefined");
         }
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userID]);
+  }, [user?.uid]);
 
   const displayName = auth?.currentUser?.displayName;
 

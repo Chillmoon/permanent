@@ -63,7 +63,7 @@ const Rates = () => {
             <button
               className={classes.button}
               onClick={() => {
-                if (rate === "Rate1") {
+                if (rate === "Rate1" || rate === "Rate2") {
                   navigate("/platform");
                 } else if (user?.uid) {
                   window.location.href =
@@ -73,7 +73,9 @@ const Rates = () => {
                 }
               }}
             >
-              {rate === "Rate1" ? t("Перейти до уроків") : t("Придбати зараз")}
+              {rate === "Rate1" || rate === "Rate2"
+                ? t("Перейти до уроків")
+                : t("Придбати зараз")}
             </button>
           </div>
         </div>
