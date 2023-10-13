@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useTranslation } from "react-i18next";
 
@@ -20,12 +20,10 @@ import { RootState } from "../../app/store";
 const LessonPage = () => {
   const classes = useStyles();
   const { t } = useTranslation();
-
-  const user = useSelector((state: RootState) => state.user.user);
+  const navigate = useNavigate();
 
   const { lessonNumber } = useParams();
-  const [hasPaidForCourse, setHasPaidForCourse] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const user = useSelector((state: RootState) => state.user.user);
 
   const blockLabel = findBlockLabelById(
     courses,
@@ -39,21 +37,21 @@ const LessonPage = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    retrievePaymentData(user?.uid)
-      .then((paymentData) => {
-        if (paymentData) {
-          console.log(paymentData);
-          // setHasPaidForCourse(true);
-          // setIsLoading(false);
-        }
-      })
-      .catch((error) => {
-        console.error("Error checking payment data:", error);
-      });
+    const checkPaymentStatus = async () => {
+      try {
+        const isPayed = await retrievePaymentData(user?.uid);
 
+        if (isPayed === null) {
+          navigate("/courses/fastEyeliner");
+        }
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+
+    checkPaymentStatus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.uid]);
+  }, [user]);
 
   return (
     <>

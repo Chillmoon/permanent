@@ -37,8 +37,6 @@ const PaymentSuccessPage = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
 
-    console.log(paramsObject, "paramsObject");
-
     const paymentRate = paramsObject.product_id
       ? paramsObject.product_id.slice(-5)
       : "";
@@ -50,6 +48,7 @@ const PaymentSuccessPage = () => {
       setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
         const paymentData = {
+          course: payedCourse,
           rate: paymentRate,
           orderId: paramsObject.order_id,
           signature: paramsObject.signature,

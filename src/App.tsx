@@ -15,9 +15,9 @@ import HomePage from "./pages/Home";
 import LessonPage from "./pages/Lesson";
 import Students from "./pages/Students";
 import LandingPage from "./pages/LandingPage";
+import PaymentSuccessPage from "./pages/PaymentSuccess";
 
 import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
-import PaymentSuccessPage from "./pages/PaymentSuccess";
 import Footer from "./components/Footer";
 
 function App() {
@@ -52,9 +52,9 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        {/* {shouldRedirect && (
+        {shouldRedirect && (
           <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
-        )} */}
+        )}
         <Route
           path="/courses"
           element={

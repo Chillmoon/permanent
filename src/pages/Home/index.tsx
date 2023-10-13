@@ -27,22 +27,28 @@ const cardData = [
 const HomePage = () => {
   const classes = useStyles();
   const isLoading = useSelector((state: RootState) => state.user.isLoading);
-  const userId = useSelector((state: RootState) => state.user.user?.uid);
+  const user = useSelector((state: RootState) => state.user.user);
 
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const isPayed = retrievePaymentData(userId);
-
-    if (!isPayed) {
-      navigate("/courses/fastEyeliner");
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const isMobileScreen = useMediaQuery("(max-width:1000px)");
+
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const isPayed = await retrievePaymentData(user?.uid);
+
+        if (isPayed === null) {
+          navigate("/courses/fastEyeliner");
+        }
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   return isLoading ? (
     <HomePageSkeleton />
