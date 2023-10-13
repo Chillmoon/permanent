@@ -12,7 +12,7 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
   databaseURL:
-    "https://permanent-by-kushnir-default-rtdb.europe-west1.firebasedatabase.app/",
+    "https://permanent-by-kushnir-default-rtdb.europe-west1.firebasedatabase.app",
 };
 
 // Initialize Firebase

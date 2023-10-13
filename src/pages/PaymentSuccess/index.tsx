@@ -36,16 +36,16 @@ const PaymentSuccessPage = () => {
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
-    console.log(searchParams, "searchParams");
+
     console.log(paramsObject, "paramsObject");
+
     const paymentRate = paramsObject.product_id
       ? paramsObject.product_id.slice(-5)
       : "";
     const payedCourse = paramsObject.product_id
       ? paramsObject.product_id.slice(0, -5)
       : "";
-    console.log(payedCourse, "payedCourse");
-    console.log(paymentRate, "paymentRate");
+
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);
       if (payedCourse === "eyeliner") {

@@ -14,7 +14,6 @@ const Rates = () => {
   const navigate = useNavigate();
 
   const user = useSelector((state: RootState) => state.user.user);
-  console.log(user);
 
   return (
     <div className={classes.wrapper}>
