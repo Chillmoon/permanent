@@ -34,25 +34,20 @@ const PaymentSuccessPage = () => {
   };
 
   useEffect(() => {
-    // Выполните POST-запрос к URL, на который Fondy отправляет данные
-    fetch("/paymentSuccess", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams(window.location.search).toString(),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Полученные данные из POST-запроса
-        console.log("Данные из POST-запроса:", data);
+    // Получите параметры из URL
+    const searchParams = new URLSearchParams(window.location.search);
+    const paramsObject = Object.fromEntries(searchParams.entries());
+    console.log(searchParams, "searchParams");
+    console.log(paramsObject, "paramsObject");
+    // Извлеките необходимые данные
+    const order_id = paramsObject.order_id;
+    const product_id = paramsObject.product_id;
+    const signature = paramsObject.signature;
 
-        // В data будут содержаться order_id, product_id, signature
-        // Можно обратиться к ним так: data.order_id, data.product_id, data.signature
-      })
-      .catch((error) => {
-        console.error("Ошибка при выполнении POST-запроса:", error);
-      });
+    // Выведите данные в консоль
+    console.log("order_id:", order_id);
+    console.log("product_id:", product_id);
+    console.log("signature:", signature);
   }, []);
 
   // useEffect(() => {
