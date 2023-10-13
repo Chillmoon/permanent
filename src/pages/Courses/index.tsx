@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 const cardData = [
   {
     name: "FAST EYELINER",
-    id: "eyeliner",
+    id: "fastEyeliner",
     description: "Курс по виконанню міжвійної зони з ідеальним загоєнням",
   },
   {

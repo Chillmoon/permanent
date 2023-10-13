@@ -58,8 +58,8 @@ export type AllCourses = Course[];
 
 export const courses: AllCourses = [
   {
-    id: "eyeliner",
-    label: "EYELINER",
+    id: "fastEyeliner",
+    label: "FAST EYELINER",
     targetAudience: [
       {
         emoji: "../../assets/child.png",

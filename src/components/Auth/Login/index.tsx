@@ -47,7 +47,7 @@ const Login = () => {
         console.log("Данные об оплате найдены");
         dispatch(
           userSlice.actions.setIsPayed({
-            eyeliner: { isPayed: true, ...paymentData },
+            fastEyeliner: { isPayed: true, ...paymentData },
           })
         );
       } else {

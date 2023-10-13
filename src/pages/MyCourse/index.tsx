@@ -14,7 +14,7 @@ const MyCourse = () => {
     <>
       <div className={classes.coursePageMobile}>
         <div>Це {courseId}. Тут буде вітальне відео</div>
-        <a href="/platform/eyeliner/block0-lesson1">Перейти до уроків</a>
+        <a href="/platform/fastEyeliner/block0-lesson1">Перейти до уроків</a>
       </div>
       <Grid container>
         <Grid item className={classes.myCoursePageWideScreen}>

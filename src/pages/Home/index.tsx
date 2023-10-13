@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const cardData = [
   {
     name: "FAST EYELINER",
-    id: "eyeliner",
+    id: "fastEyeliner",
     description: "Курс по виконанню міжвійної зони з ідеальним загоєнням",
   },
   {
@@ -36,7 +36,7 @@ const HomePage = () => {
     const isPayed = retrievePaymentData(userId);
 
     if (!isPayed) {
-      navigate("/courses/eyeliner");
+      navigate("/courses/fastEyeliner");
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
