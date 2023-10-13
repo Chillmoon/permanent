@@ -5,10 +5,10 @@ const initialState = {
   isLoading: true,
   language: "ua",
   isPayed: {
-    eyeliner: {
+    fastEyeliner: {
       isPayed: false,
       orderId: "",
-      merchantId: "1528075",
+      merchantId: "1534312",
       signature: "",
     },
   },

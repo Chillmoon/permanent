@@ -48,7 +48,7 @@ const PaymentSuccessPage = () => {
 
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);
-      if (payedCourse === "eyeliner") {
+      if (payedCourse === "fastEyeliner") {
         const paymentData = {
           rate: paymentRate,
           orderId: paramsObject.order_id,
@@ -56,7 +56,7 @@ const PaymentSuccessPage = () => {
         };
         dispatch(
           setIsPayed({
-            eyeliner: paymentData,
+            fastEyeliner: paymentData,
           })
         );
         if (userID) {
