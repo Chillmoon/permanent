@@ -39,11 +39,10 @@ const PaymentSuccessPage = () => {
       to_email: user?.email,
       to_name: user?.username,
     };
-    console.log("hello2");
     emailjs
       .send(
         "service_n51bus2",
-        "template_1iak6uu_ukr",
+        t("templateID"),
         templateParams,
         "Z7CUCUgFvHXqj-qZg"
       )
@@ -54,11 +53,11 @@ const PaymentSuccessPage = () => {
         console.error("Email not sent:", error);
       });
   };
+  console.log(t("templateID"));
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
-    console.log("hello");
     const paymentRate = paramsObject.product_id
       ? paramsObject.product_id.slice(-5)
       : "";
@@ -67,10 +66,11 @@ const PaymentSuccessPage = () => {
       : "";
 
     if (paramsObject.order_status === "approved") {
-      console.log("hello1");
-      sendEmail();
       setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
+        if (paymentRate === "Rate2") {
+          sendEmail();
+        }
         const paymentData = {
           course: payedCourse,
           rate: paymentRate,
