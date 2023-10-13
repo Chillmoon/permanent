@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
 import { t } from "i18next";
+import emailjs from "@emailjs/browser";
 
 import { userSlice } from "../../app/features/userSlice";
 import { RootState } from "../../app/store";
@@ -33,6 +34,27 @@ const PaymentSuccessPage = () => {
     }
   };
 
+  const sendEmail = () => {
+    const templateParams = {
+      to_email: user?.email,
+      to_name: user?.username,
+    };
+    console.log("hello2");
+    emailjs
+      .send(
+        "service_n51bus2",
+        "template_1iak6uu_ukr",
+        templateParams,
+        "Z7CUCUgFvHXqj-qZg"
+      )
+      .then((response) => {
+        console.log("Email sent:", response);
+      })
+      .catch((error) => {
+        console.error("Email not sent:", error);
+      });
+  };
+
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
@@ -46,7 +68,7 @@ const PaymentSuccessPage = () => {
 
     if (paramsObject.order_status === "approved") {
       console.log("hello1");
-
+      sendEmail();
       setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
         const paymentData = {
