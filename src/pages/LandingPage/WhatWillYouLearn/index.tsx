@@ -108,7 +108,7 @@ const WhatWillYouLearn = () => {
                 src="../../assets/checkIcon.svg"
               />
               <div>
-                {t("Працювати ")}{" "}
+                {t("Працювати")}{" "}
                 <strong style={{ color: "#FFE5D1" }}>
                   {t("з усіма типами повік")}
                 </strong>
@@ -216,7 +216,7 @@ const WhatWillYouLearn = () => {
                   src="../../assets/checkIcon.svg"
                 />
                 <div>
-                  {t("Працювати ")} <strong>{t("з усіма типами повік")}</strong>
+                  {t("Працювати")} <strong> {t("з усіма типами повік")}</strong>
                 </div>
               </li>
               <li>

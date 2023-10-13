@@ -6,14 +6,31 @@ import { useNavigate } from "react-router-dom";
 import { RootState } from "../../../app/store";
 
 import useStyles from "./styles";
+import { useEffect, useState } from "react";
+import retrievePaymentData from "../../../app/functions/retrievePaymentData";
 
 const Rates = () => {
   const classes = useStyles();
   const { t } = useTranslation();
+  const [rate, setRate] = useState(undefined);
 
   const navigate = useNavigate();
 
   const user = useSelector((state: RootState) => state.user.user);
+
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const payedData = await retrievePaymentData(user?.uid);
+        const payedRate = payedData.rate;
+        setRate(payedRate);
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   return (
     <div className={classes.wrapper}>
@@ -23,9 +40,9 @@ const Rates = () => {
       <div className={classes.cardsWrapper}>
         <div className={classes.cardWrapper}>
           <div className={classes.card}>
-            <div className={classes.cardTitle}>{t("Classic")}</div>
+            <div className={classes.cardTitle}>Classic</div>
             <ul className={classes.cardList}>
-              <li>{t("Практичні демонстраціі")}</li>
+              <li>{t("Практичні демонстрації")}</li>
               <li>{t("Теоретичний блок")}</li>
               <li>{t("Пігметнологія пігментів для очей")}</li>
               <li>{t("Доступ на платформі 3 місяці")}</li>
@@ -45,14 +62,18 @@ const Rates = () => {
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.button}
-              onClick={() =>
-                user?.uid
-                  ? (window.location.href =
-                      "https://pay.fondy.eu/s/bNRqXwTx8Sz")
-                  : navigate("/login")
-              }
+              onClick={() => {
+                if (rate === "Rate1") {
+                  navigate("/platform");
+                } else if (user?.uid) {
+                  window.location.href =
+                    "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+                } else {
+                  navigate("/login");
+                }
+              }}
             >
-              {t("Придбати зараз")}
+              {rate === "Rate1" ? t("Перейти до уроків") : t("Придбати зараз")}
             </button>
           </div>
         </div>
@@ -62,9 +83,9 @@ const Rates = () => {
               {t("залишилось")}
               <div>{t("11 місць")}</div>
             </div>
-            <div className={classes.cardTitle}>{t("Advanced")}</div>
+            <div className={classes.cardTitle}>Advanced</div>
             <ul className={classes.cardList}>
-              <li>{t("Практичні демонстраціі")}</li>
+              <li>{t("Практичні демонстрації")}</li>
               <li>{t("Теоретичний блок")}</li>
               <li>{t("Пігметнологія пігментів для очей")}</li>
               <li>
@@ -84,14 +105,18 @@ const Rates = () => {
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.blackButton}
-              onClick={() =>
-                user?.uid
-                  ? (window.location.href =
-                      "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO")
-                  : navigate("/login")
-              }
+              onClick={() => {
+                if (rate === "Rate2") {
+                  navigate("/platform");
+                } else if (user?.uid) {
+                  window.location.href =
+                    "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+                } else {
+                  navigate("/login");
+                }
+              }}
             >
-              {t("Придбати зараз")}
+              {rate === "Rate2" ? t("Перейти до уроків") : t("Придбати зараз")}
             </button>
           </div>
         </div>

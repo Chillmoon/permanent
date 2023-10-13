@@ -37,7 +37,7 @@ const Courses = () => {
             alt="details"
           />
           <div className={classes.wrapper}>
-            <div className={classes.username}>{t("permanent.by.kushnir")}</div>
+            <div className={classes.username}>permanent.by.kushnir</div>
             <div className={classes.name}>{t("Вікторія Кушнір")}</div>{" "}
           </div>
           <div>
@@ -49,36 +49,24 @@ const Courses = () => {
                   <strong style={{ color: "#FFF", opacity: 1 }}>
                     {t("9 років")}
                   </strong>
-                  , {t("пройшла всі техніки, від трешу до шикарних робіт")}
                 </div>
               </div>
               <div className={classes.textBlockWrapper}>
                 <span className={classes.lineShort} />
-                <div>
-                  {t("Переможниця чемпіонатів")},{" "}
-                  <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                    {t("спікер та суддя")}
-                  </strong>{" "}
-                  {t("українських та міжнародних конференцій")}.
-                </div>
+                <div>{t("Переможниця чемпіонатів")}</div>
               </div>
 
               <div className={classes.textBlockWrapper}>
                 <span className={classes.lineShort} />
                 <div>
-                  {t("Досвід роботи")}{" "}
-                  <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                    {t("9 років")}
-                  </strong>
-                  , {t("пройшла всі техніки, від трешу до шикарних робіт")}
+                  {t("Пройшла всі техніки, від трешу до шикарних робіт")}
                 </div>
               </div>
               <div className={classes.textBlockWrapper}>
                 <span className={classes.lineShort} />
                 <div>
-                  {t("Переможниця чемпіонатів")},{" "}
                   <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                    {t("спікер та суддя")}
+                    {t("Спікер та суддя")}
                   </strong>{" "}
                   {t("українських та міжнародних конференцій")}.
                 </div>
@@ -110,7 +98,9 @@ const Courses = () => {
                   <div className={classes.card}>
                     <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>
-                      {data.description}
+                      {t(
+                        "Курс по виконанню міжвійної зони з ідеальним загоєнням"
+                      )}
                     </div>
                     <button
                       className={classes.button}
@@ -157,15 +147,13 @@ const Courses = () => {
                       <strong style={{ color: "#FFE5D1" }}>
                         {t("9 років")}
                       </strong>
-                      , {t("пройшла всі техніки, від трешу до шикарних робіт")}
                     </div>
                     <span className={classes.lineLong} />
                   </div>
                   <div className={classes.textBlockWrapper}>
                     <div>
-                      {t("Переможниця чемпіонатів")},{" "}
                       <strong style={{ color: "#FFE5D1" }}>
-                        {t("спікер та суддя")}
+                        {t("Спікер та суддя")}
                       </strong>{" "}
                       {t("українських та міжнародних конференцій")}.
                     </div>
@@ -176,22 +164,12 @@ const Courses = () => {
                   <div className={classes.textBlockWrapper}>
                     <span className={classes.lineLong} />
                     <div>
-                      {t("Досвід роботи")}{" "}
-                      <strong style={{ color: "#FFE5D1" }}>
-                        {t("9 років")}
-                      </strong>
-                      , {t("пройшла всі техніки, від трешу до шикарних робіт")}
+                      {t("Пройшла всі техніки, від трешу до шикарних робіт")}
                     </div>
                   </div>
                   <div className={classes.textBlockWrapper}>
                     <span className={classes.lineShort} />
-                    <div>
-                      {t("Переможниця чемпіонатів")},{" "}
-                      <strong style={{ color: "#FFE5D1" }}>
-                        {t("спікер та суддя")}
-                      </strong>{" "}
-                      {t("українських та міжнародних конференцій")}.
-                    </div>
+                    <div>{t("Переможниця чемпіонатів")}</div>
                   </div>
                 </div>
               </div>
@@ -214,7 +192,9 @@ const Courses = () => {
                   <div className={classes.card}>
                     <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>
-                      {data.description}
+                      {t(
+                        "Курс по виконанню міжвійної зони з ідеальним загоєнням"
+                      )}
                     </div>
                     <button
                       className={classes.button}

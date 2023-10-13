@@ -20,7 +20,7 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
   };
 
   const handleCopyText = () => {
-    navigator.clipboard.writeText(t("ФОП Ковалевська Юлія Вікторівна")).then(
+    navigator.clipboard.writeText(t("ФОП Вікторія Кушнір")).then(
       () => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
@@ -64,7 +64,7 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
         >
           {t("Політика конфіденційності")}
         </Button>
-        <Button>{t("permanent.by.kushnir@gmail.com")}</Button>
+        <Button>permanent.by.kushnir@gmail.com</Button>
       </div>
 
       <div className={classes.wrapper}>

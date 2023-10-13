@@ -45,10 +45,10 @@ const useStyles = makeStyles({
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "#482B19",
-    width: 280,
-    height: 220,
+    width: 295,
+    height: 230,
     borderRadius: 16,
-    padding: "20px 35px",
+    padding: "20px 30px",
   },
   cardName: {
     fontSize: 40,
@@ -92,10 +92,10 @@ const useStyles = makeStyles({
     },
   },
   coursePlaceholder: {
-    width: 280,
-    height: 220,
+    width: 295,
+    height: 230,
     borderRadius: 16,
-    padding: "20px 35px",
+    padding: "20px 30px",
     backgroundColor: "#EBEBEB",
   },
   blockTitle: {

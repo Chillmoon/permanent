@@ -21,7 +21,7 @@ const FooterLanding = () => {
           src="../../assets/lightPhoto.svg"
           alt="Light"
         />
-        <div className={classes.username}>{t("permanent.by.kushnir")}</div>
+        <div className={classes.username}>permanent.by.kushnir</div>
         <div className={classes.name}>{t("Вікторія Кушнір")}</div>
       </div>
       <div>
@@ -33,36 +33,22 @@ const FooterLanding = () => {
               <strong style={{ color: "#FFF", opacity: 1 }}>
                 {t("9 років")}
               </strong>
-              , {t("пройшла всі техніки, від трешу до шикарних робіт")}
             </div>
           </div>
           <div className={classes.textBlockWrapper}>
             <span className={classes.lineShort} />
-            <div>
-              {t("Переможниця чемпіонатів")},{" "}
-              <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                {t("спікер та суддя")}
-              </strong>{" "}
-              {t("українських та міжнародних конференцій")}.
-            </div>
+            <div>{t("Переможниця чемпіонатів")}, </div>
           </div>
 
           <div className={classes.textBlockWrapper}>
             <span className={classes.lineShort} />
-            <div>
-              {t("Досвід роботи")}{" "}
-              <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                {t("9 років")}
-              </strong>
-              , {t("пройшла всі техніки, від трешу до шикарних робіт")}
-            </div>
+            <div>{t("Пройшла всі техніки, від трешу до шикарних робіт")}</div>
           </div>
           <div className={classes.textBlockWrapper}>
             <span className={classes.lineShort} />
             <div>
-              {t("Переможниця чемпіонатів")},{" "}
               <strong style={{ color: "#FFF1E8", opacity: 1 }}>
-                {t("спікер та суддя")}
+                {t("Спікер та суддя")}
               </strong>{" "}
               {t("українських та міжнародних конференцій")}.
             </div>
@@ -93,16 +79,14 @@ const FooterLanding = () => {
             <div className={classes.textBlockWrapper}>
               <div>
                 {t("Досвід роботи")}{" "}
-                <strong style={{ color: "#FFE5D1" }}>{t("9 років")}</strong>,{" "}
-                {t("пройшла всі техніки, від трешу до шикарних робіт")}
+                <strong style={{ color: "#FFE5D1" }}>{t("9 років")}</strong>
               </div>
               <span className={classes.lineLong} />
             </div>
             <div className={classes.textBlockWrapper}>
               <div>
-                {t("Переможниця чемпіонатів")},{" "}
                 <strong style={{ color: "#FFE5D1" }}>
-                  {t("спікер та суддя")}
+                  {t("Спікер та суддя")}
                 </strong>{" "}
                 {t("українських та міжнародних конференцій")}.
               </div>
@@ -112,21 +96,11 @@ const FooterLanding = () => {
           <div className={classes.rightBlock}>
             <div className={classes.textBlockWrapper}>
               <span className={classes.lineLong} />
-              <div>
-                {t("Досвід роботи")}{" "}
-                <strong style={{ color: "#FFE5D1" }}>{t("9 років")}</strong>,{" "}
-                {t("пройшла всі техніки, від трешу до шикарних робіт")}
-              </div>
+              <div>{t("Пройшла всі техніки, від трешу до шикарних робіт")}</div>
             </div>
             <div className={classes.textBlockWrapper}>
               <span className={classes.lineShort} />
-              <div>
-                {t("Переможниця чемпіонатів")},{" "}
-                <strong style={{ color: "#FFE5D1" }}>
-                  {t("спікер та суддя")}
-                </strong>{" "}
-                {t("українських та міжнародних конференцій")}.
-              </div>
+              <div>{t("Переможниця чемпіонатів")} </div>
             </div>
           </div>
         </div>

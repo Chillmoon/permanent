@@ -8,7 +8,6 @@ const retrievePaymentData = async (userId: any) => {
 
     if (snapshot.exists()) {
       const paymentData = snapshot.val();
-
       return paymentData;
     } else {
       return null;
