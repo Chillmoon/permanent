@@ -1,11 +1,20 @@
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { RootState } from "../../../app/store";
 
 import useStyles from "./styles";
 
 const Rates = () => {
   const classes = useStyles();
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const user = useSelector((state: RootState) => state.user.user);
+  console.log(user);
 
   return (
     <div className={classes.wrapper}>
@@ -37,7 +46,12 @@ const Rates = () => {
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.button}
-              onClick={() => console.log("button")}
+              onClick={() =>
+                user?.uid
+                  ? (window.location.href =
+                      "https://pay.fondy.eu/s/bNRqXwTx8Sz")
+                  : navigate("/login")
+              }
             >
               {t("Придбати зараз")}
             </button>
@@ -71,7 +85,12 @@ const Rates = () => {
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.blackButton}
-              onClick={() => console.log("button")}
+              onClick={() =>
+                user?.uid
+                  ? (window.location.href =
+                      "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO")
+                  : navigate("/login")
+              }
             >
               {t("Придбати зараз")}
             </button>

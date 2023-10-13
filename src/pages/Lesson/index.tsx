@@ -12,12 +12,20 @@ import MobileLesson from "./MobileLesson";
 import HomeworkUploader from "../../components/HomeworkUploader";
 
 import useStyles from "./styles";
+import { useEffect, useState } from "react";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 const LessonPage = () => {
   const classes = useStyles();
   const { t } = useTranslation();
 
+  const user = useSelector((state: RootState) => state.user.user);
+
   const { lessonNumber } = useParams();
+  const [hasPaidForCourse, setHasPaidForCourse] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const blockLabel = findBlockLabelById(
     courses,
@@ -29,6 +37,23 @@ const LessonPage = () => {
   const handleDownloadFile = (fileUrl: string, fileName: string) => {
     window.open(fileUrl, "_blank");
   };
+
+  useEffect(() => {
+    setIsLoading(true);
+    retrievePaymentData(user?.uid)
+      .then((paymentData) => {
+        if (paymentData) {
+          console.log(paymentData);
+          // setHasPaidForCourse(true);
+          // setIsLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Error checking payment data:", error);
+      });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.uid]);
 
   return (
     <>

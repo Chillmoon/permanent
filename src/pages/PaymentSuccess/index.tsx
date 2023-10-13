@@ -43,7 +43,8 @@ const PaymentSuccessPage = () => {
     const payedCourse = paramsObject.product_id
       ? paramsObject.product_id.slice(0, -5)
       : "";
-
+    console.log(payedCourse, "payedCourse");
+    console.log(paymentRate, "paymentRate");
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);
       if (payedCourse === "eyeliner") {

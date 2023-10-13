@@ -52,9 +52,9 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        {shouldRedirect && (
+        {/* {shouldRedirect && (
           <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
-        )}
+        )} */}
         <Route
           path="/courses"
           element={
