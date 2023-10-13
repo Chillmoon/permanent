@@ -13,7 +13,7 @@ export type RootState = {
     isLoading: boolean;
     language: "ua" | "ru";
     isPayed: {
-      eyeliner: {
+      fastEyeliner: {
         isPayed: false;
         orderId: string;
         merchantId: string;

@@ -1,13 +1,14 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { useSelector } from "react-redux";
-
-import ProgressCard from "../../components/ProgressCard";
-import { RootState } from "../../app/store";
-import HomePageSkeleton from "../../components/Skeletons/HomePageSkeleton";
-
-import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+import { RootState } from "../../app/store";
+import HomePageSkeleton from "../../components/Skeletons/HomePageSkeleton";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
+
+import useStyles from "./styles";
+import { useEffect } from "react";
 
 const cardData = [
   {
@@ -26,12 +27,20 @@ const cardData = [
 const HomePage = () => {
   const classes = useStyles();
   const isLoading = useSelector((state: RootState) => state.user.isLoading);
+  const userId = useSelector((state: RootState) => state.user.user?.uid);
+
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const isCourseAvailable = useSelector(
-    (state: RootState) => state.user.isPayed.eyeliner.isPayed
-  );
+  useEffect(() => {
+    const isPayed = retrievePaymentData(userId);
+
+    if (!isPayed) {
+      navigate("/courses/eyeliner");
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
