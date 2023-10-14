@@ -149,12 +149,14 @@ const PaymentSuccessPage = () => {
               "У тебе зараз немає доступних курсів, але ти можеш придбати курс «FAST EYELINER»"
             )}
           </div>
-          <button
-            className={classes.button}
-            onClick={() => navigate(`/courses/fastEyeliner`)}
-          >
-            {t("Деталі про курс")}
-          </button>
+          <div className={classes.buttonWrapper}>
+            <button
+              className={classes.button}
+              onClick={() => navigate(`/courses/fastEyeliner`)}
+            >
+              {t("Деталі про курс")}
+            </button>
+          </div>
         </>
       )}
     </div>

@@ -74,6 +74,14 @@ const useStyles = makeStyles({
       fontSize: 16,
     },
   },
+  buttonWrapper: {
+    position: "relative",
+    marginTop: 20,
+    height: 120,
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+  },
   button: {
     position: "absolute",
     bottom: 50,
@@ -89,7 +97,6 @@ const useStyles = makeStyles({
     textTransform: "uppercase",
     fontWeight: 600,
     fontSize: 18,
-    marginTop: 20,
 
     "&:hover": {
       marginTop: 22,
@@ -101,9 +108,6 @@ const useStyles = makeStyles({
         "radial-gradient(69.13% 99.35% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%)",
     },
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
-    "@media (max-width:1000px)": {
-      bottom: 20,
-    },
   },
 });
 
