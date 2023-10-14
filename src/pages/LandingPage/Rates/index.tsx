@@ -66,8 +66,7 @@ const Rates = () => {
                 if (rate === "Rate1" || rate === "Rate2") {
                   navigate("/platform");
                 } else if (user?.uid) {
-                  window.location.href =
-                    "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+                  window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
                 } else {
                   navigate("/login");
                 }

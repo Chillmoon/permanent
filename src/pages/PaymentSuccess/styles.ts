@@ -36,6 +36,8 @@ const useStyles = makeStyles({
     },
   },
   text: {
+    maxWidth: 800,
+    textAlign: "center",
     zIndex: 2,
     fontSize: 45,
     fontWeight: 600,
@@ -71,6 +73,36 @@ const useStyles = makeStyles({
     marginBottom: 10,
     "@media (max-width:1000px)": {
       fontSize: 16,
+    },
+  },
+  button: {
+    position: "absolute",
+    bottom: 70,
+    background:
+      "var(--BTN_MAIN, radial-gradient(29.03% 41.72% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%))",
+    padding: "19px 25px 18px 25px",
+    borderRadius: 15,
+    border: "none",
+    color: "#FFF",
+    borderBottom: "5px solid #482B19",
+    width: 250,
+    zIndex: 1000,
+    textTransform: "uppercase",
+    fontWeight: 600,
+    fontSize: 18,
+    marginTop: 20,
+    "&:hover": {
+      marginTop: 22,
+      cursor: "pointer",
+      borderBottom: "none",
+      filter: "drop-shadow(0px 0px 40px #B7703D)",
+      transition: "all 0.3s ease",
+      background:
+        "radial-gradient(69.13% 99.35% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%)",
+    },
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    "@media (max-width:1000px)": {
+      marginBottom: 0,
     },
   },
 });

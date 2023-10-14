@@ -11,6 +11,7 @@ import { auth, realtimeDb } from "../../app/features/firebase";
 import Timer from "../../components/Timer";
 
 import useStyles from "./styles";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
 
 const PaymentSuccessPage = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const PaymentSuccessPage = () => {
   const user = useSelector((state: RootState) => state.user.user);
   const { t } = useTranslation();
 
-  const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(true);
+  const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
 
   const savePaymentData = async (
     userId: string,
@@ -53,6 +54,23 @@ const PaymentSuccessPage = () => {
   };
 
   useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const isPayed = await retrievePaymentData(user?.uid);
+
+        if (isPayed !== null) {
+          setIsPaymentSuccessful(true);
+        }
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+
+    checkPaymentStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const paramsObject = Object.fromEntries(searchParams.entries());
     const paymentRate = paramsObject.product_id
@@ -61,7 +79,6 @@ const PaymentSuccessPage = () => {
     const payedCourse = paramsObject.product_id
       ? paramsObject.product_id.slice(0, -5)
       : "";
-
     if (paramsObject.order_status === "approved") {
       setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
@@ -118,7 +135,25 @@ const PaymentSuccessPage = () => {
           </div>
         </>
       ) : (
-        <div className={classes.text}>{t("Помилка під час оплати")}</div>
+        <>
+          <div className={classes.text}>
+            {t("Вітаю")},{displayName} !
+          </div>
+          <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
+          <Timer isLanding={false} />
+          <br />
+          <div className={classes.text}>
+            {t(
+              "У тебе зараз немає доступних курсів, але ти можеш придбати курс «FAST EYELINER»"
+            )}
+          </div>
+          <button
+            className={classes.button}
+            onClick={() => navigate(`/courses/fastEyeliner`)}
+          >
+            {t("Деталі про курс")}
+          </button>
+        </>
       )}
     </div>
   );
