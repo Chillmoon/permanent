@@ -90,6 +90,7 @@ const PaymentSuccessPage = () => {
           rate: paymentRate,
           orderId: paramsObject.order_id,
           signature: paramsObject.signature,
+          orderTime: paramsObject.order_time,
         };
         dispatch(
           setIsPayed({
