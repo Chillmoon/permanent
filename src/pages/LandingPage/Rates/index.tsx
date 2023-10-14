@@ -57,8 +57,8 @@ const Rates = () => {
                 </div>
               </li>
             </ul>
-            <div className={classes.originalPrice}>$190</div>
-            <div className={classes.discountedPrice}>$150</div>
+            <div className={classes.originalPrice}>€190</div>
+            <div className={classes.discountedPrice}>€150</div>
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.button}
@@ -102,8 +102,8 @@ const Rates = () => {
                 <strong>{t("Чат-підтримка протягом 3х місяців")}</strong>
               </li>
             </ul>
-            <div className={classes.originalPrice}>$250</div>
-            <div className={classes.discountedPrice}>$190</div>
+            <div className={classes.originalPrice}>€250</div>
+            <div className={classes.discountedPrice}>€190</div>
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
             <button
               className={classes.blackButton}
