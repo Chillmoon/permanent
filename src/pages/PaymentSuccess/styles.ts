@@ -11,6 +11,9 @@ const useStyles = makeStyles({
     fontFamily: `"Exo 2", sans-serif !important`,
     "@media (max-width:1000px)": {
       margin: "0 20px",
+      marginTop: 150,
+      height: "100vh",
+      justifyContent: "start",
     },
   },
   backgroundDetails: {
@@ -47,9 +50,13 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       fontSize: 40,
       textAlign: "center",
+      "@media (max-width:1000px)": {
+        fontSize: 35,
+      },
     },
   },
   textSmall: {
+    textAlign: "center",
     zIndex: 2,
     fontSize: 27,
     marginTop: 30,
@@ -61,6 +68,7 @@ const useStyles = makeStyles({
     marginBottom: 10,
   },
   textTiny: {
+    textAlign: "center",
     zIndex: 2,
     fontSize: 14,
     marginTop: 5,
