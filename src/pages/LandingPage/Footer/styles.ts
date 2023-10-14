@@ -125,6 +125,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       marginBottom: 0,
       color: "#FFF",
+      textAlign: "center",
     },
   },
   nameWrapper: {
