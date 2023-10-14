@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
-import { t } from "i18next";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 import { userSlice } from "../../app/features/userSlice";
 import { RootState } from "../../app/store";
 import { auth, realtimeDb } from "../../app/features/firebase";
+import Timer from "../../components/Timer";
 
 import useStyles from "./styles";
-import Timer from "../../components/Timer";
 
 const PaymentSuccessPage = () => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const PaymentSuccessPage = () => {
   const dispatch = useDispatch();
   const { setIsPayed } = userSlice.actions;
   const user = useSelector((state: RootState) => state.user.user);
+  const { t } = useTranslation();
 
   const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(true);
 
@@ -46,14 +47,10 @@ const PaymentSuccessPage = () => {
         templateParams,
         "Z7CUCUgFvHXqj-qZg"
       )
-      .then((response) => {
-        console.log("Email sent:", response);
-      })
       .catch((error) => {
         console.error("Email not sent:", error);
       });
   };
-  console.log(t("templateID"));
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);

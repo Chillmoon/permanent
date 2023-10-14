@@ -133,7 +133,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: "-7px",
+    marginTop: "11px",
   },
   username: {
     color: "#FFF",
