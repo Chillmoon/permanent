@@ -59,7 +59,7 @@ const PaymentSuccessPage = () => {
         const isPayed = await retrievePaymentData(user?.uid);
 
         if (isPayed !== null) {
-          setIsPaymentSuccessful(true);
+          setIsPaymentSuccessful(false);
         }
       } catch (error) {
         console.error("Error checking payment status:", error);
@@ -137,7 +137,9 @@ const PaymentSuccessPage = () => {
       ) : (
         <>
           <div className={classes.text}>
-            {t("Вітаю")},{displayName} !
+            {t("Вітаю")},
+            <br />
+            {displayName}
           </div>
           <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
           <Timer isLanding={false} />

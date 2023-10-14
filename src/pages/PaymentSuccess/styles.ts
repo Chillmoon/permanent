@@ -8,7 +8,6 @@ const useStyles = makeStyles({
     alignItems: "center",
     height: "100vh",
 
-    overflow: "hidden",
     fontFamily: `"Exo 2", sans-serif !important`,
     "@media (max-width:1000px)": {
       margin: "0 20px",
@@ -77,7 +76,7 @@ const useStyles = makeStyles({
   },
   button: {
     position: "absolute",
-    bottom: 70,
+    bottom: 50,
     background:
       "var(--BTN_MAIN, radial-gradient(29.03% 41.72% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%))",
     padding: "19px 25px 18px 25px",
@@ -91,6 +90,7 @@ const useStyles = makeStyles({
     fontWeight: 600,
     fontSize: 18,
     marginTop: 20,
+
     "&:hover": {
       marginTop: 22,
       cursor: "pointer",
@@ -102,7 +102,7 @@ const useStyles = makeStyles({
     },
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (max-width:1000px)": {
-      marginBottom: 0,
+      bottom: 20,
     },
   },
 });
