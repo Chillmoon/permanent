@@ -46,8 +46,7 @@ const useStyles = makeStyles({
     marginBottom: 20,
   },
   headerMobile: {
-    // backgroundColor: "red",
-    height: "100vh",
+    height: "100%",
     marginTop: 100,
     width: "100% !important",
     backgroundImage: "linear-gradient(104deg, #ffd7bb -10.85%, #fff 102.7%)",
