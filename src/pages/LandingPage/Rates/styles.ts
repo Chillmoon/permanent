@@ -52,6 +52,7 @@ const useStyles = makeStyles({
     },
   },
   card: {
+    position: "relative",
     margin: 20,
     borderRadius: 16,
     border: "2px solid #FFF",
@@ -172,10 +173,10 @@ const useStyles = makeStyles({
     },
   },
   label: {
-    transform: "rotate(12deg)",
+    transform: "rotate(6deg)",
     position: "absolute",
-    top: 85,
-    right: 220,
+    top: "-35px",
+    right: "-30px",
     color: "#FFF",
     backgroundColor: "#B7703D",
     borderRadius: 12,
@@ -189,8 +190,8 @@ const useStyles = makeStyles({
       fontSize: 25,
     },
     "@media (max-width:1000px)": {
-      top: 910,
-      right: 0,
+      top: "-20px",
+      right: "-10px",
       marginRight: "-5px",
     },
   },
