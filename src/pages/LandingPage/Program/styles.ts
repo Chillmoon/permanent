@@ -77,12 +77,14 @@ const useStyles = makeStyles({
     },
   },
   tableBody: {
-    padding: 20,
     fontFamily: `"Exo 2", sans-serif !important`,
+    width: "100%",
+
     "&>ul": {
+      margin: 20,
       color: "#8D7467",
       padding: "0px 0px 0px 20px",
-      margin: 0,
+
       display: "flex",
       flexDirection: "column",
       gap: 16,

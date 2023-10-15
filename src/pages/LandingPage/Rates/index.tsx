@@ -8,6 +8,7 @@ import { RootState } from "../../../app/store";
 import useStyles from "./styles";
 import { useEffect, useState } from "react";
 import retrievePaymentData from "../../../app/functions/retrievePaymentData";
+import { Opacity } from "@mui/icons-material";
 
 const Rates = () => {
   const classes = useStyles();
@@ -42,21 +43,142 @@ const Rates = () => {
           <div className={classes.card}>
             <div className={classes.cardTitle}>Classic</div>
             <ul className={classes.cardList}>
-              <li>{t("Практичні демонстрації")}</li>
-              <li>{t("Теоретичний блок")}</li>
-              <li>{t("Пігметнологія пігментів для очей")}</li>
-              <li>{t("Доступ на платформі 3 місяці")}</li>
-              <li>
-                <div className={classes.cardListItemLined}>
-                  {t("Zoom з Вікторією питання/відповіді")}
+              <li
+                style={{
+                  fontSize: 18,
+                  listStyle: "none",
+                }}
+              >
+                <div>
+                  {" "}
+                  {t("Доступ на платформі")} <strong> {t("6 місяців")}</strong>
                 </div>
               </li>
-              <li>
-                <div className={classes.cardListItemLined}>
-                  {t("Чат-підтримка протягом 3х місяців")}
-                </div>
+              <li style={{ fontWeight: 700, fontSize: 16 }}>
+                {t("Теоретичний блок")}:
+                <ul
+                  style={{
+                    listStyle: "none",
+                    fontWeight: 270,
+                    padding: 0,
+                    fontSize: 14,
+                    gap: 7,
+                  }}
+                >
+                  <li>{t("Голки")}</li>
+                  <li>{t("Апарати")}</li>
+                  <li>{t("Пігментологія")}</li>
+                  <li>{t("Опік рогівки")}</li>
+                  <li>
+                    {t(
+                      "Особливості техніки виконання міжвійки за 15 хвилин з ідеальним загоєнням"
+                    )}
+                  </li>
+                  <li>{t("Фото міжвійки, світло, лінза, ракурси")}</li>
+                  <li
+                    style={{
+                      marginTop: 5,
+                      textDecoration: "line-through",
+                      opacity: 0.7,
+                    }}
+                  >
+                    - {t("особливості роботи з віковими клієнтами")}
+                  </li>
+                  <li
+                    style={{
+                      marginTop: 5,
+                      textDecoration: "line-through",
+                      opacity: 0.7,
+                    }}
+                  >
+                    -{" "}
+                    {t("особливості виконання міжвійки коричневими пігментами")}
+                  </li>
+                  <li
+                    style={{
+                      marginTop: 5,
+                      textDecoration: "line-through",
+                      opacity: 0.7,
+                    }}
+                  >
+                    -{" "}
+                    {t(
+                      "правила роботи з коричневим пігментом, щоб міжвійка виглядала яскраво і не виходила через червоний"
+                    )}
+                  </li>
+                </ul>
+                <li
+                  style={{
+                    fontWeight: 700,
+                    fontSize: 16,
+                    listStyle: "none",
+                    marginTop: 10,
+                  }}
+                >
+                  {t("Практика")}:
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      fontWeight: 270,
+                      padding: 0,
+                      fontSize: 14,
+                      width: 300,
+                      gap: 7,
+                    }}
+                  >
+                    <li>{t("Показова робота на міжвійці пучком")}</li>
+                    <li>{t("Правильна постановка рук і натяжка шкіри")}</li>
+                    <li
+                      style={{
+                        marginTop: 5,
+                        textDecoration: "line-through",
+                        opacity: 0.7,
+                      }}
+                    >
+                      -{" "}
+                      {t(
+                        "показова робота на моделі коричневим пігментом на моделі 60+ "
+                      )}
+                    </li>
+                    <li
+                      style={{
+                        marginTop: 5,
+                        textDecoration: "line-through",
+                        opacity: 0.7,
+                      }}
+                    >
+                      - {t("правильна натяжка на вікових клієнтах")}
+                    </li>
+                  </ul>
+                </li>
               </li>
             </ul>
+            <img
+              style={{ opacity: 0.5 }}
+              className={classes.bonus}
+              src="../../assets/crossedBonus.svg"
+            />
+            <strong
+              style={{
+                color: "#E8A41A",
+                fontSize: 14,
+                textDecoration: "line-through",
+                opacity: 0.7,
+              }}
+            >
+              {t("Груповий Zoom з Вікторією")}
+            </strong>
+            <strong
+              style={{
+                color: "#E8A41A",
+                fontSize: 14,
+                textDecoration: "line-through",
+                opacity: 0.7,
+                marginBottom: 5,
+              }}
+            >
+              {t("Чат-підтримка протягом 3х місяців")}
+            </strong>
             <div className={classes.originalPrice}>€190</div>
             <div className={classes.discountedPrice}>€150</div>
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>
@@ -80,27 +202,96 @@ const Rates = () => {
         </div>
         <div className={classes.cardWrapper1}>
           <div className={classes.card}>
-            <div className={classes.label}>
-              {t("залишилось")}
-              <div>{t("11 місць")}</div>
-            </div>
+            <div className={classes.label}>{t("Місця обмежені")}</div>
             <div className={classes.cardTitle}>Advanced</div>
             <ul className={classes.cardList}>
-              <li>{t("Практичні демонстрації")}</li>
-              <li>{t("Теоретичний блок")}</li>
-              <li>{t("Пігметнологія пігментів для очей")}</li>
-              <li>
+              <li
+                style={{
+                  fontSize: 18,
+                  listStyle: "none",
+                }}
+              >
                 <div>
-                  {t("Доступ на платформі")} <strong>{t("6 місяців")}</strong>
+                  {" "}
+                  {t("Доступ на платформі")} <strong> {t("6 місяців")}</strong>
                 </div>
               </li>
-              <li>
-                <strong>{t("Zoom з Вікторією питання/відповіді")}</strong>
-              </li>
-              <li>
-                <strong>{t("Чат-підтримка протягом 3х місяців")}</strong>
+              <li style={{ fontWeight: 700, fontSize: 16 }}>
+                {t("Теоретичний блок")}:
+                <ul
+                  style={{
+                    listStyle: "none",
+                    fontWeight: 270,
+                    padding: 0,
+                    fontSize: 14,
+                    gap: 7,
+                  }}
+                >
+                  <li>{t("Голки")}</li>
+                  <li>{t("Апарати")}</li>
+                  <li>{t("Пігментологія")}</li>
+                  <li>{t("Опік рогівки")}</li>
+                  <li>
+                    {t(
+                      "Особливості техніки виконання міжвійки за 15 хвилин з ідеальним загоєнням"
+                    )}
+                  </li>
+                  <li>{t("Фото міжвійки, світло, лінза, ракурси")}</li>
+                  <li style={{ marginTop: 5, fontWeight: 700 }}>
+                    + {t("особливості роботи з віковими клієнтами")}
+                  </li>
+                  <li style={{ marginTop: 5, fontWeight: 700 }}>
+                    +{" "}
+                    {t("особливості виконання міжвійки коричневими пігментами")}
+                  </li>
+                  <li style={{ marginTop: 5, fontWeight: 700 }}>
+                    +{" "}
+                    {t(
+                      "правила роботи з коричневим пігментом, щоб міжвійка виглядала яскраво і не виходила через червоний"
+                    )}
+                  </li>
+                </ul>
+                <li
+                  style={{
+                    fontWeight: 700,
+                    fontSize: 16,
+                    listStyle: "none",
+                    marginTop: 10,
+                  }}
+                >
+                  {t("Практика")}:
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      fontWeight: 270,
+                      padding: 0,
+                      fontSize: 14,
+                      width: 300,
+                      gap: 7,
+                    }}
+                  >
+                    <li>{t("Показова робота на міжвійці пучком")}</li>
+                    <li>{t("Правильна постановка рук і натяжка шкіри")}</li>
+                    <li style={{ marginTop: 5, fontWeight: 700 }}>
+                      +{" "}
+                      {t(
+                        "показова робота на моделі коричневим пігментом на моделі 60+ "
+                      )}
+                    </li>
+                    <li style={{ marginTop: 5, fontWeight: 700 }}>
+                      + {t("правильна натяжка на вікових клієнтах")}
+                    </li>
+                  </ul>
+                </li>
               </li>
             </ul>
+            <img className={classes.bonus} src="../../assets/bonus.svg" />
+            <strong style={{ color: "#E8A41A", fontSize: 14 }}>
+              {t("Груповий Zoom з Вікторією")}
+            </strong>
+            <strong style={{ color: "#E8A41A", fontSize: 14, marginBottom: 5 }}>
+              {t("Чат-підтримка протягом 3х місяців")}
+            </strong>
             <div className={classes.originalPrice}>€250</div>
             <div className={classes.discountedPrice}>€190</div>
             <div className={classes.priceDescription}>{t("до 17 жовтня")}</div>

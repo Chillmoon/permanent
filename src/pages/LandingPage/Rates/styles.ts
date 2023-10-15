@@ -55,14 +55,14 @@ const useStyles = makeStyles({
     margin: 20,
     borderRadius: 16,
     border: "2px solid #FFF",
-    height: 475,
+    height: 728,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "40px 20px",
+    padding: "30px 20px",
     "@media (max-width:1000px)": {
       margin: 5,
-      padding: "35px 20px 20px 20px",
+      padding: "30px 20px 20px 20px",
       height: "100%",
     },
   },
@@ -79,8 +79,8 @@ const useStyles = makeStyles({
     alignItems: "center",
     flexDirection: "column",
     padding: 0,
-    gap: 20,
-    marginBottom: 40,
+    gap: 10,
+    marginBottom: 30,
     "@media (max-width:1000px)": {
       marginBottom: 30,
       gap: 15,
@@ -103,6 +103,7 @@ const useStyles = makeStyles({
   originalPrice: {
     fontSize: 16,
     color: "#FFF",
+    marginBottom: "-10px",
     textDecorationLine: "line-through",
     "@media (max-width:1000px)": {
       color: "rgba(255, 255, 255, 0.60)",
@@ -110,7 +111,9 @@ const useStyles = makeStyles({
   },
   discountedPrice: { fontSize: 40, color: "#FFF", fontWeight: 700 },
   priceDescription: {
+    fontSize: 12,
     color: "#FFF",
+    marginTop: "-7px",
   },
   button: {
     position: "relative",
@@ -186,7 +189,7 @@ const useStyles = makeStyles({
       fontSize: 25,
     },
     "@media (max-width:1000px)": {
-      top: 660,
+      top: 910,
       right: 0,
       marginRight: "-5px",
     },
@@ -203,6 +206,26 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       marginBottom: 30,
     },
+  },
+  priceBlock: {
+    position: "absolute",
+    bottom: 50,
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    textAlign: "center",
+  },
+  bonus: {
+    marginTop: "-50px",
+    marginBottom: "-25px",
+    marginLeft: "-40px",
+    width: 150,
+    "@media (max-width:1000px)": {
+      marginTop: "-50px",
+    },
+  },
+  bonusBlock: {
+    display: "flex",
   },
 });
 
