@@ -55,6 +55,19 @@ function App() {
         {shouldRedirect && (
           <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
         )}
+        {shouldRedirect && (
+          <Route
+            path="/platform/:courseId/:lessonNumber"
+            element={<Navigate to="/paymentSuccess" />}
+          />
+        )}
+        {shouldRedirect && (
+          <Route
+            path="/platform/:courseId"
+            element={<Navigate to="/paymentSuccess" />}
+          />
+        )}
+
         <Route
           path="/courses"
           element={

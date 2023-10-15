@@ -6,7 +6,6 @@ import {
   AccordionDetails,
   AccordionSummary,
   Grid,
-  Typography,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -91,7 +90,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                             {section.image && (
                               <img
                                 src={section.image}
-                                alt={section.title}
+                                alt=""
                                 width="100%"
                                 height="100%"
                               />
@@ -160,6 +159,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                 }}
                               >
                                 <img
+                                  alt=""
                                   className={classes.saveIcon}
                                   src={"../../assets/saveIcon.svg"}
                                 />

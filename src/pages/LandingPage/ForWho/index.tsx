@@ -45,9 +45,7 @@ const ForWho = () => {
         "для тих, хто хоче працювати дорого, без корекціі, і з постійним потоком вдячних клієнтів",
     },
   ];
-  {
-    console.log(t(forWhoList[0].description));
-  }
+
   return (
     <div className={classes.forWhoErapper}>
       <img

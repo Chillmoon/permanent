@@ -1,10 +1,8 @@
 import { Typography, useMediaQuery } from "@mui/material";
-
-import CustomButton from "../../components/CustomButton";
-
-import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+import useStyles from "./styles";
 
 const cardData = [
   {

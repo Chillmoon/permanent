@@ -46,8 +46,8 @@ const HomePage = () => {
         console.error("Error checking payment status:", error);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     checkPaymentStatus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return isLoading ? (

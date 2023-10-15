@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useTranslation } from "react-i18next";
@@ -12,7 +13,7 @@ import MobileLesson from "./MobileLesson";
 import HomeworkUploader from "../../components/HomeworkUploader";
 
 import useStyles from "./styles";
-import { useEffect, useState } from "react";
+
 import retrievePaymentData from "../../app/functions/retrievePaymentData";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
@@ -141,6 +142,7 @@ const LessonPage = () => {
                   >
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <img
+                        alt=""
                         className={classes.saveIcon}
                         src={"../../assets/saveIcon.svg"}
                       />
