@@ -1,4 +1,4 @@
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
@@ -130,7 +130,7 @@ const PaymentSuccessPage = () => {
           </div>
           <br />
           <div className={classes.text}>
-            {t("Ти учасниця курсу «FAST EYELINER»")}
+            {t("Ти учасник(-ця) курсу «FAST EYELINER»")}
           </div>
           <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
           <Timer isLanding={false} />
