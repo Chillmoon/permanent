@@ -190,7 +190,7 @@ const Rates = () => {
                 } else if (user?.uid) {
                   window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
                 } else {
-                  navigate("/login");
+                  navigate("/signup");
                 }
               }}
             >
@@ -304,7 +304,7 @@ const Rates = () => {
                   window.location.href =
                     "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
                 } else {
-                  navigate("/login");
+                  navigate("/signup");
                 }
               }}
             >
