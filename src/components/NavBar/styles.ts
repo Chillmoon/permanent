@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     position: "absolute",
     display: "flex",
     zIndex: 1500,
-    left: 50,
+    left: "20px",
     padding: 0,
     textDecoration: "none ",
     "@media (max-width:1000px)": {
@@ -81,9 +81,12 @@ const useStyles = makeStyles({
     display: "none",
     position: "absolute",
     right: "2%",
-    color: "#000000",
+
     "@media (max-width:450px)": {
       display: "flex",
+      position: "absolute",
+      bottom: "-10px",
+      right: "15px",
     },
   },
   menuLink: {
@@ -173,6 +176,29 @@ const useStyles = makeStyles({
   menuExitActive: {
     opacity: 0,
     transform: "scale(0.8)",
+  },
+  languageSelectorWrapper: {
+    display: "none",
+    "@media (max-width:1000px)": {
+      display: "flex",
+      position: "absolute",
+      right: "5px",
+      top: "-3px",
+    },
+  },
+  menuWrapper: {
+    "&>div.MuiPaper-root": {
+      "&.MuiPopover-paper": {
+        "&.MuiMenu-paper": {
+          boxShadow: "none !important",
+          borderRadius: "16px !important",
+          backgroundColor: "#FCF5EF !important",
+          "&>ul": {
+            padding: "10px 0px",
+          },
+        },
+      },
+    },
   },
 });
 

@@ -136,6 +136,9 @@ const NavBar = ({ isBackground = false }) => {
             src={logoUrl}
           />
         </Typography>
+        <div className={classes.languageSelectorWrapper}>
+          <LanguageSelector />
+        </div>
         <Box className={classes.menu}>
           <IconButton
             size="large"
@@ -146,8 +149,15 @@ const NavBar = ({ isBackground = false }) => {
           >
             <MenuIcon />
           </IconButton>
+
           <Menu
             id="menu-appbar"
+            sx={{
+              display: {
+                xs: "block",
+                md: "none",
+              },
+            }}
             anchorEl={anchorElNav}
             anchorOrigin={{
               vertical: "bottom",
@@ -158,18 +168,13 @@ const NavBar = ({ isBackground = false }) => {
               vertical: "top",
               horizontal: "left",
             }}
+            className={classes.menuWrapper}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
-            sx={{
-              display: {
-                xs: "block",
-                md: "none",
-              },
-            }}
           >
-            <MenuItem key="language" onClick={handleCloseNavMenu}>
+            {/* <MenuItem key="language" onClick={handleCloseNavMenu}>
               <LanguageSelector />
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem key="settings" onClick={() => navigate("/platform")}>
               <Typography className={classes.menuLink}>
                 {t("Кабінет")}
@@ -197,14 +202,8 @@ const NavBar = ({ isBackground = false }) => {
               <MenuItem key="logOut" onClick={handleLogOut}>
                 <Typography
                   sx={{
-                    "&::after": {
-                      content: `" "`,
-                      display: "block",
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "black",
-                      marginTop: "-5px",
-                    },
+                    color: "#39291E",
+                    fontWeight: 700,
                   }}
                   textAlign="center"
                 >
