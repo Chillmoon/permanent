@@ -19,6 +19,7 @@ import PaymentSuccessPage from "./pages/PaymentSuccess";
 
 import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer";
+import FacebookPixel from "./components/FacebookPixel/FacebookPixel";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ function App() {
   return (
     <>
       <NavBar />
+      <FacebookPixel />
       <Routes>
         {shouldRedirect && (
           <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
