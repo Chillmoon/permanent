@@ -180,6 +180,9 @@ const NavBar = ({ isBackground = false }) => {
                 {t("Кабінет")}
               </Typography>
             </MenuItem>
+            <MenuItem key="settings" onClick={() => navigate("/")}>
+              <Typography className={classes.menuLink}>{t("Курси")}</Typography>
+            </MenuItem>
             {/* <MenuItem key="students" onClick={() => navigate("/students")}>
               {isAccessToStudentsAllowed && (
                 <Typography className={classes.menuLink}>

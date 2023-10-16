@@ -195,6 +195,12 @@ const useStyles = makeStyles({
           backgroundColor: "#FCF5EF !important",
           "&>ul": {
             padding: "10px 0px",
+            "&>li": {
+              padding: "0px 16px",
+              minHeight: "40px !important",
+
+              lineHeight: 20,
+            },
           },
         },
       },
