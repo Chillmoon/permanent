@@ -64,17 +64,11 @@ const Header = () => {
             >
               {t("Придбати курс")}
             </Link>
-            {/* <button
-              className={classes.button}
-              onClick={() => console.log("button")}
-            >
-              {t("Придбати курс")}
-            </button> */}
           </div>
-          <div className={classes.counterDescription}>
+          {/* <div className={classes.counterDescription}>
             {t("до кінця знижки залишилось")}
           </div>
-          <Timer />
+          <Timer /> */}
         </div>
       ) : (
         <div className={classes.header}>
@@ -91,10 +85,10 @@ const Header = () => {
             <div className={classes.courseDescription}>
               {t("Курс по виконанню міжвійної зони з ідеальним загоєнням")}
             </div>
-            <div className={classes.counterDescription}>
+            {/* <div className={classes.counterDescription}>
               {t("до кінця знижки залишилось")}
             </div>
-            <Timer />
+            <Timer /> */}
             <div className={classes.buttonWrapper}>
               <img
                 className={classes.lightButton}
