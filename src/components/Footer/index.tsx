@@ -72,14 +72,17 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
           {t("ФОП Вікторія Кушнір")}
         </Button>
         <div className={classes.linksWrapper}>
-          <IconButton href="https://www.google.com/" target="_blank">
+          <IconButton
+            href="https://www.instagram.com/permanent.by.kushnir/"
+            target="_blank"
+          >
             <img
               style={{ width: 35 }}
               src="../../assets/insta.svg"
               alt="Instagram"
             />
           </IconButton>
-          <IconButton href="https://www.google.com/" target="_blank">
+          <IconButton href="https://t.me/victoria04251" target="_blank">
             <img
               style={{ width: 35 }}
               src="../../assets/telegram.svg"
@@ -142,7 +145,7 @@ const Footer = ({ isSidebar = false, isTransparent = false }) => {
             alt="Instagram"
           />
         </IconButton>
-        <IconButton href="https://www.google.com/" target="_blank">
+        <IconButton href="https://t.me/victoria04251" target="_blank">
           <img
             style={{ width: 35 }}
             src="../../assets/telegram.svg"
