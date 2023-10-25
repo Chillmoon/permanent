@@ -53,7 +53,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
       {nodes.map((block: any) => (
         <Grid container key={block.id} className={classes.mobileLessonElement}>
           <Grid item lg={4} xs={12} className={classes.mobileLessonLabel}>
-            {block.label}
+            {t(block.label)}
             <hr className={classes.horizontalLine} />
           </Grid>
           <Grid item lg={8} xs={12}>
@@ -71,7 +71,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                     expandIcon={<ExpandMoreIcon />}
                     className={classes.mobileLessonAccordionSummary}
                   >
-                    {lesson.label}
+                    {t(lesson.label)}
                   </AccordionSummary>
                   <AccordionDetails
                     className={classes.mobileLessonAccordionDetails}

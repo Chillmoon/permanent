@@ -207,7 +207,6 @@ const useStyles = makeStyles({
     fontSize: 16,
     lineHeight: "22px",
     color: "rgba(0, 0, 0, 0.5)",
-    display: "flex",
     zIndex: 2,
     padding: "0px 20px  !important",
   },

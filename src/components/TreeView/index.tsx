@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useTranslation } from "react-i18next";
 
 interface TreeViewProps {
   courses: AllCourses;
@@ -23,6 +24,7 @@ interface Module {
 
 const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
   const { courseId } = useParams();
+  const { t } = useTranslation();
   const selectedCourse = courses.find((course) => course.id === courseId);
   const classes = useStyles();
 
@@ -40,7 +42,7 @@ const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
               expandIcon={<ExpandMoreIcon />}
               className={classes.accordionSummary}
             >
-              <Typography>{node.label}</Typography>
+              <Typography>{t(node.label)}</Typography>
             </AccordionSummary>
             <AccordionDetails>{renderTree(node.children)}</AccordionDetails>
           </Accordion>
@@ -51,7 +53,7 @@ const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
             data-id={node.id}
             className={classes.accordionLinks}
           >
-            <Typography>{node.label}</Typography>
+            <Typography>{t(node.label)}</Typography>
           </Link>
         )
       )}

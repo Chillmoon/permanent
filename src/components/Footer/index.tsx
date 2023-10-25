@@ -1,5 +1,4 @@
 import { Button, IconButton, useMediaQuery } from "@mui/material";
-import { Telegram, Instagram } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 

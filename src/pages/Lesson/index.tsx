@@ -67,9 +67,11 @@ const LessonPage = () => {
         />
         <SideBar />
         <div className={classes.lessonPageMainBlock}>
-          <Typography className={classes.moduleLabel}>{blockLabel}</Typography>
+          <Typography className={classes.moduleLabel}>
+            {blockLabel && t(blockLabel)}
+          </Typography>
           <Typography className={classes.lessonLabel} variant="h5">
-            {lesson?.label}
+            {lesson?.label && t(lesson.label)}
           </Typography>
           <div className={classes.lessonInfo}>
             {lesson?.info?.map((section, index) => (
