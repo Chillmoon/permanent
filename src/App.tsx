@@ -56,20 +56,21 @@ function App() {
       <FacebookPixel />
       <TechSupport />
       <Routes>
-        {shouldRedirect && (
-          <Route path="/platform" element={<Navigate to="/paymentSuccess" />} />
-        )}
-        {shouldRedirect && (
-          <Route
-            path="/platform/:courseId/:lessonNumber"
-            element={<Navigate to="/paymentSuccess" />}
-          />
-        )}
-        {shouldRedirect && (
-          <Route
-            path="/platform/:courseId"
-            element={<Navigate to="/paymentSuccess" />}
-          />
+        {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
+          <>
+            <Route
+              path="/platform"
+              element={<Navigate to="/paymentSuccess" />}
+            />
+            <Route
+              path="/platform/:courseId/:lessonNumber"
+              element={<Navigate to="/paymentSuccess" />}
+            />
+            <Route
+              path="/platform/:courseId"
+              element={<Navigate to="/paymentSuccess" />}
+            />
+          </>
         )}
 
         <Route

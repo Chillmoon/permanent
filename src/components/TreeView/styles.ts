@@ -11,13 +11,22 @@ const useStyles = makeStyles({
           },
         },
       },
+      "&>div.MuiCollapse-root": {
+        marginTop: 4,
+
+        "&>div>div>div>div": {
+          paddingLeft: 30,
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+        },
+      },
     },
 
     "& a": {
       textDecoration: "none",
       color: "#FFF",
       fontWeight: "bold",
-      marginLeft: 10,
 
       "&>p": {
         fontSize: "14px !important",
@@ -34,7 +43,8 @@ const useStyles = makeStyles({
       borderBottom: "1px solid #FFF",
       width: 225,
       marginTop: 20,
-      paddingBottom: 10,
+      paddingBottom: 0,
+      paddingLeft: 0,
       "&>div>p": {
         color: "#FFF",
         fontFamily: `"Noto Serif", sans-serif !important`,
@@ -48,11 +58,7 @@ const useStyles = makeStyles({
       marginRight: 5,
     },
   },
-  accordionLinks: {
-    // "&:hover": {
-    //   color: "blue !important",
-    // },
-  },
+  accordionLinks: {},
 });
 
 export default useStyles;

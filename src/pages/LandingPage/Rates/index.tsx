@@ -2,13 +2,12 @@ import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { RootState } from "../../../app/store";
+import retrievePaymentData from "../../../app/functions/retrievePaymentData";
 
 import useStyles from "./styles";
-import { useEffect, useState } from "react";
-import retrievePaymentData from "../../../app/functions/retrievePaymentData";
-import { Opacity } from "@mui/icons-material";
 
 const Rates = () => {
   const classes = useStyles();
@@ -156,6 +155,7 @@ const Rates = () => {
             <img
               style={{ opacity: 0.5 }}
               className={classes.bonus}
+              alt="bonus"
               src="../../assets/crossedBonus.svg"
             />
             <strong
@@ -184,6 +184,7 @@ const Rates = () => {
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.button}
+              disabled={new Date() >= new Date("2023-11-01T00:00:00")}
               onClick={() => {
                 if (rate === "Rate1" || rate === "Rate2") {
                   navigate("/platform");
@@ -196,6 +197,8 @@ const Rates = () => {
             >
               {rate === "Rate1" || rate === "Rate2"
                 ? t("Перейти до уроків")
+                : new Date() >= new Date("2023-11-01T00:00:00")
+                ? t("Продажі закриті")
                 : t("Придбати зараз")}
             </button>
           </div>
@@ -285,7 +288,11 @@ const Rates = () => {
                 </li>
               </li>
             </ul>
-            <img className={classes.bonus} src="../../assets/bonus.svg" />
+            <img
+              className={classes.bonus}
+              src="../../assets/bonus.svg"
+              alt="bonus"
+            />
             <strong style={{ color: "#E8A41A", fontSize: 14 }}>
               {t("Груповий Zoom з Вікторією")}
             </strong>
@@ -297,6 +304,7 @@ const Rates = () => {
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.blackButton}
+              disabled={new Date() >= new Date("2023-11-01T00:00:00")}
               onClick={() => {
                 if (rate === "Rate2") {
                   navigate("/platform");
@@ -308,7 +316,11 @@ const Rates = () => {
                 }
               }}
             >
-              {rate === "Rate2" ? t("Перейти до уроків") : t("Придбати зараз")}
+              {rate === "Rate2"
+                ? t("Перейти до уроків")
+                : new Date() >= new Date("2023-11-01T00:00:00")
+                ? t("Продажі закриті")
+                : t("Придбати зараз")}
             </button>
           </div>
         </div>

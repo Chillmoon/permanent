@@ -131,6 +131,7 @@ const useStyles = makeStyles({
     fontWeight: 600,
     fontSize: 18,
     marginTop: 20,
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "&:hover": {
       marginTop: 22,
       cursor: "pointer",
@@ -140,7 +141,20 @@ const useStyles = makeStyles({
       background:
         "radial-gradient(69.13% 99.35% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%)",
     },
-    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    "&:disabled": {
+      color: "#482B19",
+      border: "2px solid  #482B19",
+      boxShadow: "none",
+      transform: "rotate(-2.309deg);",
+      background: "transparent",
+      "&:hover": {
+        marginTop: 20,
+        cursor: "auto",
+        filter: "none",
+        background: "transparent",
+      },
+    },
+
     "@media (max-width:1000px)": {
       marginBottom: 0,
     },
@@ -159,6 +173,7 @@ const useStyles = makeStyles({
     fontWeight: 600,
     fontSize: 18,
     marginTop: 20,
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "&:hover": {
       marginTop: 22,
       cursor: "pointer",
@@ -167,7 +182,20 @@ const useStyles = makeStyles({
       transition: "all 0.3s ease",
       background: "#DADADA",
     },
-    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    "&:disabled": {
+      background: "transparent",
+      color: "#3F3D3C",
+      border: "2px solid  #3F3D3C",
+      boxShadow: "none",
+      transform: "rotate(-2.309deg);",
+      "&:hover": {
+        marginTop: 20,
+        cursor: "auto",
+        filter: "none",
+        background: "transparent",
+      },
+    },
+
     "@media (max-width:1000px)": {
       marginBottom: 0,
     },
