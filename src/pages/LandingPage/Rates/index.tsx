@@ -182,7 +182,7 @@ const Rates = () => {
             {/* <div className={classes.originalPrice}>€190</div> */}
             <div className={classes.discountedPrice}>
               {" "}
-              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€250"}
+              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€190"}
             </div>
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
