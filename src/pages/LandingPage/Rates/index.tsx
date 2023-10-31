@@ -180,7 +180,10 @@ const Rates = () => {
               {t("Чат-підтримка протягом 3х місяців")}
             </strong>
             {/* <div className={classes.originalPrice}>€190</div> */}
-            <div className={classes.discountedPrice}>€190</div>
+            <div className={classes.discountedPrice}>
+              {" "}
+              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€250"}
+            </div>
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.button}
@@ -300,7 +303,9 @@ const Rates = () => {
               {t("Чат-підтримка протягом 3х місяців")}
             </strong>
             {/* <div className={classes.originalPrice}>€250</div> */}
-            <div className={classes.discountedPrice}>€250</div>
+            <div className={classes.discountedPrice}>
+              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€250"}
+            </div>
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.blackButton}
