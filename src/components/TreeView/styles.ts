@@ -59,6 +59,10 @@ const useStyles = makeStyles({
     },
   },
   accordionLinks: {},
+  accordionLinksDisabled: {
+    pointerEvents: "none",
+    color: "#696059 !important",
+  },
 });
 
 export default useStyles;

@@ -46,9 +46,9 @@ function App() {
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 
-  const now = new Date();
-  const redirectDate = new Date("2023-11-01");
-  const shouldRedirect = now < redirectDate;
+  // const now = new Date();
+  // const redirectDate = new Date("2023-11-01");
+  // const shouldRedirect = now < redirectDate;
 
   return (
     <>
@@ -56,7 +56,7 @@ function App() {
       <FacebookPixel />
       <TechSupport />
       <Routes>
-        {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
+        {/* {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
           <>
             <Route
               path="/platform"
@@ -71,7 +71,7 @@ function App() {
               element={<Navigate to="/paymentSuccess" />}
             />
           </>
-        )}
+        )} */}
 
         <Route
           path="/courses"

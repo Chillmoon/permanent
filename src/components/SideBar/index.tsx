@@ -1,8 +1,12 @@
 import { Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import { courses } from "../../app/features/AllCourses";
 import findCourseLabelById from "../../app/functions/findCourseLabelById";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
+import { RootState } from "../../app/store";
 
 import TreeViewComponent from "../TreeView";
 
@@ -13,9 +17,27 @@ const SideBar = () => {
 
   const { courseId } = useParams();
 
+  const user = useSelector((state: RootState) => state.user.user);
+
+  const [rate, setRate] = useState(undefined);
+
   const courseLabel = courseId
     ? findCourseLabelById(courses, courseId)
     : "Мій курс";
+
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const payedData = await retrievePaymentData(user?.uid);
+        const payedRate = payedData.rate;
+        setRate(payedRate);
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   return (
     <>
@@ -35,7 +57,7 @@ const SideBar = () => {
         <Typography className={classes.sideBarCourseName}>
           {courseLabel}
         </Typography>
-        <TreeViewComponent courses={courses} />
+        <TreeViewComponent courses={courses} rate={rate} />
       </div>
     </>
   );

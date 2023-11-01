@@ -273,7 +273,7 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block2-lesson4",
+            id: "block2-lesson4-Bonus",
             label: "Урок 4. Вікова міжвійка",
             description: "",
             disabled: false,

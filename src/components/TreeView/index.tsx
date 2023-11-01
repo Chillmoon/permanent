@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AllCourses } from "../../app/features/AllCourses";
 import useStyles from "./styles";
@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 
 interface TreeViewProps {
   courses: AllCourses;
+  rate: any;
 }
 
 interface Module {
@@ -22,7 +23,7 @@ interface Module {
   children?: Module[];
 }
 
-const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
+const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
   const { courseId } = useParams();
   const { t } = useTranslation();
   const selectedCourse = courses.find((course) => course.id === courseId);
@@ -49,9 +50,21 @@ const TreeView: React.FC<TreeViewProps> = ({ courses }) => {
         ) : (
           <Link
             key={node.id}
-            to={`/platform/${selectedCourse?.id}/${node.id}`}
+            to={
+              selectedCourse?.id === "fastEyeliner" &&
+              rate === "Rate1" &&
+              node.id === "block2-lesson4-Bonus"
+                ? "#"
+                : `/platform/${selectedCourse?.id}/${node.id}`
+            }
             data-id={node.id}
-            className={classes.accordionLinks}
+            className={
+              selectedCourse?.id === "fastEyeliner" &&
+              rate === "Rate1" &&
+              node.id === "block2-lesson4-Bonus"
+                ? classes.accordionLinksDisabled
+                : classes.accordionLinks
+            }
           >
             <Typography>{t(node.label)}</Typography>
           </Link>
