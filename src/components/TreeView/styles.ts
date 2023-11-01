@@ -63,6 +63,12 @@ const useStyles = makeStyles({
     pointerEvents: "none",
     color: "#696059 !important",
   },
+  accordionLinksBonus: {
+    "&>p": {
+      fontWeight: "700 !important",
+      color: "#E8A41A",
+    },
+  },
 });
 
 export default useStyles;

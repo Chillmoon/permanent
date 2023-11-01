@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router-dom";
-import { AllCourses } from "../../app/features/AllCourses";
-import useStyles from "./styles";
 import {
   Accordion,
   AccordionDetails,
@@ -9,7 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useTranslation } from "react-i18next";
+
+import { AllCourses } from "../../app/features/AllCourses";
+
+import useStyles from "./styles";
 
 interface TreeViewProps {
   courses: AllCourses;
@@ -53,16 +55,16 @@ const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
             to={
               selectedCourse?.id === "fastEyeliner" &&
               rate === "Rate1" &&
-              node.id === "block2-lesson4-Bonus"
+              node.id.includes("Bonus")
                 ? "#"
                 : `/platform/${selectedCourse?.id}/${node.id}`
             }
             data-id={node.id}
             className={
-              selectedCourse?.id === "fastEyeliner" &&
-              rate === "Rate1" &&
-              node.id === "block2-lesson4-Bonus"
-                ? classes.accordionLinksDisabled
+              node.id.includes("Bonus")
+                ? selectedCourse?.id === "fastEyeliner" && rate === "Rate1"
+                  ? classes.accordionLinksDisabled
+                  : classes.accordionLinksBonus
                 : classes.accordionLinks
             }
           >

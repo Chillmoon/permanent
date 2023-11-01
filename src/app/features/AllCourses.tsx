@@ -272,9 +272,89 @@ export const courses: AllCourses = [
               },
             ],
           },
+        ],
+      },
+      {
+        id: "block3",
+        label: "Додаткові уроки",
+        description: "",
+        disabled: false,
+        children: [
           {
-            id: "block2-lesson4-Bonus",
-            label: "Урок 4. Вікова міжвійка",
+            id: "block3-lesson1",
+            label: "Урок 1. Підготовка робочого місця",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%BF%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82_%D0%94%D0%9E%D0%9F1.mp4?alt=media&token=c4b97b56-d504-423d-b7d3-3d385c4c5dca&_gl=1*wvbvpa*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4wLjE2OTg4NDQzMDkuNjAuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson2",
+            label: "Урок 2. Опік рогівки",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%BF%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82_%D0%94%D0%9E%D0%9F2.mp4?alt=media&token=341da424-a6d5-4f57-96bb-3a88fa1d83ef&_gl=1*u5v7st*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4xLjE2OTg4NDQzNDMuMjYuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson3-Bonus",
+            label: "Урок 3. Особливості роботи з віковими клієнтами",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%94%D0%9E%D0%9F3.mp4?alt=media&token=513b915b-8fa0-48be-873d-04d9e0e66f52&_gl=1*12vl71i*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4xLjE2OTg4NDQzNTYuMTMuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson4",
+            label: "Урок 4. Промиваємо очі",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%94%D0%9E%D0%9F4.mp4?alt=media&token=2b476143-fe0a-47ef-a733-2ac2da6ec095&_gl=1*1lmmha3*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4xLjE2OTg4NDQzODQuNjAuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson5",
+            label: "Урок 5. Підтікання пігменту по капілярах",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%94%D0%9E%D0%9F5.mp4?alt=media&token=159b2d1a-89fb-4d6a-b9ab-eb85d837e941&_gl=1*1qxt3am*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4xLjE2OTg4NDQ0MDUuMzkuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson6-Bonus",
+            label: "Урок 6. Пігмент для коричневої міжвійки",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%94%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%BE%2F%D0%94%D0%9E%D0%9F6.mp4?alt=media&token=17aa3558-7e3c-4ea0-90a4-b9921de7e3fd&_gl=1*jf6lxb*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODg0NDMwOS4yOC4xLjE2OTg4NDQ0MTMuMzEuMC4w",
+              },
+            ],
+          },
+          {
+            id: "block2-lesson7-Bonus",
+            label: "Урок 7. Вікова міжвійка",
             description: "",
             disabled: false,
             video: [

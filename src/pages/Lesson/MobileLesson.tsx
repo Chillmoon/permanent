@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import { useSelector } from "react-redux";
 import {
   Accordion,
   AccordionDetails,
@@ -11,12 +12,12 @@ import { useTranslation } from "react-i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { AllCourses, InfoSection, Lesson } from "../../app/features/AllCourses";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
+import { RootState } from "../../app/store";
+
 import HomeworkUploader from "../../components/HomeworkUploader";
 
 import useStyles from "./styles";
-import retrievePaymentData from "../../app/functions/retrievePaymentData";
-import { useSelector } from "react-redux";
-import { RootState } from "../../app/store";
 
 interface MobileLessonProps {
   courses: AllCourses;
@@ -87,7 +88,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                     lesson?.disabled ||
                     (selectedCourse?.id === "fastEyeliner" &&
                       rate === "Rate1" &&
-                      lesson.id === "block2-lesson4-Bonus")
+                      lesson.id.includes("Bonus"))
                   }
                   onChange={() => handleLessonToggle(lesson.id)}
                 >

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { loginUser, setLoading } from "./app/features/userSlice";
@@ -21,10 +21,27 @@ import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer";
 import FacebookPixel from "./components/FacebookPixel/FacebookPixel";
 import TechSupport from "./components/TechSupport";
+import retrievePaymentData from "./app/functions/retrievePaymentData";
 
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user.user);
+  const [rate, setRate] = useState(undefined);
+  const location = useLocation();
+
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const payedData = await retrievePaymentData(user?.uid);
+        const payedRate = payedData.rate;
+        setRate(payedRate);
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -45,6 +62,11 @@ function App() {
   }, []);
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
+
+  const shouldRedirect =
+    location.pathname.includes("fastEyeliner") &&
+    location.pathname.includes("Bonus") &&
+    rate !== "Rate2";
 
   // const now = new Date();
   // const redirectDate = new Date("2023-11-01");
@@ -72,6 +94,13 @@ function App() {
             />
           </>
         )} */}
+
+        {shouldRedirect && location.pathname.includes("Bonus") && (
+          <Route
+            path="/platform/:courseId/:lessonNumber"
+            element={<Navigate to="/platform/fastEyeliner/block0-lesson1" />}
+          />
+        )}
 
         <Route
           path="/courses"
