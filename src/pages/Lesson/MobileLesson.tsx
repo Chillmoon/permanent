@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import {
   Accordion,
@@ -14,6 +14,9 @@ import { AllCourses, InfoSection, Lesson } from "../../app/features/AllCourses";
 import HomeworkUploader from "../../components/HomeworkUploader";
 
 import useStyles from "./styles";
+import retrievePaymentData from "../../app/functions/retrievePaymentData";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 interface MobileLessonProps {
   courses: AllCourses;
@@ -28,10 +31,26 @@ interface Module {
 const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
   const { courseId } = useParams();
   const selectedCourse = courses.find((course) => course.id === courseId);
+  const user = useSelector((state: RootState) => state.user.user);
   const classes = useStyles();
   const { t } = useTranslation();
 
   const [activeLessons, setActiveLessons] = useState<string[]>([]);
+  const [rate, setRate] = useState(undefined);
+
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        const payedData = await retrievePaymentData(user?.uid);
+        const payedRate = payedData.rate;
+        setRate(payedRate);
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   const handleLessonToggle = (lessonId: string) => {
     if (activeLessons.includes(lessonId)) {
@@ -64,7 +83,12 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                   disableGutters={true}
                   elevation={0}
                   expanded={activeLessons.includes(lesson.id)}
-                  disabled={lesson?.disabled}
+                  disabled={
+                    lesson?.disabled ||
+                    (selectedCourse?.id === "fastEyeliner" &&
+                      rate === "Rate1" &&
+                      lesson.id === "block2-lesson4-Bonus")
+                  }
                   onChange={() => handleLessonToggle(lesson.id)}
                 >
                   <AccordionSummary

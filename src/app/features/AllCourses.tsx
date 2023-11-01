@@ -251,7 +251,7 @@ export const courses: AllCourses = [
             video: [
               {
                 video:
-                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%2F%D0%BF%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82_%D1%83%D1%80%D0%BE%D0%BA5.mp4?alt=media&token=e774b62d-050b-4531-ae69-b59b55708216&_gl=1*1epf07h*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODIxNTA2MS4xOC4xLjE2OTgyMTczNDQuMjcuMC4w",
+                  "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2F%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%2F%D0%BF%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B5%D0%BD%D1%82_%D1%83%D1%80%D0%BE%D0%BA6.mp4?alt=media&token=74a12042-c926-4a88-a06c-cd928a5b5d3d&_gl=1*1efplc9*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODgzNTU0NS4yNi4xLjE2OTg4MzU1NTQuNTEuMC4w",
 
                 cover:
                   "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/%D0%9C%D0%B0%D1%82%D0%B5%D1%80%D1%96%D0%B0%D0%BB%D0%B8%20%D0%BA%D1%83%D1%80%D1%81%D1%83%2FCovers%2FFrame%20111.png?alt=media&token=626b805b-6f52-4d94-b996-fa7d67bafcb2&_gl=1*123sy44*_ga*MTY4OTY5MzQzLjE2OTcwOTUzMzQ.*_ga_CW55HF8NVT*MTY5ODY4MTYxNy4yMi4xLjE2OTg2ODE3NDcuMy4wLjA.",
