@@ -28,6 +28,9 @@ const HomePage = () => {
   const classes = useStyles();
   const isLoading = useSelector((state: RootState) => state.user.isLoading);
   const user = useSelector((state: RootState) => state.user.user);
+  const currentLanguage = useSelector(
+    (state: RootState) => state.user.language
+  );
 
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -59,7 +62,8 @@ const HomePage = () => {
       </Typography>
       <div className={classes.cardWrapper}>
         {cardData.map((data, index) =>
-          data.name === "Скоро" ? null : (
+          data.name === "Скоро" ? null : currentLanguage === "en" &&
+            data.name === "FAST EYELINER" ? null : (
             <div className={classes.card}>
               <div className={classes.cardName}>{data.name}</div>
               <div className={classes.courseDescription}>
@@ -96,11 +100,12 @@ const HomePage = () => {
         {cardData.map((data, index) =>
           data.name === "Скоро" ? (
             <div className={classes.coursePlaceholder} />
-          ) : (
+          ) : currentLanguage === "en" &&
+            data.name === "FAST EYELINER" ? null : (
             <div className={classes.card}>
               <div className={classes.cardName}>{data.name}</div>
               <div className={classes.courseDescription}>
-                {data.description}
+                {data.description && t(data.description)}
               </div>
               <button
                 className={classes.button}

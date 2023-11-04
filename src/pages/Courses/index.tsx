@@ -1,6 +1,9 @@
 import { Typography, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../app/store";
 
 import useStyles from "./styles";
 
@@ -22,6 +25,10 @@ const Courses = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const currentLanguage = useSelector(
+    (state: RootState) => state.user.language
+  );
 
   const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
@@ -92,7 +99,8 @@ const Courses = () => {
             </Typography>
             <div className={classes.cardWrapper}>
               {cardData.map((data, index) =>
-                data.name === "Скоро" ? null : (
+                data.name === "Скоро" ? null : currentLanguage === "en" &&
+                  data.name === "FAST EYELINER" ? null : (
                   <div className={classes.card}>
                     <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>

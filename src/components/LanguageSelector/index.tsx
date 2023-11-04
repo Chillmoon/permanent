@@ -45,6 +45,14 @@ function LanguageSelect({ isMenu = false }) {
       >
         RU
       </button>
+      /
+      <button
+        style={{ fontWeight: currentLanguage === "en" ? 700 : 300 }}
+        className={isMenu ? classes.menuLink : classes.link}
+        onClick={() => changeLanguage("en")}
+      >
+        EN
+      </button>
     </ButtonGroup>
   );
 }

@@ -11,7 +11,7 @@ export type RootState = {
       uid?: string;
     } | null;
     isLoading: boolean;
-    language: "ua" | "ru";
+    language: "ua" | "ru" | "en";
     isPayed: {
       fastEyeliner: {
         isPayed: false;

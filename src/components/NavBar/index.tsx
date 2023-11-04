@@ -96,9 +96,8 @@ const NavBar = ({ isBackground = false }) => {
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 
-  const logoUrl = isMobileScreen
-    ? "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Flogo.svg?alt=media&token=d3fe9092-2b8c-4ada-8fdc-62ccf9bea6fb&_gl=1*1fdu7wi*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE5MTA1MS40OS4xLjE2OTYxOTM2OTcuNjAuMC4w"
-    : "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
+  const logoUrl =
+    "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
 
   // const getDisplayCondition = (
   //   user: {
@@ -337,6 +336,7 @@ const NavBar = ({ isBackground = false }) => {
             </>
           ) : (
             <div className={classes.linkWrapper}>
+              <LanguageSelector isMenu={false} />
               <Box className={classes.link}>
                 <Link to={"/login"}>{t("Вхід")}</Link>/
                 <Link to={"/signup"}>{t("Реєстрація")}</Link>

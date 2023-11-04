@@ -143,6 +143,8 @@ const useStyles = makeStyles({
   },
   mobileLogo: {
     width: 200,
+    marginTop: 10,
+    marginLeft: "-70px",
   },
   menuAvatar: {
     "&>div.MuiPaper-root": {
@@ -182,8 +184,11 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       display: "flex",
       position: "absolute",
-      right: "5px",
+      right: "25px",
       top: "-3px",
+      "&>div>div>button": {
+        // fontSize: "12px !important",
+      },
     },
   },
   menuWrapper: {
