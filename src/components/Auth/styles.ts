@@ -179,7 +179,7 @@ const useStyles = makeStyles({
     textTransform: "uppercase",
     fontWeight: 600,
     fontSize: 18,
-    bottom: 60,
+    bottom: 50,
     "@media (min-width:1000px)": {
       "&:hover": {
         cursor: "pointer",
@@ -222,6 +222,7 @@ const useStyles = makeStyles({
   signUpLoginLinks: {
     fontSize: 14,
     display: "flex",
+    justifyContent: "center",
     flexDirection: "row",
     fontFamily: `"Exo 2", sans-serif !important`,
     "& :active": {
@@ -231,13 +232,45 @@ const useStyles = makeStyles({
       textDecorationLine: "underline",
     },
     "@media (max-width:1000px)": {
-      marginTop: "-50px",
+      marginTop: "-60px",
+    },
+  },
+  forgotPassword: {
+    fontSize: 14,
+    display: "flex",
+    flexDirection: "row",
+    fontFamily: `"Exo 2", sans-serif !important`,
+    "& :active": {
+      color: "darkblue",
+    },
+    "&>a": {
+      textDecorationLine: "underline",
     },
   },
   disabledLink: {
     pointerEvents: "none",
     color: "lightgrey",
     textDecorationLine: "none !important",
+  },
+  forgotPasswordLinks: {
+    fontSize: 14,
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "row",
+    fontFamily: `"Exo 2", sans-serif !important`,
+    "& :active": {
+      color: "darkblue",
+    },
+    "&>a": {
+      textDecorationLine: "underline",
+    },
+  },
+  forgotPasswordText: {
+    fontSize: 14,
+    textAlign: "center",
+    "@media (max-width:1000px)": {
+      marginTop: "-60px",
+    },
   },
 });
 

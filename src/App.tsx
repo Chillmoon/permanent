@@ -6,6 +6,7 @@ import { loginUser, setLoading } from "./app/features/userSlice";
 import { auth } from "./app/features/firebase";
 import { RootState } from "./app/store";
 import isAllowedAccessToStudents from "./app/functions/isAllowedAccessToStudents";
+import retrievePaymentData from "./app/functions/retrievePaymentData";
 
 import NavBar from "./components/NavBar";
 import Login from "./pages/Login";
@@ -16,12 +17,12 @@ import LessonPage from "./pages/Lesson";
 import Students from "./pages/Students";
 import LandingPage from "./pages/LandingPage";
 import PaymentSuccessPage from "./pages/PaymentSuccess";
+import ForgotPassword from "./pages/ForgotPassword";
 
 import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer";
 import FacebookPixel from "./components/FacebookPixel/FacebookPixel";
 import TechSupport from "./components/TechSupport";
-import retrievePaymentData from "./app/functions/retrievePaymentData";
 
 function App() {
   const dispatch = useDispatch();
@@ -113,6 +114,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route
           path="/"
           element={

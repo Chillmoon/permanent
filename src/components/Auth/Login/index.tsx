@@ -144,6 +144,9 @@ const Login = () => {
             {t("Вже заєрестрований")}
           </Link>
           /<Link to={"/signup"}>{t("Зареєструватись")}</Link>
+        </div>{" "}
+        <div className={classes.forgotPassword}>
+          <Link to={"/forgotPassword"}>{t("Забув пароль")}</Link>
         </div>
       </div>
       <GoogleAuth />

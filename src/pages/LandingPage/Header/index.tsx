@@ -2,8 +2,6 @@ import { useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-scroll";
 
-import Timer from "../../../components/Timer";
-
 import useStyles from "./styles";
 
 const Header = () => {
