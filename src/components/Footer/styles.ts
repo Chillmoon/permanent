@@ -33,9 +33,9 @@ const useStyles = makeStyles({
     marginBottom: 20,
   },
 
-  footerWrapperSidebar: {
+  footerWrapperSidebar: (props: { courseId: string }) => ({
     position: "relative",
-    backgroundColor: "#2D2927",
+    backgroundColor: props.courseId === "fastEyeliner" ? "#2D2927" : "#120F0D",
     height: "100%",
     color: "white",
     display: "flex",
@@ -47,7 +47,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     padding: "0 7%",
     marginBottom: 20,
-  },
+  }),
   mobileWrapper: {
     marginBottom: 21,
     padding: "20px 20px 0px 20px",

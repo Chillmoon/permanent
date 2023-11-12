@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { Button, IconButton, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
@@ -5,7 +6,9 @@ import { useState } from "react";
 import useStyles from "./styles";
 
 const Footer = ({ isSidebar = false, isTransparent = false }) => {
-  const classes = useStyles();
+  const { courseId } = useParams();
+  //@ts-ignore
+  const classes = useStyles({ courseId });
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
 
