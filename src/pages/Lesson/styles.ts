@@ -152,15 +152,15 @@ const useStyles = makeStyles({
     padding: "0 20px",
     zIndex: 2,
   },
-  mobileLessonLabel: {
+  mobileLessonLabel: (props: { courseId: string }) => ({
     fontFamily: `"Noto Serif", sans-serif !important`,
-    color: "#FFD7BB",
+    color: props.courseId === "fastEyeliner" ? "#FFD7BB" : "#FFF",
     fontWeight: 700,
     fontSize: 26,
     paddingTop: 20,
     marginBottom: "20px !important",
     zIndex: 2,
-  },
+  }),
   horizontalLine: {
     border: "none",
     borderTop: "1px solid #FFF",
@@ -180,7 +180,7 @@ const useStyles = makeStyles({
       },
     },
   },
-  mobileLessonAccordionSummary: {
+  mobileLessonAccordionSummary: (props: { courseId: string }) => ({
     fontFamily: `"Exo 2", sans-serif !important`,
     fontWeight: 400,
     fontSize: 18,
@@ -193,12 +193,14 @@ const useStyles = makeStyles({
     borderRadius: "8px !important",
     "&.MuiAccordionSummary-root": {
       background: "#FFF",
-      "&.Mui-expanded": { background: "#FFD7BB" },
+      "&.Mui-expanded": {
+        background: props.courseId === "fastEyeliner" ? "#FFD7BB" : "#DBDBDB",
+      },
     },
     "& .MuiAccordionSummary-expandIconWrapper": {
       color: "#004AAD",
     },
-  },
+  }),
   mobileLessonAccordionDetails: {
     background: "#FFFFFF",
     boxShadow: "4px 4px 20px rgba(0, 0, 0, 0.07)",

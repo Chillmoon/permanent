@@ -32,12 +32,10 @@ import useStyles from "./styles";
 
 const NavBar = ({ isBackground = false }) => {
   const { t } = useTranslation();
-  // const pages = [
-  //   { name: t("Курси"), id: "courses" },
-  //   { name: t("Кабінет"), id: "home" },
-  // ];
-  const classes = useStyles();
-  const { courseId, lessonNumber } = useParams();
+  const { courseId } = useParams();
+  //@ts-ignore
+  const classes = useStyles({ courseId });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -94,10 +92,15 @@ const NavBar = ({ isBackground = false }) => {
     handleCloseNavMenu();
   };
 
-  const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
-
   const logoUrl =
     "https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FlogoForLanding.svg?alt=media&token=8f5ed298-0218-42c2-ad9f-7e12130d8deb&_gl=1*azdxjv*_ga*MTc0OTgwOTU3OS4xNjkxMDAwNzE2*_ga_CW55HF8NVT*MTY5NjE3MzMyOC40Ni4xLjE2OTYxNzY4OTkuNDguMC4w";
+
+  // const pages = [
+  //   { name: t("Курси"), id: "courses" },
+  //   { name: t("Кабінет"), id: "home" },
+  // ];
+
+  // const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 
   // const getDisplayCondition = (
   //   user: {
@@ -118,7 +121,11 @@ const NavBar = ({ isBackground = false }) => {
   ) : (
     <AppBar
       sx={{
-        bgcolor: isBackground ? "#3C2E25 !important" : "transparent",
+        bgcolor: isBackground
+          ? courseId === "fastEyeliner"
+            ? "#3C2E25 !important"
+            : "#120F0D !important"
+          : "transparent",
       }}
       className={classes.navBar}
     >

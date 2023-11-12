@@ -102,7 +102,7 @@ const Courses = () => {
                 data.name === "Скоро" ? null : currentLanguage === "en" &&
                   data.name === "FAST EYELINER" ? null : (
                   <div className={classes.card}>
-                    <div className={classes.cardName}>{data.name}</div>
+                    <div className={classes.cardName}>{t(data.name)}</div>
                     <div className={classes.courseDescription}>
                       {t(
                         "Курс по виконанню міжвійної зони з ідеальним загоєнням"

@@ -33,13 +33,18 @@ function App() {
   useEffect(() => {
     const checkPaymentStatus = async () => {
       try {
-        const payedData = await retrievePaymentData(user?.uid);
-        const payedRate = payedData.rate;
-        setRate(payedRate);
+        if (user) {
+          const payedData = await retrievePaymentData(user.uid);
+          const fastEyelinerData = payedData?.fastEyeliner;
+          if (fastEyelinerData) {
+            setRate(fastEyelinerData.rate);
+          }
+        }
       } catch (error) {
         console.error("Error checking payment status:", error);
       }
     };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     checkPaymentStatus();
   }, [user]);
@@ -99,7 +104,7 @@ function App() {
         {shouldRedirect && location.pathname.includes("Bonus") && (
           <Route
             path="/platform/:courseId/:lessonNumber"
-            element={<Navigate to="/platform/fastEyeliner/block0-lesson1" />}
+            element={<Navigate to="/platform" />}
           />
         )}
 

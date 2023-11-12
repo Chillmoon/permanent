@@ -43,17 +43,24 @@ const useStyles = makeStyles({
       left: "25%",
     },
   },
-  link: {
+  link: (props: { courseId: string }) => ({
     flexDirection: "row",
     display: "flex",
+    color:
+      props.courseId === "fastEyeliner"
+        ? "#FFD7BB !important"
+        : "#FFF !important",
     "&>a": {
       fontSize: 16,
       margin: "0px 5px",
       textDecoration: "none",
-      color: "#FFD7BB !important",
+      color:
+        props.courseId === "fastEyeliner"
+          ? "#FFD7BB !important"
+          : "#FFF !important",
       fontFamily: `"Noto Serif", sans-serif !important`,
     },
-  },
+  }),
   linkPages: {
     position: "absolute",
     left: 400,

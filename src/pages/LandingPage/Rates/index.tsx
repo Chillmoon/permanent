@@ -1,36 +1,41 @@
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
+// import { useNavigate } from "react-router-dom";
+// import { useEffect, useState } from "react";
 
-import { RootState } from "../../../app/store";
-import retrievePaymentData from "../../../app/functions/retrievePaymentData";
+// import { RootState } from "../../../app/store";
+// import retrievePaymentData from "../../../app/functions/retrievePaymentData";
 
 import useStyles from "./styles";
 
 const Rates = () => {
   const classes = useStyles();
   const { t } = useTranslation();
-  const [rate, setRate] = useState(undefined);
+  // const [rate, setRate] = useState(undefined);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const user = useSelector((state: RootState) => state.user.user);
+  // const user = useSelector((state: RootState) => state.user.user);
 
-  useEffect(() => {
-    const checkPaymentStatus = async () => {
-      try {
-        const payedData = await retrievePaymentData(user?.uid);
-        const payedRate = payedData.rate;
-        setRate(payedRate);
-      } catch (error) {
-        console.error("Error checking payment status:", error);
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    checkPaymentStatus();
-  }, [user]);
+  // useEffect(() => {
+  //   const checkPaymentStatus = async () => {
+  //     try {
+  //       if (user) {
+  //         const payedData = await retrievePaymentData(user.uid);
+  //         const fastEyelinerData = payedData?.fastEyeliner;
+  //         if (fastEyelinerData) {
+  //           setRate(fastEyelinerData.rate);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error("Error checking payment status:", error);
+  //     }
+  //   };
+
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   checkPaymentStatus();
+  // }, [user]);
 
   return (
     <div className={classes.wrapper}>
@@ -188,21 +193,17 @@ const Rates = () => {
             <button
               className={classes.button}
               disabled={new Date() >= new Date("2023-11-01T00:00:00")}
-              onClick={() => {
-                if (rate === "Rate1" || rate === "Rate2") {
-                  navigate("/platform");
-                } else if (user?.uid) {
-                  window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
-                } else {
-                  navigate("/signup");
-                }
-              }}
+              // onClick={() => {
+              //   if (rate === "Rate1" || rate === "Rate2") {
+              //     navigate("/platform");
+              //   } else if (user?.uid) {
+              //     window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
+              //   } else {
+              //     navigate("/signup");
+              //   }
+              // }}
             >
-              {rate === "Rate1" || rate === "Rate2"
-                ? t("Перейти до уроків")
-                : new Date() >= new Date("2023-11-01T00:00:00")
-                ? t("Продажі закриті")
-                : t("Придбати зараз")}
+              {t("Продажі закриті")}
             </button>
           </div>
         </div>
@@ -310,22 +311,18 @@ const Rates = () => {
             <button
               className={classes.blackButton}
               disabled={new Date() >= new Date("2023-11-01T00:00:00")}
-              onClick={() => {
-                if (rate === "Rate2") {
-                  navigate("/platform");
-                } else if (user?.uid) {
-                  window.location.href =
-                    "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
-                } else {
-                  navigate("/signup");
-                }
-              }}
+              // onClick={() => {
+              //   if (rate === "Rate2") {
+              //     navigate("/platform");
+              //   } else if (user?.uid) {
+              //     window.location.href =
+              //       "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+              //   } else {
+              //     navigate("/signup");
+              //   }
+              // }}
             >
-              {rate === "Rate2"
-                ? t("Перейти до уроків")
-                : new Date() >= new Date("2023-11-01T00:00:00")
-                ? t("Продажі закриті")
-                : t("Придбати зараз")}
+              {t("Продажі закриті")}
             </button>
           </div>
         </div>

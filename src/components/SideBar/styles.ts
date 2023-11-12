@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
-  sideBarWrapper: {
+  sideBarWrapper: (props: { courseId: string }) => ({
     position: "fixed",
     display: "flex",
     flexDirection: "column",
@@ -14,7 +14,9 @@ const useStyles = makeStyles({
     textDecoration: "none",
     color: "#FFF",
     background:
-      "var( --BG_ALL, linear-gradient(17deg, #292929 -10.12%, #38281d 66.27%))",
+      props.courseId === "fastEyeliner"
+        ? "linear-gradient(17deg, #292929 -10.12%, #38281d 66.27%)"
+        : "#120F0D",
     fontWeight: "400 !important",
 
     "& :visited": {
@@ -34,7 +36,7 @@ const useStyles = makeStyles({
     "&::-webkit-scrollbar-track": {
       backgroundColor: "rgba(0,0,0,0)",
     },
-  },
+  }),
   sideBarMenu: {},
   sideBarCourseName: {
     marginTop: "100px !important",

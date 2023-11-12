@@ -33,22 +33,32 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
   const { courseId } = useParams();
   const selectedCourse = courses.find((course) => course.id === courseId);
   const user = useSelector((state: RootState) => state.user.user);
-  const classes = useStyles();
+  //@ts-ignore
+  const classes = useStyles({ courseId });
   const { t } = useTranslation();
 
   const [activeLessons, setActiveLessons] = useState<string[]>([]);
   const [rate, setRate] = useState(undefined);
 
+  if (courseId === "hairCourse") {
+    document.body.style.background = "#120F0D";
+  }
+
   useEffect(() => {
     const checkPaymentStatus = async () => {
       try {
-        const payedData = await retrievePaymentData(user?.uid);
-        const payedRate = payedData.rate;
-        setRate(payedRate);
+        if (user) {
+          const payedData = await retrievePaymentData(user.uid);
+          const fastEyelinerData = payedData?.fastEyeliner;
+          if (fastEyelinerData) {
+            setRate(fastEyelinerData.rate);
+          }
+        }
       } catch (error) {
         console.error("Error checking payment status:", error);
       }
     };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     checkPaymentStatus();
   }, [user]);
@@ -143,7 +153,8 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                   preventDefault: () => any;
                                 }) => e.preventDefault()}
                                 controls={true}
-                                url={video.video}
+                                //@ts-ignore
+                                url={t(video.video)}
                                 width="100%"
                                 height="100%"
                                 className={classes.reactPlayerMobile}

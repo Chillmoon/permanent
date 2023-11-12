@@ -2,13 +2,13 @@ import { Typography, useMediaQuery } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 import { RootState } from "../../app/store";
 import HomePageSkeleton from "../../components/Skeletons/HomePageSkeleton";
 import retrievePaymentData from "../../app/functions/retrievePaymentData";
 
 import useStyles from "./styles";
-import { useEffect } from "react";
 
 const cardData = [
   {
@@ -17,7 +17,9 @@ const cardData = [
     description: "Курс по виконанню міжвійної зони з ідеальним загоєнням",
   },
   {
-    name: "Скоро",
+    name: "Підготовка до курсу",
+    id: "hairCourse",
+    description: "Навчись робити брови з волосковою технікою",
   },
   {
     name: "Скоро",
@@ -32,6 +34,8 @@ const HomePage = () => {
     (state: RootState) => state.user.language
   );
 
+  const [availableCourses, setAvailableCourses] = useState<any[]>([]);
+
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -40,10 +44,11 @@ const HomePage = () => {
   useEffect(() => {
     const checkPaymentStatus = async () => {
       try {
-        const isPayed = await retrievePaymentData(user?.uid);
+        const payedCourses = await retrievePaymentData(user?.uid);
 
-        if (isPayed === null) {
-          navigate("/courses/fastEyeliner");
+        setAvailableCourses(payedCourses);
+        if (payedCourses === null) {
+          navigate("/courses");
         }
       } catch (error) {
         console.error("Error checking payment status:", error);
@@ -61,24 +66,34 @@ const HomePage = () => {
         {t("Доступні курси")}
       </Typography>
       <div className={classes.cardWrapper}>
-        {cardData.map((data, index) =>
-          data.name === "Скоро" ? null : currentLanguage === "en" &&
-            data.name === "FAST EYELINER" ? null : (
-            <div className={classes.card}>
-              <div className={classes.cardName}>{data.name}</div>
+        {cardData.map((data) => {
+          const isCourseAvailable =
+            availableCourses &&
+            data.id !== undefined &&
+            Object.keys(availableCourses).includes(data.id);
+
+          return data.name === "Скоро" ||
+            (currentLanguage === "en" && data.name === "FAST EYELINER") ||
+            !isCourseAvailable ? null : (
+            <div className={classes.card} key={data.id}>
+              <div className={classes.cardName}>
+                {t(data.name).toUpperCase()}
+              </div>
               <div className={classes.courseDescription}>
-                {data.description}
+                {data.description && t(data.description)}
               </div>
               <button
                 className={classes.button}
                 onClick={() => navigate(`/platform/${data.id}/block0-lesson1`)}
               >
-                {t("Перейти до уроків")}
+                {"Перейти до уроків"}
               </button>
             </div>
-          )
+          );
+        })}
+        {currentLanguage === "en" && (
+          <div className={classes.coursePlaceholder} />
         )}
-        <div className={classes.coursePlaceholder} />
       </div>
     </div>
   ) : (
@@ -97,13 +112,21 @@ const HomePage = () => {
         {t("Доступні курси")}
       </Typography>
       <div className={classes.cardWrapper}>
-        {cardData.map((data, index) =>
-          data.name === "Скоро" ? (
+        {cardData.map((data) => {
+          const isCourseAvailable =
+            availableCourses &&
+            data.id !== undefined &&
+            Object.keys(availableCourses).includes(data.id);
+
+          return data.name === "Скоро" ||
+            (currentLanguage === "en" && data.name === "FAST EYELINER") ||
+            !isCourseAvailable ? (
             <div className={classes.coursePlaceholder} />
-          ) : currentLanguage === "en" &&
-            data.name === "FAST EYELINER" ? null : (
+          ) : (
             <div className={classes.card}>
-              <div className={classes.cardName}>{data.name}</div>
+              <div className={classes.cardName}>
+                {t(data.name).toUpperCase()}
+              </div>
               <div className={classes.courseDescription}>
                 {data.description && t(data.description)}
               </div>
@@ -114,8 +137,8 @@ const HomePage = () => {
                 {t("Перейти до уроків")}
               </button>
             </div>
-          )
-        )}
+          );
+        })}
       </div>
     </div>
   );

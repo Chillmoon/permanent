@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { ref, set } from "firebase/database";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
 
 import { userSlice } from "../../app/features/userSlice";
 import { RootState } from "../../app/store";
-import { auth, realtimeDb } from "../../app/features/firebase";
-import Timer from "../../components/Timer";
+import { realtimeDb } from "../../app/features/firebase";
+// import Timer from "../../components/Timer";
 
 import useStyles from "./styles";
-import retrievePaymentData from "../../app/functions/retrievePaymentData";
+// import retrievePaymentData from "../../app/functions/retrievePaymentData";
 
 const PaymentSuccessPage = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const classes = useStyles();
 
   const dispatch = useDispatch();
@@ -22,14 +22,18 @@ const PaymentSuccessPage = () => {
   const user = useSelector((state: RootState) => state.user.user);
   const { t } = useTranslation();
 
-  const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
+  // const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(false);
 
   const savePaymentData = async (
     userId: string,
+    payedCourse: string,
     paymentData: { rate: string; orderId: string; signature: string }
   ) => {
     try {
-      const paymentRef = ref(realtimeDb, `users/${userId}/payments`);
+      const paymentRef = ref(
+        realtimeDb,
+        `users/${userId}/payments/${payedCourse}`
+      );
       await set(paymentRef, paymentData).then(() => {});
     } catch (error) {
       console.error("Error saving payment data:", error);
@@ -53,22 +57,22 @@ const PaymentSuccessPage = () => {
       });
   };
 
-  useEffect(() => {
-    const checkPaymentStatus = async () => {
-      try {
-        const isPayed = await retrievePaymentData(user?.uid);
+  // useEffect(() => {
+  //   const checkPaymentStatus = async () => {
+  //     try {
+  //       const isPayed = await retrievePaymentData(user?.uid);
 
-        if (isPayed !== null) {
-          setIsPaymentSuccessful(true);
-        }
-      } catch (error) {
-        console.error("Error checking payment status:", error);
-      }
-    };
+  //       if (isPayed !== null) {
+  //         setIsPaymentSuccessful(true);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error checking payment status:", error);
+  //     }
+  //   };
 
-    checkPaymentStatus();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  //   checkPaymentStatus();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [user]);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -80,7 +84,7 @@ const PaymentSuccessPage = () => {
       ? paramsObject.product_id.slice(0, -5)
       : "";
     if (paramsObject.order_status === "approved") {
-      setIsPaymentSuccessful(true);
+      // setIsPaymentSuccessful(true);
       if (payedCourse === "fastEyeliner") {
         if (paymentRate === "Rate2") {
           sendEmail();
@@ -98,7 +102,7 @@ const PaymentSuccessPage = () => {
           })
         );
         if (user?.uid) {
-          savePaymentData(user?.uid, paymentData);
+          savePaymentData(user?.uid, payedCourse, paymentData);
         } else {
           console.log("userID is undefined");
         }
@@ -107,7 +111,7 @@ const PaymentSuccessPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.uid]);
 
-  const displayName = auth?.currentUser?.displayName;
+  // const displayName = auth?.currentUser?.displayName;
 
   return (
     <div className={classes.wrapper}>
@@ -121,7 +125,7 @@ const PaymentSuccessPage = () => {
         src="../../assets/loginBackground.png"
         alt="details"
       />
-      {isPaymentSuccessful ? (
+      {/* {isPaymentSuccessful ? (
         <>
           <div className={classes.text}>
             {t("Вітаю")},
@@ -162,7 +166,7 @@ const PaymentSuccessPage = () => {
             </button>
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 };

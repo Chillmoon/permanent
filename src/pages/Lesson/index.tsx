@@ -19,19 +19,22 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 
 const LessonPage = () => {
-  const classes = useStyles();
+  const { courseId } = useParams();
+  //@ts-ignore
+  const classes = useStyles({ courseId });
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   const { lessonNumber } = useParams();
   const user = useSelector((state: RootState) => state.user.user);
 
-  const blockLabel = findBlockLabelById(
-    courses,
-    lessonNumber || "block0-lesson1"
-  );
+  const blockLabel =
+    courseId &&
+    findBlockLabelById(courses, courseId, lessonNumber || "block0-lesson1");
 
-  const lesson = getLessonById(courses, lessonNumber || "block0-lesson1");
+  const lesson =
+    courseId &&
+    getLessonById(courses, courseId, lessonNumber || "block0-lesson1");
 
   const handleDownloadFile = (fileUrl: string, fileName: string) => {
     window.open(fileUrl, "_blank");
@@ -43,7 +46,7 @@ const LessonPage = () => {
         const isPayed = await retrievePaymentData(user?.uid);
 
         if (isPayed === null) {
-          navigate("/courses/fastEyeliner");
+          navigate("/courses");
         }
       } catch (error) {
         console.error("Error checking payment status:", error);
@@ -71,26 +74,29 @@ const LessonPage = () => {
             {blockLabel && t(blockLabel)}
           </Typography>
           <Typography className={classes.lessonLabel} variant="h5">
-            {lesson?.label && t(lesson.label)}
+            {lesson && lesson?.label && t(lesson.label)}
           </Typography>
           <div className={classes.lessonInfo}>
-            {lesson?.info?.map((section, index) => (
-              <div key={index}>
-                {section.title && (
-                  <Typography variant="h6">{section.title}</Typography>
-                )}
+            {lesson &&
+              lesson?.info?.map((section, index) => (
+                <div key={index}>
+                  {section.title && (
+                    <Typography variant="h6">{section.title}</Typography>
+                  )}
 
-                {section.content && <Typography>{section.content}</Typography>}
-                {section.image && (
-                  <img
-                    src={section.image}
-                    alt={section.title}
-                    width={section.imageWidth}
-                  />
-                )}
-              </div>
-            ))}
-            {lesson?.video && (
+                  {section.content && (
+                    <Typography>{section.content}</Typography>
+                  )}
+                  {section.image && (
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      width={section.imageWidth}
+                    />
+                  )}
+                </div>
+              ))}
+            {lesson && lesson?.video && (
               <div className={classes.videoPlayerWrapper}>
                 {lesson?.video && (
                   <div className={classes.videoPlayerWrapper}>
@@ -111,7 +117,8 @@ const LessonPage = () => {
                                 preventDefault: () => any;
                               }) => e.preventDefault()}
                               controls={true}
-                              url={video.video}
+                              //@ts-ignore
+                              url={t(video.video)}
                               className={classes.videoPlayer}
                               config={{
                                 file: {
@@ -131,7 +138,7 @@ const LessonPage = () => {
                 )}
               </div>
             )}
-            {lesson?.file && (
+            {lesson && lesson?.file && (
               <div className={classes.fileWrapper}>
                 <Typography> {t("Матеріали уроку")}:</Typography>
                 {lesson.file.map((file, index) => (
@@ -154,7 +161,9 @@ const LessonPage = () => {
                 ))}
               </div>
             )}
-            {lesson?.homework && <HomeworkUploader lessonID={lesson?.id} />}
+            {lesson && lesson?.homework && (
+              <HomeworkUploader lessonID={lesson?.id} />
+            )}
           </div>
         </div>
       </div>

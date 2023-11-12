@@ -44,12 +44,14 @@ const Login = () => {
 
       if (paymentSnapshot.exists()) {
         const paymentData = paymentSnapshot.val();
-        console.log("Данные об оплате найдены");
-        dispatch(
-          userSlice.actions.setIsPayed({
-            fastEyeliner: { isPayed: true, ...paymentData },
-          })
-        );
+        const courses = Object.keys(paymentData).map((courseKey) => ({
+          [courseKey]: {
+            isPayed: true,
+            ...paymentData[courseKey].payments[courseKey],
+          },
+        }));
+
+        dispatch(userSlice.actions.setIsPayed(Object.assign({}, ...courses)));
       } else {
         console.log("Данные об оплате не найдены");
       }
