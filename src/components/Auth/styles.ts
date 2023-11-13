@@ -87,7 +87,7 @@ const useStyles = makeStyles({
     position: "relative",
     "@media (max-width:1000px)": {
       width: 290,
-      height: 305,
+      height: 340,
       padding: "30px 25px",
       justifyContent: "start",
     },
@@ -180,6 +180,7 @@ const useStyles = makeStyles({
     fontWeight: 600,
     fontSize: 18,
     bottom: 50,
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (min-width:1000px)": {
       "&:hover": {
         cursor: "pointer",
@@ -190,7 +191,6 @@ const useStyles = makeStyles({
           "radial-gradient(69.13% 99.35% at 50% 99.35%, #EDC9AF 0.02%, #CCA081 47.92%, #BA7441 100%)",
       },
     },
-    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (max-width:1000px)": {
       position: "relative",
       width: 290,

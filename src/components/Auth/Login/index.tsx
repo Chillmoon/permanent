@@ -117,7 +117,7 @@ const Login = () => {
               <Field
                 name="email"
                 type="email"
-                placeholder="Електронна адреса"
+                placeholder={t("Електронна адреса")}
                 className={
                   errors.email && touched.email
                     ? classes.inputError
@@ -127,7 +127,7 @@ const Login = () => {
               <Field
                 name="password"
                 type="password"
-                placeholder="Пароль"
+                placeholder={t("Пароль")}
                 className={
                   errors.password && touched.password
                     ? classes.inputError

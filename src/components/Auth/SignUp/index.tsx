@@ -119,7 +119,7 @@ const SignUp = () => {
                     : classes.input
                 }
               />
-              <button className={classes.signUpButton}>
+              <button className={classes.signUpButton} style={{ bottom: 85 }}>
                 {t("Зареєструватись")}
               </button>
             </Form>
