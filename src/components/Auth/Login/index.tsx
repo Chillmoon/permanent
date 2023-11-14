@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -9,6 +10,7 @@ import { get, ref } from "firebase/database";
 import { auth, realtimeDb } from "../../../app/features/firebase";
 import GoogleAuth from "../Google";
 import { userSlice } from "../../../app/features/userSlice";
+import ErrorSnackbar from "../../ErrorMessage";
 
 import useStyles from "../styles";
 
@@ -37,6 +39,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [error, setError] = useState<string | null>(null);
+
   const checkPaymentData = async (userId: string) => {
     try {
       const paymentRef = ref(realtimeDb, `users/${userId}/payments`);
@@ -60,6 +64,10 @@ const Login = () => {
     }
   };
 
+  const handleSnackbarClose = () => {
+    setError(null);
+  };
+
   const handleSubmit = async (values: LoginFormValues) => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -75,7 +83,8 @@ const Login = () => {
         navigate(-1 || "/");
       }
     } catch (error) {
-      alert(error);
+      console.log(error);
+      setError("Невірний логін або пароль");
     }
   };
 
@@ -135,7 +144,11 @@ const Login = () => {
                 }
               />
 
-              <button className={classes.signUpButton} style={{ bottom: 85 }}>
+              <button
+                className={classes.signUpButton}
+                style={{ bottom: 85 }}
+                type="submit"
+              >
                 {t("Вхід")}
               </button>
             </Form>
@@ -152,6 +165,13 @@ const Login = () => {
         </div>
       </div>
       <GoogleAuth />
+      {error && (
+        <ErrorSnackbar
+          open={!!error}
+          onClose={handleSnackbarClose}
+          message={t(error)}
+        />
+      )}
     </div>
   );
 };

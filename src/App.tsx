@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { loginUser, setLoading } from "./app/features/userSlice";
@@ -29,6 +35,7 @@ function App() {
   const user = useSelector((state: RootState) => state.user.user);
   const [rate, setRate] = useState(undefined);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkPaymentStatus = async () => {
@@ -66,6 +73,12 @@ function App() {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (user && ["/login", "/signup"].includes(location.pathname)) {
+      navigate("/");
+    }
+  }, [user, location.pathname, navigate]);
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 

@@ -13,6 +13,8 @@ import { auth } from "../../../app/features/firebase";
 import GoogleAuth from "../Google";
 
 import useStyles from "../styles";
+import React from "react";
+import ErrorSnackbar from "../../ErrorMessage";
 
 type SignUpFormValues = {
   name: string;
@@ -39,26 +41,31 @@ const validationSchema = Yup.object().shape({
 const SignUp = () => {
   const classes = useStyles();
   const { t } = useTranslation();
+  const [error, setError] = React.useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = (values: SignUpFormValues) => {
-    createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then(() =>
-        signInWithEmailAndPassword(auth, values.email, values.password)
-          .then(() => {
-            if (auth.currentUser) {
-              updateProfile(auth.currentUser, { displayName: values.name });
-            }
-          })
-          .then(() => {
-            navigate(-1 || "/");
-          })
-      )
+  const handleCloseError = () => {
+    setError("");
+  };
 
-      .catch((error) => {
-        alert(error);
-      });
+  const handleSubmit = async (values: SignUpFormValues) => {
+    try {
+      await createUserWithEmailAndPassword(auth, values.email, values.password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
+
+      if (userCredential.user) {
+        await updateProfile(userCredential.user, { displayName: values.name });
+      }
+
+      navigate(-1 || "/");
+    } catch (error) {
+      setError("Користувач з таким email вже існує");
+    }
   };
 
   return (
@@ -119,7 +126,11 @@ const SignUp = () => {
                     : classes.input
                 }
               />
-              <button className={classes.signUpButton} style={{ bottom: 85 }}>
+              <button
+                className={classes.signUpButton}
+                style={{ bottom: 65 }}
+                type="submit"
+              >
                 {t("Зареєструватись")}
               </button>
             </Form>
@@ -133,6 +144,13 @@ const SignUp = () => {
         </div>
       </div>
       <GoogleAuth />
+      {error && (
+        <ErrorSnackbar
+          open={!!error}
+          onClose={handleCloseError}
+          message={t(error)}
+        />
+      )}
     </div>
   );
 };

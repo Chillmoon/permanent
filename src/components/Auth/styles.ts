@@ -179,7 +179,6 @@ const useStyles = makeStyles({
     textTransform: "uppercase",
     fontWeight: 600,
     fontSize: 18,
-    bottom: 50,
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "@media (min-width:1000px)": {
       "&:hover": {
