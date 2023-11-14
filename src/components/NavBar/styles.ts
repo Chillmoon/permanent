@@ -39,6 +39,9 @@ const useStyles = makeStyles({
     left: "20px",
     padding: 0,
     textDecoration: "none ",
+    "&:hover": {
+      cursor: "pointer",
+    },
     "@media (max-width:1000px)": {
       left: "25%",
     },

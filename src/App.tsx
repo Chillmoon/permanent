@@ -149,17 +149,18 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/platform"
-          element={
-            <>
-              <HomePage />
-              <Footer isTransparent={true} />
-            </>
-          }
-        />
+
         <Route element={<ProtectedRoutes />}>
-          {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}
+          {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}{" "}
+          <Route
+            path="/platform"
+            element={
+              <>
+                <HomePage />
+                <Footer isTransparent={true} />
+              </>
+            }
+          />
           <Route
             path="/platform/:courseId/:lessonNumber"
             element={
