@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,12 +10,13 @@ import {
 } from "firebase/auth";
 
 import { auth } from "../../../app/features/firebase";
+import { loginUser } from "../../../app/features/userSlice";
 
 import GoogleAuth from "../Google";
+import ErrorSnackbar from "../../ErrorMessage";
 
 import useStyles from "../styles";
 import React from "react";
-import ErrorSnackbar from "../../ErrorMessage";
 
 type SignUpFormValues = {
   name: string;
@@ -44,6 +46,7 @@ const SignUp = () => {
   const [error, setError] = React.useState("");
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleCloseError = () => {
     setError("");
@@ -51,8 +54,7 @@ const SignUp = () => {
 
   const handleSubmit = async (values: SignUpFormValues) => {
     try {
-      await createUserWithEmailAndPassword(auth, values.email, values.password);
-      const userCredential = await signInWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         values.email,
         values.password
@@ -60,9 +62,15 @@ const SignUp = () => {
 
       if (userCredential.user) {
         await updateProfile(userCredential.user, { displayName: values.name });
+        dispatch(
+          loginUser({
+            uid: userCredential.user.uid,
+            username: values.name,
+            email: values.email,
+          })
+        );
+        navigate(-1 || "/");
       }
-
-      navigate(-1 || "/");
     } catch (error) {
       setError("Користувач з таким email вже існує");
     }

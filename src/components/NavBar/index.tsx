@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -41,23 +41,12 @@ const NavBar = ({ isBackground = false }) => {
 
   const user = useSelector((state: RootState) => state.user.user);
 
+  // const [isLoading, setIsLoading] = useState(
+  //   useSelector((state: RootState) => state.user.isLoading)
+  // );
+
   const isMobileScreen = useMediaQuery("(max-width:1000px)");
 
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch(
-          loginUser({
-            uid: authUser.uid,
-            username: authUser.displayName,
-            email: authUser.email,
-          })
-        );
-        dispatch(setLoading(false));
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -114,11 +103,7 @@ const NavBar = ({ isBackground = false }) => {
   //   return !user && pageId === "home" ? "none" : "flex";
   // };
 
-  const isLoading = useSelector((state: RootState) => state.user.isLoading);
-
-  return isLoading ? (
-    <NavBarSkeleton />
-  ) : (
+  return (
     <AppBar
       sx={{
         bgcolor: isBackground
@@ -133,7 +118,7 @@ const NavBar = ({ isBackground = false }) => {
         <Typography
           variant="h5"
           component="a"
-          href="/"
+          onClick={() => navigate("/")}
           className={classes.navBarTitle}
         >
           <img
@@ -271,7 +256,7 @@ const NavBar = ({ isBackground = false }) => {
                           : classes.avatarCircle
                       }
                     >
-                      {user.username.charAt(0)}
+                      {user.username.charAt(0).toUpperCase()}
                     </Avatar>
                   </IconButton>
                 </Tooltip>

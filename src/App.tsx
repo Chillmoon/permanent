@@ -113,14 +113,12 @@ function App() {
             />
           </>
         )} */}
-
         {shouldRedirect && location.pathname.includes("Bonus") && (
           <Route
             path="/platform/:courseId/:lessonNumber"
             element={<Navigate to="/platform" />}
           />
         )}
-
         <Route
           path="/courses"
           element={
@@ -151,16 +149,16 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/platform"
+          element={
+            <>
+              <HomePage />
+              <Footer isTransparent={true} />
+            </>
+          }
+        />
         <Route element={<ProtectedRoutes />}>
-          <Route
-            path="/platform"
-            element={
-              <>
-                <HomePage />
-                <Footer isTransparent={true} />
-              </>
-            }
-          />
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}
           <Route
             path="/platform/:courseId/:lessonNumber"

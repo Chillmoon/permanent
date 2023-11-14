@@ -28,7 +28,6 @@ const cardData = [
 
 const HomePage = () => {
   const classes = useStyles();
-  const isLoading = useSelector((state: RootState) => state.user.isLoading);
   const user = useSelector((state: RootState) => state.user.user);
   const currentLanguage = useSelector(
     (state: RootState) => state.user.language
@@ -47,9 +46,6 @@ const HomePage = () => {
         const payedCourses = await retrievePaymentData(user?.uid);
 
         setAvailableCourses(payedCourses);
-        if (payedCourses === null) {
-          navigate("/courses");
-        }
       } catch (error) {
         console.error("Error checking payment status:", error);
       }
@@ -58,9 +54,7 @@ const HomePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  return isLoading ? (
-    <HomePageSkeleton />
-  ) : isMobileScreen ? (
+  return isMobileScreen ? (
     <div className={classes.wrapper}>
       <Typography variant="h4" className={classes.blockTitle}>
         {t("Доступні курси")}

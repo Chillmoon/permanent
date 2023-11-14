@@ -17,7 +17,7 @@ function LanguageSelect({ isMenu = false }) {
   );
 
   useEffect(() => {
-    const language = localStorage.getItem("language") || i18n.language;
+    const language = i18n.language;
     dispatch(setLanguage(language));
     i18n.changeLanguage(language);
   }, [dispatch, setLanguage]);
