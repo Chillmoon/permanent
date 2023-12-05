@@ -191,7 +191,7 @@ const PaymentSuccessPage = () => {
           <div className={classes.buttonWrapper}>
             <button
               className={classes.button}
-              onClick={() => navigate(`/courses/hairCourse`)}
+              onClick={() => navigate(`/courses/hairstrokes`)}
             >
               {t("Деталі про курс")}
             </button>

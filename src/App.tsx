@@ -129,7 +129,7 @@ function App() {
         )}
         {shouldRedirectHairCourse && (
           <Route
-            path="/platform/hairCourse/:lessonNumber"
+            path="/platform/hairstrokes/:lessonNumber"
             element={<Navigate to="/paymentSuccess" />}
           />
         )}
@@ -164,7 +164,7 @@ function App() {
           }
         />
         <Route
-          path="/courses/hairCourse"
+          path="/courses/hairstrokes"
           element={
             <>
               <HairstrokesLanding />

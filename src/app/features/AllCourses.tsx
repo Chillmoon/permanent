@@ -293,7 +293,7 @@ export const courses: AllCourses = [
     ],
   },
   {
-    id: "hairCourse",
+    id: "hairstrokes",
     label: "HAIRSTROKES",
     afterCourseBlock: [
       {

@@ -18,7 +18,7 @@ const cardData = [
   },
   {
     name: "HAIR STROKES",
-    id: "hairCourse",
+    id: "hairstrokes",
     description: "Навчись робити брови з волосковою технікою",
   },
   {
@@ -43,7 +43,10 @@ const HomePage = () => {
   useEffect(() => {
     const checkPaymentStatus = async () => {
       try {
-        const payedCourses = await retrievePaymentData(user?.uid);
+        const paymentData = await retrievePaymentData(user?.uid);
+        const payedCourses = paymentData?.hairCourse
+          ? { ...paymentData, hairstrokes: paymentData.hairCourse }
+          : paymentData;
 
         setAvailableCourses(payedCourses);
       } catch (error) {

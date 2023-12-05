@@ -172,7 +172,7 @@ const Rates = () => {
           <div className={classes.rateBonus}>{t("Бонуси")} </div>
           <div className={classes.blockBonuses}>
             <div>• {t("чат-підтримка протягом курсу")}</div>
-            <div>• {t("zoom-зустріч")}</div>
+            <div>• {t("1 zoom-зустріч")}</div>
           </div>
           <div className={classes.actualPrice}>
             {t("ціна зараз")}
@@ -197,6 +197,7 @@ const Rates = () => {
           </button>{" "}
           <a
             className={classes.link}
+            style={{ marginBottom: 10 }}
             href="https://pay.fondy.eu/s/LVjuLgtRO?_gl=1*1jxqhqg*_gcl_aw*R0NMLjE2OTc2MTE2NDAuQ2owS0NRanc0YmlwQmhDeUFSSXNBRnNpZUN4WEtkclNiUmZmeS1PaG9fanNGUFRvNi1taE1sdm80eXZzOU5QOUNuMVZCYXJoSkNNM1FRd2FBc1lQRUFMd193Y0I.*_gcl_au*ODc0MDg1MjY5LjE2OTcxMDk5NDM.*_ga*NTEwODE2NDI3LjE2OTcxMDk5NDM.*_ga_Z2KY5VSWGZ*MTcwMTgwNTIwNi4xOC4xLjE3MDE4MDg2MzEuMC4wLjA.&_ga=2.262876687.2069655254.1701805207-510816427.1697109943"
           >
             {t("Забронювати місце")}
@@ -299,7 +300,7 @@ const Rates = () => {
           <div className={classes.rateBonus}>{t("Бонуси")} </div>
           <div className={classes.blockBonuses}>
             <div>• {t("чат-підтримка протягом курсу")}</div>
-            <div>• {t("zoom-зустріч")}</div>
+            <div>• {t("3 zoom-зустрічі")}</div>
           </div>
           <div
             className={classes.actualPrice}
@@ -327,6 +328,7 @@ const Rates = () => {
           </button>{" "}
           <a
             className={classes.link}
+            style={{ marginBottom: 10 }}
             href="https://pay.fondy.eu/s/ATSypWp?_gl=1*1og65ja*_gcl_aw*R0NMLjE2OTc2MTE2NDAuQ2owS0NRanc0YmlwQmhDeUFSSXNBRnNpZUN4WEtkclNiUmZmeS1PaG9fanNGUFRvNi1taE1sdm80eXZzOU5QOUNuMVZCYXJoSkNNM1FRd2FBc1lQRUFMd193Y0I.*_gcl_au*ODc0MDg1MjY5LjE2OTcxMDk5NDM.*_ga*NTEwODE2NDI3LjE2OTcxMDk5NDM.*_ga_Z2KY5VSWGZ*MTcwMTgwNTIwNi4xOC4xLjE3MDE4MDg2MzEuMC4wLjA.&_ga=2.233915933.2069655254.1701805207-510816427.1697109943"
           >
             {t("Забронювати місце")}
@@ -346,9 +348,9 @@ const Rates = () => {
             src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fvip.png?alt=media&token=8381b0f6-8d8f-4e03-9f85-30ba75affee4"
           />
           <div className={classes.rateName} style={{ color: "#3E2513" }}>
-            {t("Особиста")}
+            {t("Індивідуальна")}
             {<br />}
-            {t("Робота зі мною")}
+            {t("Робота з Вікторією Кушнір по курсу ADVANCED ")}
           </div>
           <div className={classes.available} style={{ color: "#3E2513" }}>
             {t("всього 8 місць")}
@@ -371,7 +373,7 @@ const Rates = () => {
             style={{
               backgroundColor: "#3E2513",
               color: "#FFF",
-              bottom: 20,
+              bottom: 50,
             }}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
             onClick={() => {
@@ -386,6 +388,14 @@ const Rates = () => {
           >
             {t("Придбати")}
           </button>
+          <a
+            className={classes.link}
+            style={{ color: "#000" }}
+            href="https://t.me/+CgZE2V_M179kZDQy"
+            target="_blank"
+          >
+            {t("Розстрочка")}
+          </a>
         </div>
       </div>
     </div>

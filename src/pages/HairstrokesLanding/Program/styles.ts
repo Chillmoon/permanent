@@ -12,8 +12,8 @@ const useStyles = makeStyles({
     marginBottom: 150,
     "@media (max-width:1000px)": {
       padding: "0px 20px",
-      marginTop: "200px",
       marginBottom: 50,
+      height: "100%",
     },
   },
   brow: {

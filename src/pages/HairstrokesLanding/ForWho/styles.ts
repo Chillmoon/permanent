@@ -10,7 +10,8 @@ const useStyles = makeStyles({
     alignItems: "center",
     "@media (max-width:1000px)": {
       padding: "0px 20px",
-      marginTop: "-150px",
+      height: "100%",
+      marginBottom: 200,
     },
   },
   rectangleHairstrokes: {
@@ -99,6 +100,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       display: "block",
       zIndex: 3,
+      width: "100%",
     },
   },
 });

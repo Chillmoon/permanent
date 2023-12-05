@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     "@media (max-width:1000px)": {
       padding: "0px 20px",
       paddingTop: 160,
+      height: "100%",
     },
   },
   stars: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
     marginTop: "-60px",
     "@media (max-width:1000px)": {
       width: "100%",
-      height: "100%",
+      height: "150%",
       objectFit: "cover",
     },
   },
