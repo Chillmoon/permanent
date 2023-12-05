@@ -162,6 +162,14 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}{" "}
           <Route
+            path="/platform/hairCourse"
+            element={<Navigate to="/paymentSuccess" />}
+          />
+          <Route
+            path="/platform/hairCourse/:lessonId"
+            element={<Navigate to="/paymentSuccess" />}
+          />
+          <Route
             path="/platform"
             element={
               <>
