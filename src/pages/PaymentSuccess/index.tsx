@@ -42,17 +42,19 @@ const PaymentSuccessPage = () => {
     }
   };
 
-  const sendEmail = (courseID: string) => {
+  const sendEmail = (courseID: string, rate?: string) => {
     const templateParams = {
       to_email: user?.email,
       to_name: user?.username,
     };
+    const templateIDHairStrokes =
+      rate === "Rate1"
+        ? t("templateIDHairStrokesRate1")
+        : t("templateIDHairStrokesRate2/3");
     emailjs
       .send(
         "service_n51bus2",
-        courseID === "fastEyeliner"
-          ? t("templateID")
-          : t("templateIDHairStrokes"),
+        courseID === "fastEyeliner" ? t("templateID") : templateIDHairStrokes,
         templateParams,
         "Z7CUCUgFvHXqj-qZg"
       )
@@ -172,7 +174,7 @@ const PaymentSuccessPage = () => {
           <div className={classes.textSmall}>{t("Ми розпочинаємо через")}:</div>
           <Timer isLanding={false} />
           <div className={classes.textTiny}>
-            *{t("доступ до уроків відкриється 1.11")}
+            *{t("доступ до уроків відкриється 1.01")}
           </div>
         </>
       ) : (
