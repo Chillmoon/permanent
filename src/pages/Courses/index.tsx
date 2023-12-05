@@ -14,11 +14,6 @@ const cardData = [
     description: "Курс по виконанню міжвійної зони з ідеальним загоєнням",
   },
   {
-    name: "HAIR STROKES",
-    id: "hairstrokes",
-    description: "Навчись робити брови з волосковою технікою",
-  },
-  {
     name: "Скоро",
   },
   {
