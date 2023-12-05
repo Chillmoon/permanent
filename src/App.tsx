@@ -34,7 +34,8 @@ import HairstrokesLanding from "./pages/HairstrokesLanding";
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user.user);
-  const [rate, setRate] = useState(undefined);
+  const [rateFastEyeliner, setRateFastEyeliner] = useState(undefined);
+  const [rateHairCourse, setRateHairCourse] = useState(undefined);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -44,8 +45,12 @@ function App() {
         if (user) {
           const payedData = await retrievePaymentData(user.uid);
           const fastEyelinerData = payedData?.fastEyeliner;
+          const hairCourseData = payedData?.hairCourse;
           if (fastEyelinerData) {
-            setRate(fastEyelinerData.rate);
+            setRateFastEyeliner(fastEyelinerData.rate);
+          }
+          if (hairCourseData) {
+            setRateHairCourse(hairCourseData.rate);
           }
         }
       } catch (error) {
@@ -83,11 +88,13 @@ function App() {
 
   const isAccessToStudentsAllowed = isAllowedAccessToStudents(user?.uid);
 
-  const shouldRedirect =
+  const shouldRedirectFastEyeliner =
     location.pathname.includes("fastEyeliner") &&
     location.pathname.includes("Bonus") &&
-    rate !== "Rate2";
+    rateFastEyeliner !== "Rate2";
 
+  const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
+  console.log(rateHairCourse);
   // const now = new Date();
   // const redirectDate = new Date("2023-11-01");
   // const shouldRedirect = now < redirectDate;
@@ -114,10 +121,16 @@ function App() {
             />
           </>
         )} */}
-        {shouldRedirect && location.pathname.includes("Bonus") && (
+        {shouldRedirectFastEyeliner && location.pathname.includes("Bonus") && (
           <Route
             path="/platform/:courseId/:lessonNumber"
             element={<Navigate to="/platform" />}
+          />
+        )}
+        {shouldRedirectHairCourse && (
+          <Route
+            path="/platform/hairCourse/:lessonNumber"
+            element={<Navigate to="/paymentSuccess" />}
           />
         )}
         <Route
@@ -161,14 +174,6 @@ function App() {
         />
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}{" "}
-          <Route
-            path="/platform/hairCourse"
-            element={<Navigate to="/paymentSuccess" />}
-          />
-          <Route
-            path="/platform/hairCourse/:lessonId"
-            element={<Navigate to="/paymentSuccess" />}
-          />
           <Route
             path="/platform"
             element={
