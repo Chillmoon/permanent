@@ -67,7 +67,7 @@ const PaymentSuccessPage = () => {
     const checkPaymentStatus = async () => {
       try {
         const isPayed = await retrievePaymentData(user?.uid);
-        console.log(isPayed);
+
         if (isPayed !== null) {
           setIsPaymentSuccessful(true);
         }

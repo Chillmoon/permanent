@@ -94,7 +94,7 @@ function App() {
     rateFastEyeliner !== "Rate2";
 
   const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
-  console.log(rateHairCourse);
+
   // const now = new Date();
   // const redirectDate = new Date("2023-11-01");
   // const shouldRedirect = now < redirectDate;
