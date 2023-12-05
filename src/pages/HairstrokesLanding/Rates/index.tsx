@@ -197,8 +197,7 @@ const Rates = () => {
           </button>{" "}
           <a
             className={classes.link}
-            href="https://t.me/+YqhboOJRtEpjZGQy"
-            target="_blank"
+            href="https://pay.fondy.eu/s/LVjuLgtRO?_gl=1*1jxqhqg*_gcl_aw*R0NMLjE2OTc2MTE2NDAuQ2owS0NRanc0YmlwQmhDeUFSSXNBRnNpZUN4WEtkclNiUmZmeS1PaG9fanNGUFRvNi1taE1sdm80eXZzOU5QOUNuMVZCYXJoSkNNM1FRd2FBc1lQRUFMd193Y0I.*_gcl_au*ODc0MDg1MjY5LjE2OTcxMDk5NDM.*_ga*NTEwODE2NDI3LjE2OTcxMDk5NDM.*_ga_Z2KY5VSWGZ*MTcwMTgwNTIwNi4xOC4xLjE3MDE4MDg2MzEuMC4wLjA.&_ga=2.262876687.2069655254.1701805207-510816427.1697109943"
           >
             {t("Забронювати місце")}
           </a>
@@ -328,8 +327,7 @@ const Rates = () => {
           </button>{" "}
           <a
             className={classes.link}
-            href="https://t.me/+YqhboOJRtEpjZGQy"
-            target="_blank"
+            href="https://pay.fondy.eu/s/ATSypWp?_gl=1*1og65ja*_gcl_aw*R0NMLjE2OTc2MTE2NDAuQ2owS0NRanc0YmlwQmhDeUFSSXNBRnNpZUN4WEtkclNiUmZmeS1PaG9fanNGUFRvNi1taE1sdm80eXZzOU5QOUNuMVZCYXJoSkNNM1FRd2FBc1lQRUFMd193Y0I.*_gcl_au*ODc0MDg1MjY5LjE2OTcxMDk5NDM.*_ga*NTEwODE2NDI3LjE2OTcxMDk5NDM.*_ga_Z2KY5VSWGZ*MTcwMTgwNTIwNi4xOC4xLjE3MDE4MDg2MzEuMC4wLjA.&_ga=2.233915933.2069655254.1701805207-510816427.1697109943"
           >
             {t("Забронювати місце")}
           </a>
