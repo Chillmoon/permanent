@@ -5,7 +5,7 @@ import { RootState } from "../../app/store";
 
 const ProtectedRoutes = () => {
   const user = useSelector((state: RootState) => state.user.user);
-
+  console.log(user);
   return user ? <Outlet /> : <Navigate to="/login" />;
 };
 

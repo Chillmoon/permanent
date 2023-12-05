@@ -104,9 +104,7 @@ const Courses = () => {
                   <div className={classes.card}>
                     <div className={classes.cardName}>{t(data.name)}</div>
                     <div className={classes.courseDescription}>
-                      {t(
-                        "Курс по виконанню міжвійної зони з ідеальним загоєнням"
-                      )}
+                      {data.description && t(data.description)}
                     </div>
                     <button
                       className={classes.button}
@@ -191,16 +189,14 @@ const Courses = () => {
               {t("Доступні курси")}
             </Typography>
             <div className={classes.cardWrapper}>
-              {cardData.map((data, index) =>
+              {cardData.map((data) =>
                 data.name === "Скоро" ? (
                   <div className={classes.coursePlaceholder}></div>
                 ) : (
                   <div className={classes.card}>
                     <div className={classes.cardName}>{data.name}</div>
                     <div className={classes.courseDescription}>
-                      {t(
-                        "Курс по виконанню міжвійної зони з ідеальним загоєнням"
-                      )}
+                      {data.description && t(data.description)}
                     </div>
                     <button
                       className={classes.button}

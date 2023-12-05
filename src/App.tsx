@@ -29,6 +29,7 @@ import ProtectedRoutes from "./components/ProtectedRoute/ProtectedRoute";
 import Footer from "./components/Footer";
 import FacebookPixel from "./components/FacebookPixel/FacebookPixel";
 import TechSupport from "./components/TechSupport";
+import HairstrokesLanding from "./pages/HairstrokesLanding";
 
 function App() {
   const dispatch = useDispatch();
@@ -141,7 +142,7 @@ function App() {
           }
         />
         <Route
-          path="/courses/:courseId"
+          path="/courses/fastEyeliner"
           element={
             <>
               <LandingPage />
@@ -149,7 +150,15 @@ function App() {
             </>
           }
         />
-
+        <Route
+          path="/courses/hairCourse"
+          element={
+            <>
+              <HairstrokesLanding />
+              <Footer isTransparent={true} />
+            </>
+          }
+        />
         <Route element={<ProtectedRoutes />}>
           {/* <Route path="/home/:courseId" element={<MyCourse />} /> */}{" "}
           <Route
@@ -171,15 +180,6 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/paymentSuccess"
-            element={
-              <>
-                <PaymentSuccessPage />
-                <Footer isTransparent={true} />
-              </>
-            }
-          />
           {isAccessToStudentsAllowed && (
             <Route
               path="/students"
@@ -192,8 +192,17 @@ function App() {
               }
             />
           )}
-        </Route>
-      </Routes>
+        </Route>{" "}
+        <Route
+          path="/paymentSuccess"
+          element={
+            <>
+              <PaymentSuccessPage />
+              <Footer isTransparent={true} />
+            </>
+          }
+        />
+      </Routes>{" "}
       {/* {["/login", "/signup"].includes(location.pathname) ? null : <Footer />} */}
     </>
   );

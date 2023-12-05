@@ -294,7 +294,7 @@ export const courses: AllCourses = [
   },
   {
     id: "hairCourse",
-    label: "Підготовка до курсу",
+    label: "HAIRSTROKES",
     afterCourseBlock: [
       {
         id: 1,
