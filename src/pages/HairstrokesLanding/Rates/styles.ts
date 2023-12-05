@@ -163,7 +163,6 @@ const useStyles = makeStyles({
     border: "none",
     color: "#221207",
     borderBottom: "5px solid #C2C2C2",
-    width: 200,
     zIndex: 1000,
     textTransform: "uppercase",
     fontWeight: 700,

@@ -187,7 +187,8 @@ const Rates = () => {
               if (rate === "Rate1" || rate === "Rate2" || rate === "Rate3") {
                 navigate("/paymentSuccess");
               } else if (user?.uid) {
-                window.location.href = "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+                window.location.href =
+                  "https://pay.fondy.eu/s/NXuwkJTz?_gl=1*cchsxz*_gcl_aw*R0NMLjE2OTc2MTE2NDAuQ2owS0NRanc0YmlwQmhDeUFSSXNBRnNpZUN4WEtkclNiUmZmeS1PaG9fanNGUFRvNi1taE1sdm80eXZzOU5QOUNuMVZCYXJoSkNNM1FRd2FBc1lQRUFMd193Y0I.*_gcl_au*ODc0MDg1MjY5LjE2OTcxMDk5NDM.*_ga*NTEwODE2NDI3LjE2OTcxMDk5NDM.*_ga_Z2KY5VSWGZ*MTcwMTgxNzAwNS4xOS4xLjE3MDE4MTcxOTUuMC4wLjA.&_ga=2.234496413.2069655254.1701805207-510816427.1697109943";
               } else {
                 navigate("/signup");
               }
