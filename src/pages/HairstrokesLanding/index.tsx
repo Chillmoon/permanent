@@ -11,6 +11,7 @@ import Rates from "./Rates";
 import Footer from "./Footer";
 
 import useStyles from "./styles";
+import Championship from "./Championship";
 
 const HairstrokesLanding = () => {
   const classes = useStyles();
@@ -48,6 +49,7 @@ const HairstrokesLanding = () => {
       <Header />
       <ForWho />
       <Program />
+      <Championship />
       <Rates />
       <Footer />
     </div>
