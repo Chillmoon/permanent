@@ -195,6 +195,7 @@ const Rates = () => {
             }}
           >
             {t("Придбати")}
+            <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
           </button>{" "}
           <a
             className={classes.link}
@@ -326,6 +327,7 @@ const Rates = () => {
             }}
           >
             {t("Придбати")}
+            <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
           </button>{" "}
           <a
             className={classes.link}
@@ -354,7 +356,7 @@ const Rates = () => {
             {t("Робота з Вікторією Кушнір по курсу ADVANCED ")}
           </div>
           <div className={classes.available} style={{ color: "#3E2513" }}>
-            {t("всього 8 місць")}
+            {t("всього 7/8 місць")}
           </div>
           <div
             className={classes.actualPrice}
@@ -362,7 +364,7 @@ const Rates = () => {
               backgroundColor: "#FFF",
               border: "1px solid #3E2513",
               color: "#3E2513",
-              marginBottom: 80,
+              marginBottom: 120,
             }}
           >
             {t("ціна зараз")}
@@ -374,7 +376,7 @@ const Rates = () => {
             style={{
               backgroundColor: "#3E2513",
               color: "#FFF",
-              bottom: 50,
+              bottom: 60,
             }}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
             onClick={() => {
@@ -388,6 +390,7 @@ const Rates = () => {
             }}
           >
             {t("Придбати")}
+            <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
           </button>
           <a
             className={classes.link}

@@ -167,7 +167,7 @@ const useStyles = makeStyles({
     textTransform: "uppercase",
     fontWeight: 700,
     fontFamily: `"Exo 2", sans-serif !important`,
-    fontSize: 22,
+    fontSize: 25,
     marginTop: 20,
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
     "&:hover": {
