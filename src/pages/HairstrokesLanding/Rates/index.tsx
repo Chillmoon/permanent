@@ -176,10 +176,10 @@ const Rates = () => {
           </div>
           <div className={classes.actualPrice}>
             {t("ціна зараз")}
-            <div className={classes.price}>790€</div>
+            <div className={classes.price}>850€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 07.12")}</div>
-          <div className={classes.fullPrice}>850€</div>
+          <div className={classes.fullPriceLabel}>{t("ціна з 11.12")}</div>
+          <div className={classes.fullPrice}>950€</div>
           <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
@@ -225,7 +225,7 @@ const Rates = () => {
               color: "rgba(255, 255, 255, 0.70)",
             }}
           >
-            {t("всього 30 місць")}
+            {t("всього 18/30 місць")}
           </div>
           <div className={classes.rateBlock}>{t("Блок")} 1</div>
           <div className={classes.blockContains}>
@@ -309,10 +309,10 @@ const Rates = () => {
             style={{ backgroundColor: "#221207" }}
           >
             {t("ціна зараз")}
-            <div className={classes.price}>990€</div>
+            <div className={classes.price}>1090€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 07.12")}</div>
-          <div className={classes.fullPrice}>1090€</div>
+          <div className={classes.fullPriceLabel}>{t("ціна з 11.12")}</div>
+          <div className={classes.fullPrice}>1190€</div>
           <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
