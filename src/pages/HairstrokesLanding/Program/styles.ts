@@ -47,14 +47,33 @@ const useStyles = makeStyles({
     alignItems: "start",
     gap: 50,
     marginBottom: 40,
+    position: "relative",
   },
   blockLabel: {
     marginTop: 27,
+    marginLeft: "-9px",
     color: "#FFF",
     fontFamily: `"Exo 2", sans-serif !important`,
     fontSize: 22,
     fontWeight: 700,
     textTransform: "uppercase",
+    "@media (max-width:1000px)": {
+      display: "none",
+    },
+  },
+  blockLabelMobile: {
+    display: "none",
+    "@media (max-width:1000px)": {
+      display: "block",
+      padding: 20,
+      backgroundColor: "#221207",
+      borderRadius: "30px 30px 0px 0px",
+      margin: "-31px",
+      marginBottom: 30,
+      fontSize: 18,
+      textTransform: "uppercase",
+      color: "#FFF",
+    },
   },
   block: {
     backgroundColor: "#FFF",
@@ -84,6 +103,14 @@ const useStyles = makeStyles({
     margin: "-31px",
     marginTop: 30,
     color: "#FFF",
+  },
+  programBlockLine: {
+    borderLeft: "2px dashed #FFF",
+    zIndex: 2,
+    "@media (max-width:1000px)": {
+      borderLeft: "none",
+      zIndex: 6,
+    },
   },
 });
 

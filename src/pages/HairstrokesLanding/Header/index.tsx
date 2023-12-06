@@ -44,7 +44,7 @@ const Header = () => {
         {t("До підвищення цін залишилось")}
       </div>
       <div className={classes.timer}>
-        <Timer />
+        <Timer isLanding={true} />
       </div>
     </div>
   );

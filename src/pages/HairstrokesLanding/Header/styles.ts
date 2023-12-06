@@ -41,6 +41,7 @@ const useStyles = makeStyles({
     zIndex: 1,
     position: "absolute",
     top: 250,
+    width: "100%",
     "@media (max-width:1000px)": {
       display: "none",
     },
