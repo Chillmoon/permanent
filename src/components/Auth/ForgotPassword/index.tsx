@@ -68,7 +68,11 @@ const ForgotPassword = () => {
                     : classes.input
                 }
               />
-              <button className={classes.signUpButton} type="submit">
+              <button
+                className={classes.signUpButton}
+                type="submit"
+                style={{ bottom: 70 }}
+              >
                 {t("Скинути пароль")}
               </button>
               <div className={classes.forgotPasswordText}>
