@@ -174,11 +174,34 @@ const Rates = () => {
             <div>• {t("чат-підтримка протягом курсу")}</div>
             <div>• {t("1 zoom-зустріч")}</div>
           </div>
+          <div className={classes.blockContains}>
+            <div
+              style={{
+                marginTop: 10,
+              }}
+            >
+              {t("доступ до курсу 4 місяців")}
+            </div>
+          </div>
+          <div
+            style={{
+              color: "#FFF",
+              textAlign: "center",
+              fontFamily: `"Exo 2", sans-serif !important`,
+              textTransform: "uppercase",
+              fontSize: 14,
+              marginTop: 10,
+
+              fontWeight: 600,
+            }}
+          >
+            {t("старт навчання 01.01.2024")}
+          </div>
           <div className={classes.actualPrice}>
             {t("ціна зараз")}
             <div className={classes.price}>850€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 11.12")}</div>
+          <div className={classes.fullPriceLabel}>{t("ціна з 12.12")}</div>
           <div className={classes.fullPrice}>950€</div>
           <button
             className={classes.rateButton}
@@ -304,6 +327,28 @@ const Rates = () => {
             <div>• {t("чат-підтримка протягом курсу")}</div>
             <div>• {t("3 zoom-зустрічі")}</div>
           </div>
+          <div className={classes.blockContains}>
+            <div
+              style={{
+                marginTop: 10,
+              }}
+            >
+              {t("доступ до курсу 6 місяці")}
+            </div>
+          </div>
+          <div
+            style={{
+              color: "#FFF",
+              textAlign: "center",
+              fontFamily: `"Exo 2", sans-serif !important`,
+              textTransform: "uppercase",
+              fontSize: 14,
+              marginTop: 10,
+              fontWeight: 600,
+            }}
+          >
+            {t("старт навчання 01.01.2024")}
+          </div>
           <div
             className={classes.actualPrice}
             style={{ backgroundColor: "#221207" }}
@@ -311,7 +356,7 @@ const Rates = () => {
             {t("ціна зараз")}
             <div className={classes.price}>1090€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 11.12")}</div>
+          <div className={classes.fullPriceLabel}>{t("ціна з 12.12")}</div>
           <div className={classes.fullPrice}>1190€</div>
           <button
             className={classes.rateButton}
@@ -357,6 +402,19 @@ const Rates = () => {
           </div>
           <div className={classes.available} style={{ color: "#3E2513" }}>
             {t("всього 7/8 місць")}
+          </div>
+          <div
+            style={{
+              color: "#3E2513",
+              textAlign: "center",
+              fontFamily: `"Exo 2", sans-serif !important`,
+              textTransform: "uppercase",
+              fontSize: 14,
+              marginTop: 15,
+              fontWeight: 600,
+            }}
+          >
+            {t("старт навчання 01.01.2024")}
           </div>
           <div
             className={classes.actualPrice}
