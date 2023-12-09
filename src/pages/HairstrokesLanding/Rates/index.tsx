@@ -248,7 +248,7 @@ const Rates = () => {
               color: "rgba(255, 255, 255, 0.70)",
             }}
           >
-            {t("всього 18/30 місць")}
+            {t("всього 14/30 місць")}
           </div>
           <div className={classes.rateBlock}>{t("Блок")} 1</div>
           <div className={classes.blockContains}>
@@ -401,7 +401,7 @@ const Rates = () => {
             {t("Робота з Вікторією Кушнір по курсу ADVANCED ")}
           </div>
           <div className={classes.available} style={{ color: "#3E2513" }}>
-            {t("всього 7/8 місць")}
+            {t("всього 5/8 місць")}
           </div>
           <div
             style={{
