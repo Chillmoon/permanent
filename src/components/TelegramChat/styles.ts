@@ -4,15 +4,15 @@ const useStyles = makeStyles({
   wrapper: {
     position: "fixed",
     right: 30,
-    bottom: 30,
+    bottom: 120,
     zIndex: 1001,
     opacity: 0.7,
     "&>a": {
-      display: "block",
+      display: "block", // Изменяем на блочный элемент
       borderRadius: "50%",
       width: 70,
       height: 70,
-      textDecoration: "none",
+      textDecoration: "none", // Убираем стандартное подчеркивание для ссылки
       "&>img": {
         width: "100%",
         height: "100%",

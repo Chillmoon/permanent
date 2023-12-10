@@ -30,6 +30,7 @@ import Footer from "./components/Footer";
 import FacebookPixel from "./components/FacebookPixel/FacebookPixel";
 import TechSupport from "./components/TechSupport";
 import HairstrokesLanding from "./pages/HairstrokesLanding";
+import TelegramChat from "./components/TelegramChat";
 
 function App() {
   const dispatch = useDispatch();
@@ -103,6 +104,7 @@ function App() {
     <>
       <NavBar />
       <FacebookPixel />
+      {rateHairCourse && <TelegramChat rate={rateHairCourse} />}
       <TechSupport />
       <Routes>
         {/* {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
