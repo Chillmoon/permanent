@@ -104,7 +104,6 @@ function App() {
     <>
       <NavBar />
       <FacebookPixel />
-      {rateHairCourse && <TelegramChat rate={rateHairCourse} />}
       <TechSupport />
       <Routes>
         {/* {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
@@ -213,6 +212,7 @@ function App() {
           element={
             <>
               <PaymentSuccessPage />
+              {rateHairCourse && <TelegramChat rate={rateHairCourse} />}
               <Footer isTransparent={true} />
             </>
           }
