@@ -199,10 +199,8 @@ const Rates = () => {
           </div>
           <div className={classes.actualPrice}>
             {t("ціна зараз")}
-            <div className={classes.price}>850€</div>
+            <div className={classes.price}>950€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 12.12")}</div>
-          <div className={classes.fullPrice}>950€</div>
           <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
@@ -221,13 +219,7 @@ const Rates = () => {
             <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
           </button>{" "}
           <a
-            className={classes.link}
-            style={{ marginBottom: 10 }}
-            href="https://t.me/+QTM6Op9mbjZhYTY6"
-          >
-            {t("Забронювати місце")}
-          </a>
-          <a
+            style={{ marginTop: 100 }}
             className={classes.link}
             href="https://t.me/+CgZE2V_M179kZDQy"
             target="_blank"
@@ -354,10 +346,8 @@ const Rates = () => {
             style={{ backgroundColor: "#221207" }}
           >
             {t("ціна зараз")}
-            <div className={classes.price}>1090€</div>
+            <div className={classes.price}>1190€</div>
           </div>
-          <div className={classes.fullPriceLabel}>{t("ціна з 12.12")}</div>
-          <div className={classes.fullPrice}>1190€</div>
           <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
@@ -375,13 +365,7 @@ const Rates = () => {
             <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
           </button>{" "}
           <a
-            className={classes.link}
-            style={{ marginBottom: 10 }}
-            href="https://t.me/+QTM6Op9mbjZhYTY6"
-          >
-            {t("Забронювати місце")}
-          </a>
-          <a
+            style={{ marginTop: 100 }}
             className={classes.link}
             href="https://t.me/+CgZE2V_M179kZDQy"
             target="_blank"

@@ -156,7 +156,7 @@ const useStyles = makeStyles({
   },
   rateButton: {
     position: "absolute",
-    bottom: 75,
+    bottom: 50,
     background: "#FFF",
     padding: "15px 40px 15px 40px",
     borderRadius: 7,
