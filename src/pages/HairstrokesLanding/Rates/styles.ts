@@ -131,7 +131,6 @@ const useStyles = makeStyles({
     fontWeight: 500,
     letterSpacing: 0.32,
     textTransform: "uppercase",
-    marginBottom: 10,
   },
   price: {
     marginTop: "-10px",
@@ -152,11 +151,10 @@ const useStyles = makeStyles({
     fontWeight: 700,
     fontSize: 40,
     textDecoration: "line-through",
-    marginBottom: 90,
   },
   rateButton: {
     position: "absolute",
-    bottom: 50,
+    bottom: 120,
     background: "#FFF",
     padding: "15px 40px 15px 40px",
     borderRadius: 7,
@@ -170,6 +168,7 @@ const useStyles = makeStyles({
     fontSize: 25,
     marginTop: 20,
     boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    width: 237,
     "&:hover": {
       marginTop: 22,
       cursor: "pointer",
@@ -177,6 +176,48 @@ const useStyles = makeStyles({
       filter: "drop-shadow(0px 0px 40px #FFF)",
       transition: "all 0.3s ease",
       background: "#FFF",
+    },
+    "&:disabled": {
+      color: "#482B19",
+      border: "2px solid  #482B19",
+      boxShadow: "none",
+      transform: "rotate(-2.309deg);",
+      background: "transparent",
+      "&:hover": {
+        marginTop: 20,
+        cursor: "auto",
+        filter: "none",
+        background: "transparent",
+      },
+    },
+
+    "@media (max-width:1000px)": {
+      marginBottom: 0,
+    },
+  },
+  rateButton2: {
+    position: "absolute",
+    bottom: 40,
+    background: "#EFAA78",
+    padding: "16px 10px 15px 10px",
+    borderRadius: 7,
+    border: "none",
+    color: "#221207",
+    borderBottom: "5px solid #78553C",
+    zIndex: 1000,
+    textTransform: "uppercase",
+    fontWeight: 700,
+    fontFamily: `"Exo 2", sans-serif !important`,
+    fontSize: 20,
+    marginTop: 20,
+    width: 237,
+    boxShadow: "0 0 25.5px rgba(183, 112, 61, 0.11)",
+    "&:hover": {
+      marginTop: 22,
+      cursor: "pointer",
+      borderBottom: "none",
+      filter: "drop-shadow(0px 0px 40px #B7703D)",
+      transition: "all 0.3s ease",
     },
     "&:disabled": {
       color: "#482B19",
@@ -242,6 +283,17 @@ const useStyles = makeStyles({
   link: {
     color: "#FFF",
     fontSize: 12,
+  },
+  price1: {
+    marginTop: 10,
+    color: "#FFF",
+    marginBottom: 180,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 16,
+    gap: 10,
   },
 });
 

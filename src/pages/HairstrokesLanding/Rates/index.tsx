@@ -201,9 +201,17 @@ const Rates = () => {
             {t("ціна зараз")}
             <div className={classes.price}>950€</div>
           </div>
+          <div className={classes.price1}>
+            {t("ціна з розстрочкою в місяць")}
+            <div
+              style={{ color: "#B7703D", fontSize: 46 }}
+              className={classes.price}
+            >
+              317€
+            </div>
+          </div>
           <button
             className={classes.rateButton}
-            // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
             onClick={() => {
               if (rate === "Rate1" || rate === "Rate2" || rate === "Rate3") {
                 navigate("/paymentSuccess");
@@ -216,16 +224,16 @@ const Rates = () => {
             }}
           >
             {t("Придбати")}
-            <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
+            <div style={{ fontSize: 10 }}>{t("+ розстрочка monobank")}</div>
           </button>{" "}
-          <a
-            style={{ marginTop: 100 }}
-            className={classes.link}
-            href="https://t.me/+CgZE2V_M179kZDQy"
-            target="_blank"
+          <button
+            className={classes.rateButton2}
+            onClick={() => {
+              window.location.href = "https://t.me/+CgZE2V_M179kZDQy";
+            }}
           >
-            {t("Розстрочка")}
-          </a>
+            {t("розстрочка від нас")}
+          </button>
         </div>
         <div className={classes.rate} style={{ background: "#3E2513" }}>
           <img
@@ -348,6 +356,15 @@ const Rates = () => {
             {t("ціна зараз")}
             <div className={classes.price}>1190€</div>
           </div>
+          <div className={classes.price1}>
+            {t("ціна з розстрочкою в місяць")}
+            <div
+              style={{ color: "#B7703D", fontSize: 46 }}
+              className={classes.price}
+            >
+              397€
+            </div>
+          </div>
           <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
@@ -363,15 +380,15 @@ const Rates = () => {
           >
             {t("Придбати")}
             <div style={{ fontSize: 12 }}>{t("+ розстрочка monobank")}</div>
-          </button>{" "}
-          <a
-            style={{ marginTop: 100 }}
-            className={classes.link}
-            href="https://t.me/+CgZE2V_M179kZDQy"
-            target="_blank"
+          </button>
+          <button
+            className={classes.rateButton2}
+            onClick={() => {
+              window.location.href = "https://t.me/+CgZE2V_M179kZDQy";
+            }}
           >
-            {t("Розстрочка")}
-          </a>
+            {t("Розстрочка від нас")}
+          </button>{" "}
         </div>
         <div className={classes.rate} style={{ backgroundColor: "#EBEBEB" }}>
           <img
