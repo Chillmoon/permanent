@@ -54,7 +54,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 2</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 2</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>{t("Схеми")}</div>
             <div>-{t("побудова першого ескізу (рамка)")}</div>
             <div>-{t("аналіз рідної схеми росту брів клієнта")}</div>
@@ -87,7 +87,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 3</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 3</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>{t("Латекс")}</div>
             <div>-{t("правильна постановка рук")}</div>
             <div>-{t("розбираємо правила штриха")}</div>
@@ -115,7 +115,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 4</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 4</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>
               {t("Показовий")}
             </div>
@@ -148,7 +148,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 5</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 5</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>{t("Контент")}</div>
             <div>-{t("фото, лінзи, ракурси")}</div>
             <div>-{t("обробка та програми")}</div>
@@ -172,7 +172,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 6</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 6</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>
               {t("Чемпіонат")}
             </div>
@@ -199,7 +199,7 @@ const Program = () => {
           <div className={classes.blockLabel}>● {t("Блок")} 7</div>
           <div className={classes.block}>
             {" "}
-            <div className={classes.blockLabelMobile}>{t("Блок")} 1</div>
+            <div className={classes.blockLabelMobile}>{t("Блок")} 7</div>
             <div style={{ fontSize: 18, fontWeight: 700 }}>
               {t("Просування в Instagram")}
             </div>
