@@ -14,6 +14,7 @@ const Header = () => {
         src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fcshmr.png?alt=media&token=14091bbf-e914-4678-bb32-79b9264b04c2"
         alt="cshmr"
       />
+      {/* <div className={classes.hairstrokes}>HAIRSTROKES</div> */}
       <img
         className={classes.hairstrokes}
         src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2FHAIRSTROKES.png?alt=media&token=486eecc0-ad41-4518-9609-a75b0f338dcf"
@@ -41,7 +42,7 @@ const Header = () => {
         {t("Хочу на курс")}
       </Link>
       <div className={classes.timerDescription}>
-        {t("До підвищення цін залишилось")}
+        {t("До закриття продажів залишилось")}
       </div>
       <div className={classes.timer}>
         <Timer isLanding={true} />

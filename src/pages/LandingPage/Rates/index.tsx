@@ -1,41 +1,41 @@
 import { useTranslation } from "react-i18next";
 import { Element } from "react-scroll";
-// import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-// import { RootState } from "../../../app/store";
-// import retrievePaymentData from "../../../app/functions/retrievePaymentData";
+import { RootState } from "../../../app/store";
+import retrievePaymentData from "../../../app/functions/retrievePaymentData";
 
 import useStyles from "./styles";
 
 const Rates = () => {
   const classes = useStyles();
   const { t } = useTranslation();
-  // const [rate, setRate] = useState(undefined);
+  const [rate, setRate] = useState(undefined);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const user = useSelector((state: RootState) => state.user.user);
+  const user = useSelector((state: RootState) => state.user.user);
 
-  // useEffect(() => {
-  //   const checkPaymentStatus = async () => {
-  //     try {
-  //       if (user) {
-  //         const payedData = await retrievePaymentData(user.uid);
-  //         const fastEyelinerData = payedData?.fastEyeliner;
-  //         if (fastEyelinerData) {
-  //           setRate(fastEyelinerData.rate);
-  //         }
-  //       }
-  //     } catch (error) {
-  //       console.error("Error checking payment status:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const checkPaymentStatus = async () => {
+      try {
+        if (user) {
+          const payedData = await retrievePaymentData(user.uid);
+          const fastEyelinerData = payedData?.fastEyeliner;
+          if (fastEyelinerData) {
+            setRate(fastEyelinerData.rate);
+          }
+        }
+      } catch (error) {
+        console.error("Error checking payment status:", error);
+      }
+    };
 
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   checkPaymentStatus();
-  // }, [user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    checkPaymentStatus();
+  }, [user]);
 
   return (
     <div className={classes.wrapper}>
@@ -185,25 +185,21 @@ const Rates = () => {
               {t("Чат-підтримка протягом 3х місяців")}
             </strong>
             {/* <div className={classes.originalPrice}>€190</div> */}
-            <div className={classes.discountedPrice}>
-              {" "}
-              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€190"}
-            </div>
+            <div className={classes.discountedPrice}>€190</div>
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.button}
-              disabled={new Date() >= new Date("2023-11-01T00:00:00")}
-              // onClick={() => {
-              //   if (rate === "Rate1" || rate === "Rate2") {
-              //     navigate("/platform");
-              //   } else if (user?.uid) {
-              //     window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
-              //   } else {
-              //     navigate("/signup");
-              //   }
-              // }}
+              onClick={() => {
+                if (rate === "Rate1" || rate === "Rate2") {
+                  navigate("/platform");
+                } else if (user?.uid) {
+                  window.location.href = "https://pay.fondy.eu/s/bNRqXwTx8Sz";
+                } else {
+                  navigate("/signup");
+                }
+              }}
             >
-              {t("Продажі закриті")}
+              {t("Придбати")}
             </button>
           </div>
         </div>
@@ -304,25 +300,22 @@ const Rates = () => {
               {t("Чат-підтримка протягом 3х місяців")}
             </strong>
             {/* <div className={classes.originalPrice}>€250</div> */}
-            <div className={classes.discountedPrice}>
-              {new Date() >= new Date("2023-11-01T00:00:00") ? " " : "€250"}
-            </div>
+            <div className={classes.discountedPrice}>€250</div>
             {/* <div className={classes.priceDescription}>{t("до 17 жовтня")}</div> */}
             <button
               className={classes.blackButton}
-              disabled={new Date() >= new Date("2023-11-01T00:00:00")}
-              // onClick={() => {
-              //   if (rate === "Rate2") {
-              //     navigate("/platform");
-              //   } else if (user?.uid) {
-              //     window.location.href =
-              //       "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
-              //   } else {
-              //     navigate("/signup");
-              //   }
-              // }}
+              onClick={() => {
+                if (rate === "Rate2") {
+                  navigate("/platform");
+                } else if (user?.uid) {
+                  window.location.href =
+                    "https://pay.fondy.eu/s/RTUBH8ZDpDRagDO";
+                } else {
+                  navigate("/signup");
+                }
+              }}
             >
-              {t("Продажі закриті")}
+              {t("Придбати")}
             </button>
           </div>
         </div>
