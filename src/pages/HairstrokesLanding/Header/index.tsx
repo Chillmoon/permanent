@@ -41,12 +41,12 @@ const Header = () => {
       >
         {t("Хочу на курс")}
       </Link>
-      <div className={classes.timerDescription}>
+      {/* <div className={classes.timerDescription}>
         {t("До закриття продажів залишилось")}
       </div>
       <div className={classes.timer}>
         <Timer isLanding={true} />
-      </div>
+      </div> */}
     </div>
   );
 };

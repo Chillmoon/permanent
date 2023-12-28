@@ -74,7 +74,7 @@ const Rates = () => {
             src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fstart.png?alt=media&token=2bf03713-a66d-46f0-aba0-d4502b9fa18a"
           />
           <div className={classes.rateName}>{t("Start")}</div>
-          <div className={classes.available}>∞</div>
+          {/* <div className={classes.available}>∞</div> */}
           <div className={classes.rateBlock}>{t("Блок")} 1</div>
           <div className={classes.blockContains}>
             <div>• {t("типи шкіри")}</div>
@@ -197,7 +197,7 @@ const Rates = () => {
           >
             {t("старт навчання 01.01.2024")}
           </div>
-          <div className={classes.actualPrice}>
+          {/* <div className={classes.actualPrice}>
             {t("ціна зараз")}
             <div className={classes.price}>950€</div>
           </div>
@@ -208,9 +208,9 @@ const Rates = () => {
               className={classes.price}
             >
               317€
-            </div>
-          </div>
-          <button
+            </div> */}
+          {/* </div> */}
+          {/* <button
             className={classes.rateButton}
             onClick={() => {
               if (rate === "Rate1" || rate === "Rate2" || rate === "Rate3") {
@@ -233,7 +233,7 @@ const Rates = () => {
             }}
           >
             {t("розстрочка від нас")}
-          </button>
+          </button> */}
         </div>
         <div className={classes.rate} style={{ background: "#3E2513" }}>
           <img
@@ -242,14 +242,14 @@ const Rates = () => {
             src="https://firebasestorage.googleapis.com/v0/b/permanent-by-kushnir.appspot.com/o/assets%2Fadvanced.png?alt=media&token=78488320-b717-4378-aae2-d57f23fb98f6"
           />
           <div className={classes.rateName}>{t("Advanced")}</div>
-          <div
+          {/* <div
             className={classes.available}
             style={{
               color: "rgba(255, 255, 255, 0.70)",
             }}
           >
             {t("всього 7/30 місць")}
-          </div>
+          </div> */}
           <div className={classes.rateBlock}>{t("Блок")} 1</div>
           <div className={classes.blockContains}>
             <div>• {t("типи шкіри")}</div>
@@ -349,7 +349,7 @@ const Rates = () => {
           >
             {t("старт навчання 01.01.2024")}
           </div>
-          <div
+          {/* <div
             className={classes.actualPrice}
             style={{ backgroundColor: "#221207" }}
           >
@@ -364,8 +364,8 @@ const Rates = () => {
             >
               397€
             </div>
-          </div>
-          <button
+          </div> */}
+          {/* <button
             className={classes.rateButton}
             // disabled={new Date() >= new Date("2023-11-01T00:00:00")}
             onClick={() => {
@@ -388,7 +388,7 @@ const Rates = () => {
             }}
           >
             {t("Розстрочка від нас")}
-          </button>{" "}
+          </button>{" "} */}
         </div>
         <div className={classes.rate} style={{ backgroundColor: "#EBEBEB" }}>
           <img
@@ -401,9 +401,9 @@ const Rates = () => {
             {<br />}
             {t("Робота з Вікторією Кушнір по курсу ADVANCED ")}
           </div>
-          <div className={classes.available} style={{ color: "#3E2513" }}>
+          {/* <div className={classes.available} style={{ color: "#3E2513" }}>
             {t("всього 3/8 місць")}
-          </div>
+          </div> */}
           <div
             style={{
               color: "#3E2513",
