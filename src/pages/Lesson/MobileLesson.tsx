@@ -157,6 +157,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                 url={t(video.video)}
                                 width="100%"
                                 height="100%"
+                                webkit-playsinline
                                 className={classes.reactPlayerMobile}
                                 config={{
                                   file: {
