@@ -424,6 +424,18 @@ export const courses: AllCourses = [
               },
             ],
           },
+          {
+            id: "block0-lesson9",
+            label: "Урок 9. Малюємо схему разом",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "hairCourse-Малюємо схему разом",
+                cover: "",
+              },
+            ],
+          },
         ],
       },
     ],
