@@ -411,6 +411,19 @@ export const courses: AllCourses = [
               },
             ],
           },
+          {
+            id: "block0-lesson8",
+            label: "Урок 8. Допостановка руки на латексі. Штрих та його види",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "hairCourse-Допостановка руки на латексі. Штрих та його види",
+                cover: "",
+              },
+            ],
+          },
         ],
       },
     ],
