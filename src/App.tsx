@@ -37,6 +37,7 @@ function App() {
   const user = useSelector((state: RootState) => state.user.user);
   const [rateFastEyeliner, setRateFastEyeliner] = useState(undefined);
   const [rateHairCourse, setRateHairCourse] = useState(undefined);
+  const [rateHairCourseDemo, setRateHairCourseDemo] = useState(undefined);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -47,11 +48,15 @@ function App() {
           const payedData = await retrievePaymentData(user.uid);
           const fastEyelinerData = payedData?.fastEyeliner;
           const hairCourseData = payedData?.hairCourse;
+          const hairCourseDemoData = payedData?.hairCourseDemo;
           if (fastEyelinerData) {
             setRateFastEyeliner(fastEyelinerData.rate);
           }
           if (hairCourseData) {
             setRateHairCourse(hairCourseData.rate);
+          }
+          if (hairCourseDemoData) {
+            setRateHairCourseDemo(hairCourseDemoData.rate);
           }
         }
       } catch (error) {

@@ -17,6 +17,12 @@ const initialState = {
       merchantId: "1534312",
       signature: "",
     },
+    hairCourseDemo: {
+      isPayed: false,
+      orderId: "",
+      merchantId: "1534312",
+      signature: "",
+    },
   },
 };
 

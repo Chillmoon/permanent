@@ -293,7 +293,7 @@ export const courses: AllCourses = [
     ],
   },
   {
-    id: "hairstrokes",
+    id: "hairstrokesDemo",
     label: "HAIRSTROKES",
     afterCourseBlock: [
       {
@@ -432,6 +432,128 @@ export const courses: AllCourses = [
             video: [
               {
                 video: "hairCourse-Малюємо схему разом",
+                cover: "",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "hairstrokes",
+    label: "CSHMR HAIRSTROKES",
+    children: [
+      {
+        id: "block0",
+        label: "Уроки",
+        description: "",
+        disabled: false,
+        children: [
+          {
+            id: "block0-lesson1",
+            label: "Урок 1. Вступ",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Вступ",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson2",
+            label: "Урок 2. Типи шкіри",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Типи шкіри",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson3",
+            label: "Урок 3. Апарати",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Апарати",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson4",
+            label: "Урок 4. Голки",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Голки",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson5",
+            label: "Урок 5. Пігменти",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Пігменти",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson6",
+            label: "Урок 6. Загоєння. Післядогляд",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Загоєння",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson7",
+            label: "Урок 7. Кольористика",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Кольористика",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson8",
+            label: "Урок 8. УФ",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-УФ",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson9",
+            label: "Урок 9. Робоче місце",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Робоче місце",
                 cover: "",
               },
             ],

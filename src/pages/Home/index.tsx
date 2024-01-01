@@ -18,11 +18,13 @@ const cardData = [
   },
   {
     name: "HAIR STROKES",
-    id: "hairstrokes",
+    id: "hairstrokesDemo",
     description: "Навчись робити брови з волосковою технікою",
   },
   {
-    name: "Скоро",
+    name: "CSHMR HAIRSTROKES",
+    id: "hairstrokes",
+    description: "Навчись робити брови з волосковою технікою",
   },
 ];
 
@@ -44,10 +46,13 @@ const HomePage = () => {
     const checkPaymentStatus = async () => {
       try {
         const paymentData = await retrievePaymentData(user?.uid);
-        const payedCourses = paymentData?.hairCourse
-          ? { ...paymentData, hairstrokes: paymentData.hairCourse }
-          : paymentData;
-
+        const payedCourses = {
+          fastEyeliner: paymentData.fastEyeliner,
+          hairstrokesDemo: paymentData.hairCourseDemo,
+          hairstrokes: paymentData.hairCourse,
+        };
+        console.log("123", payedCourses);
+        //@ts-ignore
         setAvailableCourses(payedCourses);
       } catch (error) {
         console.error("Error checking payment status:", error);
