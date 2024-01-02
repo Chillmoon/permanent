@@ -6,9 +6,10 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "100%",
     width: "100%",
     overflow: "hidden",
+    paddingTop: 150,
   },
   backgroundDetails: {
     position: "absolute",

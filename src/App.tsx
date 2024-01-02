@@ -133,12 +133,12 @@ function App() {
             element={<Navigate to="/platform" />}
           />
         )}
-        {shouldRedirectHairCourse && (
+        {/* {shouldRedirectHairCourse && (
           <Route
             path="/platform/hairstrokes/:lessonNumber"
             element={<Navigate to="/paymentSuccess" />}
           />
-        )}
+        )} */}
         <Route
           path="/courses"
           element={

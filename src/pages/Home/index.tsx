@@ -72,10 +72,11 @@ const HomePage = () => {
           const isCourseAvailable =
             availableCourses &&
             data.id !== undefined &&
-            Object.keys(availableCourses).includes(data.id);
-
+            //@ts-ignore
+            availableCourses[data.id] !== undefined;
           return data.name === "Скоро" ||
             (currentLanguage === "en" && data.name === "FAST EYELINER") ||
+            (currentLanguage === "en" && data.name === "CSHMR HAIRSTROKES") ||
             !isCourseAvailable ? null : (
             <div className={classes.card} key={data.id}>
               <div className={classes.cardName}>
@@ -118,10 +119,12 @@ const HomePage = () => {
           const isCourseAvailable =
             availableCourses &&
             data.id !== undefined &&
-            Object.keys(availableCourses).includes(data.id);
+            //@ts-ignore
+            availableCourses[data.id] !== undefined;
 
           return data.name === "Скоро" ||
             (currentLanguage === "en" && data.name === "FAST EYELINER") ||
+            (currentLanguage === "en" && data.name === "CSHMR HAIRSTROKES") ||
             !isCourseAvailable ? (
             <div className={classes.coursePlaceholder} />
           ) : (
