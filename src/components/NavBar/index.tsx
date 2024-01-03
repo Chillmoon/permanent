@@ -74,6 +74,7 @@ const NavBar = ({ isBackground = false }) => {
     dispatch(logOutUser());
     signOut(auth);
     handleCloseUserMenu();
+    navigate("/");
   };
 
   const handleLogIn = () => {
@@ -163,47 +164,30 @@ const NavBar = ({ isBackground = false }) => {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
           >
-            {/* <MenuItem key="language" onClick={handleCloseNavMenu}>
-              <LanguageSelector />
-            </MenuItem> */}
-            <MenuItem key="settings" onClick={() => navigate("/platform")}>
-              <Typography className={classes.menuLink}>
-                {t("Кабінет")}
-              </Typography>
-            </MenuItem>
+            {user && (
+              <MenuItem key="settings" onClick={() => navigate("/platform")}>
+                <Typography className={classes.menuLink}>
+                  {t("Кабінет")}
+                </Typography>
+              </MenuItem>
+            )}
             <MenuItem key="settings" onClick={() => navigate("/")}>
               <Typography className={classes.menuLink}>{t("Курси")}</Typography>
             </MenuItem>
-            {/* <MenuItem key="students" onClick={() => navigate("/students")}>
-              {isAccessToStudentsAllowed && (
-                <Typography className={classes.menuLink}>
-                  {t("Студенти")}
-                </Typography>
-              )}
-            </MenuItem> */}
-            {/* {pages.map((page) => (
-              <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                <Link to={`/${page.id}`} className={classes.menuLink}>
-                  <Typography
-                    sx={{ display: getDisplayCondition(user, page.id) }}
-                  >
-                    {page.name}
-                  </Typography>
-                </Link>
-              </MenuItem>
-            ))} */}
             {user && user.username ? (
-              <MenuItem key="logOut" onClick={handleLogOut}>
-                <Typography
-                  sx={{
-                    color: "#39291E",
-                    fontWeight: 700,
-                  }}
-                  textAlign="center"
-                >
-                  {t("Вихід")}
-                </Typography>
-              </MenuItem>
+              <>
+                <MenuItem key="logOut" onClick={handleLogOut}>
+                  <Typography
+                    sx={{
+                      color: "#39291E",
+                      fontWeight: 700,
+                    }}
+                    textAlign="center"
+                  >
+                    {t("Вихід")}
+                  </Typography>
+                </MenuItem>
+              </>
             ) : (
               <MenuItem key="logIn" onClick={handleLogIn}>
                 <Typography

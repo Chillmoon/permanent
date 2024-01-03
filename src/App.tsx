@@ -145,6 +145,7 @@ function App() {
             element={<Navigate to="/platform" />}
           />
         )}
+        {!user && <Route path="/platform" element={<Navigate to="/login" />} />}
         <Route
           path="/courses"
           element={
