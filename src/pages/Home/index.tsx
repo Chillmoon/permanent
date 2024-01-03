@@ -51,7 +51,6 @@ const HomePage = () => {
           hairstrokesDemo: paymentData.hairCourseDemo,
           hairstrokes: paymentData.hairCourse,
         };
-        console.log("123", payedCourses);
         //@ts-ignore
         setAvailableCourses(payedCourses);
       } catch (error) {

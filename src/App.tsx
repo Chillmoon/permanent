@@ -101,6 +101,10 @@ function App() {
 
   const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
 
+  const isCoursePayedFastEyeliner = Boolean(rateFastEyeliner);
+  const isCoursePayedHairstrokesDemo = Boolean(rateHairCourseDemo);
+  const isCoursePayedHairstrokes = Boolean(rateHairCourse);
+
   // const now = new Date();
   // const redirectDate = new Date("2023-11-01");
   // const shouldRedirect = now < redirectDate;
@@ -111,22 +115,6 @@ function App() {
       <FacebookPixel />
       <TechSupport />
       <Routes>
-        {/* {shouldRedirect && new Date() < new Date("2023-11-01T00:00:00") && (
-          <>
-            <Route
-              path="/platform"
-              element={<Navigate to="/paymentSuccess" />}
-            />
-            <Route
-              path="/platform/:courseId/:lessonNumber"
-              element={<Navigate to="/paymentSuccess" />}
-            />
-            <Route
-              path="/platform/:courseId"
-              element={<Navigate to="/paymentSuccess" />}
-            />
-          </>
-        )} */}
         {shouldRedirectFastEyeliner && location.pathname.includes("Bonus") && (
           <Route
             path="/platform/:courseId/:lessonNumber"
@@ -139,6 +127,24 @@ function App() {
             element={<Navigate to="/paymentSuccess" />}
           />
         )} */}
+        {!isCoursePayedFastEyeliner && (
+          <Route
+            path="/platform/fastEyeliner/:lessonNumber"
+            element={<Navigate to="/platform" />}
+          />
+        )}
+        {!isCoursePayedHairstrokesDemo && (
+          <Route
+            path="/platform/hairstrokesDemo/:lessonNumber"
+            element={<Navigate to="/platform" />}
+          />
+        )}
+        {!isCoursePayedHairstrokes && (
+          <Route
+            path="/platform/hairstrokesDemo/:lessonNumber"
+            element={<Navigate to="/platform" />}
+          />
+        )}
         <Route
           path="/courses"
           element={
@@ -223,7 +229,6 @@ function App() {
           }
         />
       </Routes>{" "}
-      {/* {["/login", "/signup"].includes(location.pathname) ? null : <Footer />} */}
     </>
   );
 }
