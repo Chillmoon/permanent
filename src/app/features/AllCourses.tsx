@@ -438,6 +438,18 @@ export const courses: AllCourses = [
               },
             ],
           },
+          {
+            id: "block0-lesson10-Bonus",
+            label: "Методичка",
+            description: "",
+            disabled: false,
+            file: [
+              {
+                file: t("Методичка-файл"),
+                name: t("Методичка"),
+              },
+            ],
+          },
         ],
       },
     ],
@@ -621,6 +633,18 @@ export const courses: AllCourses = [
               },
             ],
           },
+          {
+            id: "block0-lesson10-Bonus",
+            label: "Методичка",
+            description: "",
+            disabled: false,
+            file: [
+              {
+                file: t("Методичка-файл"),
+                name: t("Методичка"),
+              },
+            ],
+          },
         ],
       },
       {
@@ -687,6 +711,20 @@ export const courses: AllCourses = [
         children: [
           {
             id: "block5-lesson1",
+            label: "Урок 1",
+            description: "",
+            disabled: true,
+          },
+        ],
+      },
+      {
+        id: "block6",
+        label: "Просування в Instagram",
+        description: "",
+        disabled: true,
+        children: [
+          {
+            id: "block6-lesson1",
             label: "Урок 1",
             description: "",
             disabled: true,
