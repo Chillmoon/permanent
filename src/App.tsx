@@ -99,10 +99,10 @@ function App() {
     location.pathname.includes("Bonus") &&
     rateFastEyeliner !== "Rate2";
 
-  const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
+  // const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
 
   const isCoursePayedFastEyeliner = Boolean(rateFastEyeliner);
-  // const isCoursePayedHairstrokesDemo = Boolean(rateHairCourseDemo);
+  const isCoursePayedHairstrokesDemo = Boolean(rateHairCourseDemo);
   const isCoursePayedHairstrokes = Boolean(rateHairCourse);
 
   // const now = new Date();
@@ -133,15 +133,15 @@ function App() {
             element={<Navigate to="/platform" />}
           />
         )}
-        {/* {!isCoursePayedHairstrokesDemo && (
+        {!isCoursePayedHairstrokesDemo && (
           <Route
             path="/platform/hairstrokesDemo/:lessonNumber"
             element={<Navigate to="/platform" />}
           />
-        )} */}
+        )}
         {!isCoursePayedHairstrokes && (
           <Route
-            path="/platform/hairstrokesDemo/:lessonNumber"
+            path="/platform/hairstrokes/:lessonNumber"
             element={<Navigate to="/platform" />}
           />
         )}
