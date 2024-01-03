@@ -653,27 +653,27 @@ export const courses: AllCourses = [
             label: "Методичка",
             description: "",
             disabled: false,
-            info: [
-              {
-                content: (
-                  <>
-                    <a
-                      //@ts-ignore
-                      href={t("Методичка-файл")}
-                      target="_blank"
-                    >
-                      {t("Методичка")}
-                    </a>
-                  </>
-                ),
-              },
-            ],
-            // file: [
+            // info: [
             //   {
-            //     file: t("Методичка-файл"),
-            //     name: t("Методичка"),
+            //     content: (
+            //       <>
+            //         <a
+            //           //@ts-ignore
+            //           href={t("Методичка-файл")}
+            //           target="_blank"
+            //         >
+            //           {t("Методичка")}
+            //         </a>
+            //       </>
+            //     ),
             //   },
             // ],
+            file: [
+              {
+                file: t("Методичка-файл"),
+                name: t("Методичка"),
+              },
+            ],
           },
         ],
       },
