@@ -391,12 +391,12 @@ export const courses: AllCourses = [
           },
           {
             id: "block0-lesson6",
-            label: "Урок 6. Розпад пігментів",
+            label: "Урок 6. УФ та ферментний розпад",
             description: "",
             disabled: false,
             video: [
               {
-                video: "hairCourse-Розпад пігментів",
+                video: "cshmr-УФ",
                 cover: "",
               },
             ],
@@ -586,12 +586,12 @@ export const courses: AllCourses = [
           },
           {
             id: "block0-lesson6",
-            label: "Урок 6. Кольористика",
+            label: "Урок 6. Колористика",
             description: "",
             disabled: false,
             video: [
               {
-                video: "cshmr-Кольористика",
+                video: "cshmr-Колористика",
                 cover: "",
               },
             ],
@@ -611,7 +611,7 @@ export const courses: AllCourses = [
 
           {
             id: "block0-lesson8",
-            label: "Урок 8. УФ",
+            label: "Урок 8. УФ та ферментний розпад",
             description: "",
             disabled: false,
             video: [

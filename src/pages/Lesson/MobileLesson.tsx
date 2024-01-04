@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
+import HlsPlayer from "react-hls-player";
 import { useSelector } from "react-redux";
 import {
   Accordion,
@@ -36,6 +36,7 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
   //@ts-ignore
   const classes = useStyles({ courseId });
   const { t } = useTranslation();
+  const playerRef = React.useRef<HTMLVideoElement | null>(null);
 
   const [activeLessons, setActiveLessons] = useState<string[]>([]);
   const [rate, setRate] = useState(undefined);
@@ -148,25 +149,15 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                               key={index}
                               className={classes.videoPlayerMobile}
                             >
-                              <ReactPlayer
-                                onContextMenu={(e: {
-                                  preventDefault: () => any;
-                                }) => e.preventDefault()}
+                              <HlsPlayer
+                                src={t(video.video)}
+                                autoPlay={false}
                                 controls={true}
-                                //@ts-ignore
-                                url={t(video.video)}
                                 width="100%"
                                 height="100%"
-                                webkit-playsinline
+                                poster={video.cover}
                                 className={classes.reactPlayerMobile}
-                                config={{
-                                  file: {
-                                    attributes: {
-                                      controlsList: "nodownload",
-                                    },
-                                  },
-                                }}
-                                light={video.cover}
+                                playerRef={playerRef}
                               />
                               <span>{video.text}</span>
                             </div>
