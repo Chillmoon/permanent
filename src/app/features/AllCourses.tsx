@@ -391,7 +391,7 @@ export const courses: AllCourses = [
           },
           {
             id: "block0-lesson6",
-            label: "Урок 6. УФ та ферментний розпад",
+            label: "Урок 6. Розпад пігментів",
             description: "",
             disabled: false,
             video: [
