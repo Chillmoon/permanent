@@ -665,12 +665,61 @@ export const courses: AllCourses = [
         children: [
           {
             id: "block1-lesson1",
-            label: "Урок 1.",
+            label: "Урок 1.Створення першого ескізу",
             description: "",
             disabled: true,
+            video: [
+              {
+                video: "cshmr-Створення першого ескізу",
+              },
+            ],
           },
           {
-            id: "block1-lesson1-BonusZoom",
+            id: "block1-lesson2",
+            label: "Урок 2. Аналіз природнього росту волосся",
+            description: "",
+            disabled: true,
+            video: [
+              {
+                video: "cshmr-Аналіз природнього росту волосся",
+              },
+            ],
+          },
+          {
+            id: "block1-lesson3",
+            label: "Урок 3. Види волосків",
+            description: "",
+            disabled: true,
+            video: [
+              {
+                video: "cshmr-Види волосків",
+              },
+            ],
+          },
+          {
+            id: "block1-lesson4",
+            label: "Урок 4. Види схем",
+            description: "",
+            disabled: true,
+            video: [
+              {
+                video: "cshmr-Види схем",
+              },
+            ],
+          },
+          {
+            id: "block1-lesson5",
+            label: "Урок 5. Малюємо основну схему разом",
+            description: "",
+            disabled: true,
+            video: [
+              {
+                video: "cshmr-Малюємо основну схему разом",
+              },
+            ],
+          },
+          {
+            id: "block1-lesson6-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
             disabled: true,
