@@ -18,6 +18,7 @@ import { RootState } from "../../app/store";
 import HomeworkUploader from "../../components/HomeworkUploader";
 
 import useStyles from "./styles";
+import findCourseLabelById from "../../app/functions/findCourseLabelById";
 
 interface MobileLessonProps {
   courses: AllCourses;
@@ -39,7 +40,9 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
   const playerRef = React.useRef<HTMLVideoElement | null>(null);
 
   const [activeLessons, setActiveLessons] = useState<string[]>([]);
-  const [rate, setRate] = useState(undefined);
+  const [rateFastEyeliner, setRateFastEyeliner] = useState(undefined);
+  const [rateHairCourse, setRateHairCourse] = useState(undefined);
+  const [rateHairCourseDemo, setRateHairCourseDemo] = useState(undefined);
 
   if (courseId === "hairCourse") {
     document.body.style.background = "#120F0D";
@@ -51,8 +54,16 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
         if (user) {
           const payedData = await retrievePaymentData(user.uid);
           const fastEyelinerData = payedData?.fastEyeliner;
+          const hairCourseData = payedData?.hairCourse;
+          const hairCourseDemoData = payedData?.hairCourseDemo;
           if (fastEyelinerData) {
-            setRate(fastEyelinerData.rate);
+            setRateFastEyeliner(fastEyelinerData.rate);
+          }
+          if (hairCourseData) {
+            setRateHairCourse(hairCourseData.rate);
+          }
+          if (hairCourseDemoData) {
+            setRateHairCourseDemo(hairCourseDemoData.rate);
           }
         }
       } catch (error) {
@@ -79,131 +90,155 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
     anchor.click();
   };
 
+  const courseLabel = courseId
+    ? findCourseLabelById(courses, courseId)
+    : "Мій курс";
+
+  const courseRate =
+    courseLabel === "CSHMR HAIRSTROKES"
+      ? rateHairCourse
+      : courseLabel === "HAIRSTROKES"
+      ? rateHairCourseDemo
+      : rateFastEyeliner;
+
+  console.log(courseRate);
+
   const renderTree = (nodes: Module[]) => (
     <>
       {nodes.map((block: any) => (
         <Grid container key={block.id} className={classes.mobileLessonElement}>
           <Grid item lg={4} xs={12} className={classes.mobileLessonLabel}>
             {t(block.label)}
+            {block.start && (
+              <div className={classes.blockStart}>{`${t("відкриття")} ${
+                block.start
+              }`}</div>
+            )}
             <hr className={classes.horizontalLine} />
           </Grid>
           <Grid item lg={8} xs={12}>
             <div className={classes.mobileLessonAccordion}>
-              {block.children.map((lesson: Lesson) => (
-                <Accordion
-                  key={lesson.id}
-                  disableGutters={true}
-                  elevation={0}
-                  expanded={activeLessons.includes(lesson.id)}
-                  disabled={
-                    lesson?.disabled ||
-                    (selectedCourse?.id === "fastEyeliner" &&
-                      rate === "Rate1" &&
-                      lesson.id.includes("Bonus"))
-                  }
-                  onChange={() => handleLessonToggle(lesson.id)}
-                >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    className={classes.mobileLessonAccordionSummary}
+              {block.children.map((lesson: Lesson) =>
+                lesson.id.includes("BonusZoom") &&
+                courseRate === "Rate1" ? null : (
+                  <Accordion
+                    key={lesson.id}
+                    disableGutters={true}
+                    elevation={0}
+                    expanded={activeLessons.includes(lesson.id)}
+                    disabled={
+                      lesson?.disabled ||
+                      (selectedCourse?.id === "fastEyeliner" &&
+                        rateFastEyeliner === "Rate1" &&
+                        lesson.id.includes("Bonus")) ||
+                      (selectedCourse?.id === "hairstrokes" &&
+                        rateHairCourse === "Rate1" &&
+                        lesson.id.includes("Bonus"))
+                    }
+                    onChange={() => handleLessonToggle(lesson.id)}
                   >
-                    {t(lesson.label)}
-                  </AccordionSummary>
-                  <AccordionDetails
-                    className={classes.mobileLessonAccordionDetails}
-                  >
-                    <div className={classes.lessonInfo}>
-                      {lesson?.info?.map(
-                        (section: InfoSection, index: number) => (
-                          <div key={index}>
-                            {section.title && (
-                              <div className={classes.textTitle}>
-                                {section.title}
-                              </div>
-                            )}
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      className={classes.mobileLessonAccordionSummary}
+                    >
+                      {t(lesson.label)}
+                    </AccordionSummary>
+                    <AccordionDetails
+                      className={classes.mobileLessonAccordionDetails}
+                    >
+                      <div className={classes.lessonInfo}>
+                        {lesson?.info?.map(
+                          (section: InfoSection, index: number) => (
+                            <div key={index}>
+                              {section.title && (
+                                <div className={classes.textTitle}>
+                                  {section.title}
+                                </div>
+                              )}
 
-                            {section.content && <div>{section.content}</div>}
-                            {section.image && (
-                              <img
-                                src={section.image}
-                                alt=""
-                                width="100%"
-                                height="100%"
-                              />
-                            )}
-                          </div>
-                        )
-                      )}
-                      {activeLessons.includes(lesson.id) &&
-                        lesson?.video &&
-                        lesson?.video.map(
-                          (
-                            video: {
-                              video: string;
-                              cover?: string;
-                              text?: string | JSX.Element;
-                            },
-                            index: number
-                          ) => (
-                            <div
-                              key={index}
-                              className={classes.videoPlayerMobile}
-                            >
-                              <HlsPlayer
-                                src={t(video.video)}
-                                autoPlay={false}
-                                controls={true}
-                                width="100%"
-                                height="100%"
-                                poster={video.cover}
-                                className={classes.reactPlayerMobile}
-                                playerRef={playerRef}
-                              />
-                              <span>{video.text}</span>
+                              {section.content && <div>{section.content}</div>}
+                              {section.image && (
+                                <img
+                                  src={section.image}
+                                  alt=""
+                                  width="100%"
+                                  height="100%"
+                                />
+                              )}
                             </div>
                           )
                         )}
-
-                      {lesson.file && (
-                        <div className={classes.fileWrapper}>
-                          <div className={classes.fileDescription}>
-                            {t("Матеріали до уроку")}:
-                          </div>
-                          {lesson.file.map((file, index) => (
-                            <button
-                              key={index}
-                              className={classes.button}
-                              onClick={() =>
-                                handleDownloadFile(
-                                  file.file as string,
-                                  file.name
-                                )
-                              }
-                            >
+                        {activeLessons.includes(lesson.id) &&
+                          lesson?.video &&
+                          lesson?.video.map(
+                            (
+                              video: {
+                                video: string;
+                                cover?: string;
+                                text?: string | JSX.Element;
+                              },
+                              index: number
+                            ) => (
                               <div
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
+                                key={index}
+                                className={classes.videoPlayerMobile}
                               >
-                                <img
-                                  alt=""
-                                  className={classes.saveIcon}
-                                  src={"../../assets/saveIcon.svg"}
+                                <HlsPlayer
+                                  src={t(video.video)}
+                                  autoPlay={false}
+                                  controls={true}
+                                  width="100%"
+                                  height="100%"
+                                  poster={video.cover}
+                                  className={classes.reactPlayerMobile}
+                                  playerRef={playerRef}
                                 />
-                                {file.name}
+                                <span>{video.text}</span>
                               </div>
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                      {lesson?.homework && (
-                        <HomeworkUploader lessonID={lesson?.id} />
-                      )}
-                    </div>
-                  </AccordionDetails>
-                </Accordion>
-              ))}
+                            )
+                          )}
+
+                        {lesson.file && (
+                          <div className={classes.fileWrapper}>
+                            <div className={classes.fileDescription}>
+                              {t("Матеріали до уроку")}:
+                            </div>
+                            {lesson.file.map((file, index) => (
+                              <button
+                                key={index}
+                                className={classes.button}
+                                onClick={() =>
+                                  handleDownloadFile(
+                                    file.file as string,
+                                    file.name
+                                  )
+                                }
+                              >
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <img
+                                    alt=""
+                                    className={classes.saveIcon}
+                                    src={"../../assets/saveIcon.svg"}
+                                  />
+                                  {file.name}
+                                </div>
+                              </button>
+                            ))}
+                          </div>
+                        )}
+                        {lesson?.homework && (
+                          <HomeworkUploader lessonID={lesson?.id} />
+                        )}
+                      </div>
+                    </AccordionDetails>
+                  </Accordion>
+                )
+              )}
             </div>
           </Grid>
         </Grid>

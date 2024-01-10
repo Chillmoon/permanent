@@ -26,6 +26,7 @@ export type Block = {
   description: string;
   disabled?: boolean;
   speaker?: string;
+  start?: string;
 };
 
 export type TargetAudienceElement = {
@@ -634,7 +635,14 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block0-lesson10-Bonus",
+            id: "block0-lesson10",
+            label: "Зум з Поліною Зонтаг",
+            description: "",
+            disabled: false,
+            info: [{ content: "1 січня о 16:00" }],
+          },
+          {
+            id: "block0-lesson11-Special",
             label: "Методичка",
             description: "",
             disabled: false,
@@ -652,11 +660,18 @@ export const courses: AllCourses = [
         id: "block1",
         label: "Схеми",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "13.01",
         children: [
           {
             id: "block1-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
+            description: "",
+            disabled: true,
+          },
+          {
+            id: "block1-lesson1-BonusZoom",
+            label: "Зум з Вікторією",
             description: "",
             disabled: true,
           },
@@ -666,11 +681,12 @@ export const courses: AllCourses = [
         id: "block2",
         label: "Латекс",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "28.01",
         children: [
           {
             id: "block2-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
             description: "",
             disabled: true,
           },
@@ -680,11 +696,18 @@ export const courses: AllCourses = [
         id: "block3",
         label: "Показовий",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "6.02",
         children: [
           {
             id: "block3-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
+            description: "",
+            disabled: true,
+          },
+          {
+            id: "block3-lesson1-BonusZoom",
+            label: "Зум з Вікторією",
             description: "",
             disabled: true,
           },
@@ -694,11 +717,12 @@ export const courses: AllCourses = [
         id: "block4",
         label: "Контент",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "16.02",
         children: [
           {
             id: "block4-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
             description: "",
             disabled: true,
           },
@@ -708,11 +732,12 @@ export const courses: AllCourses = [
         id: "block5",
         label: "Чемпіонат",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "23.02",
         children: [
           {
             id: "block5-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
             description: "",
             disabled: true,
           },
@@ -722,25 +747,18 @@ export const courses: AllCourses = [
         id: "block6",
         label: "Просування в Instagram",
         description: "",
-        disabled: true,
+        disabled: false,
+        start: "3.03",
         children: [
           {
             id: "block6-lesson1",
-            label: "Урок 1",
+            label: "Урок 1.",
             description: "",
             disabled: true,
           },
-        ],
-      },
-      {
-        id: "block6",
-        label: "Просування в Instagram",
-        description: "",
-        disabled: true,
-        children: [
           {
             id: "block6-lesson1",
-            label: "Урок 1",
+            label: "Зум з Вікторією",
             description: "",
             disabled: true,
           },

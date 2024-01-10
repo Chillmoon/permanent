@@ -21,11 +21,9 @@ const SideBar = () => {
 
   const user = useSelector((state: RootState) => state.user.user);
 
-  const [rate, setRate] = useState(undefined);
-
-  const courseLabel = courseId
-    ? findCourseLabelById(courses, courseId)
-    : "Мій курс";
+  const [rateFastEyeliner, setRateFastEyeliner] = useState(undefined);
+  const [rateHairCourse, setRateHairCourse] = useState(undefined);
+  const [rateHairCourseDemo, setRateHairCourseDemo] = useState(undefined);
 
   useEffect(() => {
     const checkPaymentStatus = async () => {
@@ -33,8 +31,16 @@ const SideBar = () => {
         if (user) {
           const payedData = await retrievePaymentData(user.uid);
           const fastEyelinerData = payedData?.fastEyeliner;
+          const hairCourseData = payedData?.hairCourse;
+          const hairCourseDemoData = payedData?.hairCourseDemo;
           if (fastEyelinerData) {
-            setRate(fastEyelinerData.rate);
+            setRateFastEyeliner(fastEyelinerData.rate);
+          }
+          if (hairCourseData) {
+            setRateHairCourse(hairCourseData.rate);
+          }
+          if (hairCourseDemoData) {
+            setRateHairCourseDemo(hairCourseDemoData.rate);
           }
         }
       } catch (error) {
@@ -45,6 +51,17 @@ const SideBar = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     checkPaymentStatus();
   }, [user]);
+
+  const courseLabel = courseId
+    ? findCourseLabelById(courses, courseId)
+    : "Мій курс";
+
+  const courseRate =
+    courseLabel === "CSHMR HAIRSTROKES"
+      ? rateHairCourse
+      : courseLabel === "HAIRSTROKES"
+      ? rateHairCourseDemo
+      : rateFastEyeliner;
 
   return (
     <>
@@ -64,7 +81,7 @@ const SideBar = () => {
         <Typography className={classes.sideBarCourseName}>
           {t(courseLabel)}
         </Typography>
-        <TreeViewComponent courses={courses} rate={rate} />
+        <TreeViewComponent courses={courses} rate={courseRate} />
       </div>
     </>
   );

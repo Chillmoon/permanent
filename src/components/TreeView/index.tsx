@@ -23,6 +23,7 @@ interface Module {
   label: string;
   disabled?: boolean; // Add 'disabled' property
   children?: Module[];
+  start?: string;
 }
 
 const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
@@ -45,26 +46,42 @@ const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
               expandIcon={<ExpandMoreIcon />}
               className={classes.accordionSummary}
             >
-              <Typography>{t(node.label)}</Typography>
+              <div className={classes.blockLabelWrapper}>
+                <Typography>{t(node.label)}</Typography>
+                {node.start && (
+                  <div className={classes.blockStart}>{`${t("відкриття")} ${
+                    node.start
+                  }`}</div>
+                )}
+              </div>
             </AccordionSummary>
             <AccordionDetails>{renderTree(node.children)}</AccordionDetails>
           </Accordion>
-        ) : (
+        ) : node.id.includes("BonusZoom") && rate === "Rate1" ? null : (
           <Link
             key={node.id}
             to={
-              selectedCourse?.id === "fastEyeliner" &&
-              rate === "Rate1" &&
-              node.id.includes("Bonus")
+              (selectedCourse?.id === "fastEyeliner" &&
+                rate === "Rate1" &&
+                node.id.includes("Bonus")) ||
+              (selectedCourse?.id === "hairstrokes" &&
+                rate === "Rate1" &&
+                node.id.includes("Bonus"))
                 ? "#"
                 : `/platform/${selectedCourse?.id}/${node.id}`
             }
             data-id={node.id}
             className={
               node.id.includes("Bonus")
-                ? selectedCourse?.id === "fastEyeliner" && rate === "Rate1"
+                ? (selectedCourse?.id === "fastEyeliner" && rate === "Rate1") ||
+                  (selectedCourse?.id === "hairstrokes" && rate === "Rate1") ||
+                  node.disabled
                   ? classes.accordionLinksDisabled
                   : classes.accordionLinksBonus
+                : node.disabled
+                ? classes.accordionLinksDisabled
+                : node.id.includes("Special")
+                ? classes.accordionLinksBonus
                 : classes.accordionLinks
             }
           >

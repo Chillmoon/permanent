@@ -45,7 +45,7 @@ const useStyles = makeStyles({
       marginTop: 20,
       paddingBottom: 0,
       paddingLeft: 0,
-      "&>div>p": {
+      "&>div>div>p": {
         color: "#FFF",
         fontFamily: `"Noto Serif", sans-serif !important`,
         "&:hover": {
@@ -68,6 +68,15 @@ const useStyles = makeStyles({
       fontWeight: "700 !important",
       color: "#E8A41A",
     },
+  },
+  blockLabelWrapper: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  blockStart: {
+    fontSize: 12,
+    color: "#FFF",
+    opacity: 0.5,
   },
 });
 

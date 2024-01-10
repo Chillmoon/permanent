@@ -180,6 +180,11 @@ const useStyles = makeStyles({
       },
     },
   },
+  blockStart: {
+    fontSize: 14,
+    color: "#FFF",
+    opacity: 0.5,
+  },
   mobileLessonAccordionSummary: (props: { courseId: string }) => ({
     fontFamily: `"Exo 2", sans-serif !important`,
     fontWeight: 400,
