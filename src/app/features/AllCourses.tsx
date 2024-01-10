@@ -639,7 +639,7 @@ export const courses: AllCourses = [
             label: "Зум з Поліною Зонтаг",
             description: "",
             disabled: false,
-            info: [{ content: "1 січня о 16:00" }],
+            info: [{ content: "11 січня о 16:00" }],
           },
           {
             id: "block0-lesson11-Special",
