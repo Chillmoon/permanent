@@ -646,7 +646,6 @@ export const courses: AllCourses = [
             label: "Методичка",
             description: "",
             disabled: false,
-
             file: [
               {
                 file: t("Методичка-файл"),

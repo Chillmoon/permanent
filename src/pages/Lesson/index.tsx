@@ -36,18 +36,19 @@ const LessonPage = () => {
     courseId &&
     getLessonById(courses, courseId, lessonNumber || "block0-lesson1");
 
-  const handleDownloadFile = (fileUrl: string, fileName: string) => {
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = fileName;
-    link.target = "_blank";
-
-    const clickEvent = new MouseEvent("click", {
-      bubbles: true,
-      cancelable: true,
-      view: window,
-    });
-    link.dispatchEvent(clickEvent);
+  const handleDownloadFile = async (fileUrl: string, fileName: string) => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: fileName,
+          url: fileUrl,
+        });
+      } else {
+        window.open(fileUrl, "_blank");
+      }
+    } catch (error) {
+      console.error("Error sharing file:", error);
+    }
   };
 
   useEffect(() => {
