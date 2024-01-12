@@ -664,9 +664,9 @@ export const courses: AllCourses = [
         children: [
           {
             id: "block1-lesson1",
-            label: "Урок 1.Створення першого ескізу",
+            label: "Урок 1. Створення першого ескізу",
             description: "",
-            disabled: true,
+            disabled: false,
             video: [
               {
                 video: "cshmr-Створення першого ескізу",
@@ -677,7 +677,7 @@ export const courses: AllCourses = [
             id: "block1-lesson2",
             label: "Урок 2. Аналіз природнього росту волосся",
             description: "",
-            disabled: true,
+            disabled: false,
             video: [
               {
                 video: "cshmr-Аналіз природнього росту волосся",
@@ -688,7 +688,7 @@ export const courses: AllCourses = [
             id: "block1-lesson3",
             label: "Урок 3. Види волосків",
             description: "",
-            disabled: true,
+            disabled: false,
             video: [
               {
                 video: "cshmr-Види волосків",
@@ -699,7 +699,7 @@ export const courses: AllCourses = [
             id: "block1-lesson4",
             label: "Урок 4. Види схем",
             description: "",
-            disabled: true,
+            disabled: false,
             video: [
               {
                 video: "cshmr-Види схем",
@@ -710,7 +710,7 @@ export const courses: AllCourses = [
             id: "block1-lesson5",
             label: "Урок 5. Малюємо основну схему разом",
             description: "",
-            disabled: true,
+            disabled: false,
             video: [
               {
                 video: "cshmr-Малюємо основну схему разом",
@@ -718,10 +718,22 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block1-lesson6-BonusZoom",
+            id: "block1-lesson6",
+            label: "Урок 6. Малюємо схему з нижнім розміщенням основної лінії",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "cshmr-Малюємо схему з нижнім розміщенням основної лінії",
+              },
+            ],
+          },
+          {
+            id: "block1-lesson7-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
-            disabled: true,
+            disabled: false,
           },
         ],
       },
