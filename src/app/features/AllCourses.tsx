@@ -660,7 +660,6 @@ export const courses: AllCourses = [
         label: "Схеми",
         description: "",
         disabled: false,
-        start: "13.01",
         children: [
           {
             id: "block1-lesson1",
