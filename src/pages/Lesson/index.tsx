@@ -37,7 +37,17 @@ const LessonPage = () => {
     getLessonById(courses, courseId, lessonNumber || "block0-lesson1");
 
   const handleDownloadFile = (fileUrl: string, fileName: string) => {
-    window.open(fileUrl, "_blank");
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    link.target = "_blank";
+
+    const clickEvent = new MouseEvent("click", {
+      bubbles: true,
+      cancelable: true,
+      view: window,
+    });
+    link.dispatchEvent(clickEvent);
   };
 
   useEffect(() => {

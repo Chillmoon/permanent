@@ -97,7 +97,7 @@ function App() {
   const shouldRedirectFastEyeliner =
     location.pathname.includes("fastEyeliner") &&
     location.pathname.includes("Bonus") &&
-    rateFastEyeliner !== "Rate2";
+    rateFastEyeliner === "Rate1";
 
   // const shouldRedirectHairCourse = rateHairCourse !== "RateSpecial";
 
