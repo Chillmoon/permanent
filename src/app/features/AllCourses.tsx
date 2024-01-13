@@ -440,7 +440,19 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block0-lesson10-Bonus",
+            id: "block0-lesson10",
+            label: "Урок 10. Показова робота",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "hairCourse-Показова робота",
+                cover: "",
+              },
+            ],
+          },
+          {
+            id: "block0-lesson11-Bonus",
             label: "Методичка",
             description: "",
             disabled: false,
