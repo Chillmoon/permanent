@@ -651,7 +651,11 @@ export const courses: AllCourses = [
             label: "Зум з Поліною Зонтаг",
             description: "",
             disabled: false,
-            info: [{ content: "11 січня о 16:00" }],
+            video: [
+              { video: "cshmr-Зум1" },
+              { video: "cshmr-Зум2" },
+              { video: "cshmr-Зум3" },
+            ],
           },
           {
             id: "block0-lesson11-Special",
