@@ -757,13 +757,42 @@ export const courses: AllCourses = [
         label: "Латекс",
         description: "",
         disabled: false,
-        start: "28.01",
+        // start: "28.01",
         children: [
           {
             id: "block2-lesson1",
-            label: "Урок 1.",
+            label: "Урок 1. Постановка рук",
             description: "",
-            disabled: true,
+            disabled: false,
+            video: [{ video: "cshmr-Постановка рук" }],
+          },
+          {
+            id: "block2-lesson2",
+            label: "Урок 2. Як тримати апарат",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Як тримати апарат" }],
+          },
+          {
+            id: "block2-lesson3",
+            label: "Урок 3. Основні правила штриха",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Основні правила штриха" }],
+          },
+          {
+            id: "block2-lesson4",
+            label: "Урок 4. Вправи на латексі",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Вправи на латексі" }],
+          },
+          {
+            id: "block2-lesson5",
+            label: "Урок 5. Малюємо типи волосків на латексі",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Малюємо типи волосків на латексі" }],
           },
         ],
       },
@@ -772,7 +801,7 @@ export const courses: AllCourses = [
         label: "Показовий",
         description: "",
         disabled: false,
-        start: "6.02",
+        start: "14.02",
         children: [
           {
             id: "block3-lesson1",
@@ -793,7 +822,7 @@ export const courses: AllCourses = [
         label: "Контент",
         description: "",
         disabled: false,
-        start: "16.02",
+        start: "28.02",
         children: [
           {
             id: "block4-lesson1",
@@ -808,7 +837,7 @@ export const courses: AllCourses = [
         label: "Чемпіонат",
         description: "",
         disabled: false,
-        start: "23.02",
+        start: "08.03",
         children: [
           {
             id: "block5-lesson1",
@@ -823,7 +852,7 @@ export const courses: AllCourses = [
         label: "Просування в Instagram",
         description: "",
         disabled: false,
-        start: "3.03",
+        start: "18.03",
         children: [
           {
             id: "block6-lesson1",
