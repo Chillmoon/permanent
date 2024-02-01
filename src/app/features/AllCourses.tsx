@@ -749,6 +749,7 @@ export const courses: AllCourses = [
             label: "Зум з Вікторією",
             description: "",
             disabled: false,
+            video: [{ video: "cshmr-ЗумСхеми" }],
           },
         ],
       },
