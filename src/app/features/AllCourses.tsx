@@ -404,32 +404,42 @@ export const courses: AllCourses = [
           },
           {
             id: "block0-lesson7",
-            label: "Урок 7. Швидкість на блоці",
+            label: "Урок 7. Постановка рук",
             description: "",
             disabled: false,
-            video: [
-              {
-                video: "hairCourse-Швидкість на блоці",
-                cover: "",
-              },
-            ],
+            video: [{ video: "cshmr-Постановка рук" }],
           },
           {
             id: "block0-lesson8",
-            label: "Урок 8. Допостановка руки на латексі. Штрих та його види",
+            label: "Урок 8. Як тримати апарат",
             description: "",
             disabled: false,
-            video: [
-              {
-                video:
-                  "hairCourse-Допостановка руки на латексі. Штрих та його види",
-                cover: "",
-              },
-            ],
+            video: [{ video: "cshmr-Як тримати апарат" }],
           },
           {
             id: "block0-lesson9",
-            label: "Урок 9. Малюємо схему разом",
+            label: "Урок 9. Основні правила штриха",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Основні правила штриха" }],
+          },
+          {
+            id: "block0-lesson10",
+            label: "Урок 10. Вправи на латексі",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Вправи на латексі" }],
+          },
+          {
+            id: "block0-lesson11",
+            label: "Урок 11. Малюємо типи волосків на латексі",
+            description: "",
+            disabled: false,
+            video: [{ video: "cshmr-Малюємо типи волосків на латексі" }],
+          },
+          {
+            id: "block0-lesson12",
+            label: "Урок 12. Малюємо схему разом",
             description: "",
             disabled: false,
             video: [
@@ -440,8 +450,8 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block0-lesson10",
-            label: "Урок 10. Показова робота",
+            id: "block0-lesson13",
+            label: "Урок 13. Показова робота",
             description: "",
             disabled: false,
             video: [
@@ -452,7 +462,7 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block0-lesson11-Bonus",
+            id: "block0-lesson14-Bonus",
             label: "Методичка",
             description: "",
             disabled: false,
