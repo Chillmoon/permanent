@@ -812,7 +812,7 @@ export const courses: AllCourses = [
         label: "Показовий",
         description: "",
         disabled: false,
-        start: "14.02",
+        start: "16.02",
         children: [
           {
             id: "block3-lesson1",
