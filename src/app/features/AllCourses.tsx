@@ -826,7 +826,7 @@ export const courses: AllCourses = [
           },
           {
             id: "block3-lesson2",
-            label: "Урок 2. Урок 2. Виконання на моделі 65+",
+            label: "Урок 2. Виконання на моделі 65+",
             description: "",
             disabled: false,
             video: [

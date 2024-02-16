@@ -133,7 +133,12 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                         lesson.id.includes("Bonus")) ||
                       (selectedCourse?.id === "hairstrokes" &&
                         rateHairCourse === "Rate1" &&
-                        lesson.id.includes("Bonus"))
+                        lesson.id.includes("Bonus")) ||
+                      (selectedCourse?.id === "hairstrokes" &&
+                        user?.uid === "TU7JCnd4d2NuU87Zm26QcxbXVrj2" &&
+                        !lesson.id.includes("block0") &&
+                        !lesson.id.includes("block1") &&
+                        !lesson.id.includes("block2"))
                     }
                     onChange={() => handleLessonToggle(lesson.id)}
                   >

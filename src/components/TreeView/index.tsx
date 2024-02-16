@@ -7,9 +7,11 @@ import {
   AccordionSummary,
   Typography,
 } from "@mui/material";
+import { useSelector } from "react-redux";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { AllCourses } from "../../app/features/AllCourses";
+import { RootState } from "../../app/store";
 
 import useStyles from "./styles";
 
@@ -30,6 +32,7 @@ const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
   const { courseId } = useParams();
   const { t } = useTranslation();
   const selectedCourse = courses.find((course) => course.id === courseId);
+  const user = useSelector((state: RootState) => state.user.user);
   const classes = useStyles();
 
   const renderTree = (nodes: Module[]) => (
@@ -82,6 +85,12 @@ const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
                 ? classes.accordionLinksDisabled
                 : node.id.includes("Special")
                 ? classes.accordionLinksBonus
+                : selectedCourse?.id === "hairstrokes" &&
+                  user?.uid === "TU7JCnd4d2NuU87Zm26QcxbXVrj2" &&
+                  !node.id.includes("block0") &&
+                  !node.id.includes("block1") &&
+                  !node.id.includes("block2")
+                ? classes.accordionLinksDisabled
                 : classes.accordionLinks
             }
           >
