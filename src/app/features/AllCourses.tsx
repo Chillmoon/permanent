@@ -812,13 +812,29 @@ export const courses: AllCourses = [
         label: "Показовий",
         description: "",
         disabled: false,
-        start: "16.02",
         children: [
           {
             id: "block3-lesson1",
-            label: "Урок 1.",
+            label: "Урок 1. Виконання на моделі 50+, щільна шкіра",
             description: "",
-            disabled: true,
+            disabled: false,
+            video: [
+              { video: "cshmr-50-part1" },
+              { video: "cshmr-50-part2" },
+              { video: "cshmr-50-part3" },
+            ],
+          },
+          {
+            id: "block3-lesson2",
+            label: "Урок 2. Урок 2. Виконання на моделі 65+",
+            description: "",
+            disabled: false,
+            video: [
+              { video: "cshmr-60-part1" },
+              { video: "cshmr-60-part2" },
+              { video: "cshmr-60-part3" },
+              { video: "cshmr-60-part4" },
+            ],
           },
           {
             id: "block3-lesson1-BonusZoom",
