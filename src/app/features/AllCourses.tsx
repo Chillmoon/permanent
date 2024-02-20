@@ -755,6 +755,17 @@ export const courses: AllCourses = [
             ],
           },
           {
+            id: "block1-lesson7-Special",
+            label: "Урок 7. Побудова ниткою від Анни Богдан",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Побудова ниткою від Анни Богдан",
+              },
+            ],
+          },
+          {
             id: "block1-lesson7-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
@@ -815,7 +826,20 @@ export const courses: AllCourses = [
         children: [
           {
             id: "block3-lesson1",
-            label: "Урок 1. Виконання на моделі 50+, щільна шкіра",
+            label:
+              "Урок 1. Виконання на моделі, розширення форми (шкіра після видалень)",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video:
+                  "cshmr-Виконання на моделі, розширення форми (шкіра після видалень)",
+              },
+            ],
+          },
+          {
+            id: "block3-lesson2",
+            label: "Урок 2. Виконання на моделі 50+, щільна шкіра",
             description: "",
             disabled: false,
             video: [
@@ -825,8 +849,8 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block3-lesson2",
-            label: "Урок 2. Виконання на моделі 65+",
+            id: "block3-lesson3",
+            label: "Урок 3. Виконання на моделі 65+",
             description: "",
             disabled: false,
             video: [
