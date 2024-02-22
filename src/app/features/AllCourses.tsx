@@ -833,7 +833,11 @@ export const courses: AllCourses = [
             video: [
               {
                 video:
-                  "cshmr-Виконання на моделі, розширення форми (шкіра після видалень)",
+                  "cshmr-Виконання на моделі, розширення форми (шкіра після видалень)-part1",
+              },
+              {
+                video:
+                  "cshmr-Виконання на моделі, розширення форми (шкіра після видалень)-part2",
               },
             ],
           },
@@ -850,7 +854,19 @@ export const courses: AllCourses = [
           },
           {
             id: "block3-lesson3",
-            label: "Урок 3. Виконання на моделі 65+",
+            label: "Урок 3. Змішана техніка. Суха шкіра",
+            description: "",
+            disabled: false,
+            video: [
+              { video: "cshmr-Змішана техніка. Суха шкіра-part1" },
+              { video: "cshmr-Змішана техніка. Суха шкіра-part2" },
+              { video: "cshmr-Змішана техніка. Суха шкіра-part3" },
+              { video: "cshmr-Змішана техніка. Суха шкіра-part4" },
+            ],
+          },
+          {
+            id: "block3-lesson4",
+            label: "Урок 4. Виконання на моделі 65+",
             description: "",
             disabled: false,
             video: [
@@ -861,7 +877,7 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block3-lesson1-BonusZoom",
+            id: "block3-lesson5-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
             disabled: true,
