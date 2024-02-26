@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import HlsPlayer from "react-hls-player";
+import ReactPlayer from "react-player";
 import { useSelector } from "react-redux";
 import {
   Accordion,
@@ -188,15 +189,25 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                 key={index}
                                 className={classes.videoPlayerMobile}
                               >
-                                <HlsPlayer
-                                  src={t(video.video)}
-                                  autoPlay={false}
+                                <ReactPlayer
+                                  onContextMenu={(e: {
+                                    preventDefault: () => any;
+                                  }) => e.preventDefault()}
                                   controls={true}
+                                  //@ts-ignore
+                                  url={t(video.video)}
                                   width="100%"
                                   height="100%"
-                                  poster={video.cover}
+                                  webkit-playsinline
                                   className={classes.reactPlayerMobile}
-                                  playerRef={playerRef}
+                                  config={{
+                                    file: {
+                                      attributes: {
+                                        controlsList: "nodownload",
+                                      },
+                                    },
+                                  }}
+                                  light={video.cover}
                                 />
                                 <span>{video.text}</span>
                               </div>
