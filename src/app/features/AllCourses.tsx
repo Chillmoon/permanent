@@ -958,7 +958,6 @@ export const courses: AllCourses = [
         label: "Чемпіонат",
         description: "",
         disabled: false,
-        start: "14.03",
         children: [
           {
             id: "block5-lesson1",
@@ -973,7 +972,6 @@ export const courses: AllCourses = [
         label: "Просування в Instagram",
         description: "",
         disabled: false,
-        start: "24.03",
         children: [
           {
             id: "block6-lesson1",
