@@ -854,7 +854,7 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block3-lesson2",
+            id: "block3-lesson2-Bonus",
             label: "Урок 2. Виконання на моделі 50+, щільна шкіра",
             description: "",
             disabled: false,
@@ -865,7 +865,7 @@ export const courses: AllCourses = [
             ],
           },
           {
-            id: "block3-lesson3",
+            id: "block3-lesson3-Bonus",
             label: "Урок 3. Змішана техніка. Суха шкіра",
             description: "",
             disabled: false,
@@ -892,7 +892,8 @@ export const courses: AllCourses = [
             id: "block3-lesson5-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
-            disabled: true,
+            disabled: false,
+            video: [{ video: "cshmr-block3-zoom" }],
           },
         ],
       },
