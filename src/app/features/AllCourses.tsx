@@ -918,7 +918,7 @@ export const courses: AllCourses = [
             video: [{ video: "cshmr-Про ретуш" }],
           },
           {
-            id: "block4-lesson3",
+            id: "block4-lesson3-Bonus",
             label: "Урок 3. Обробляємо фото в Snapseed та Facetune",
             description: "",
             disabled: false,
@@ -939,7 +939,7 @@ export const courses: AllCourses = [
             video: [{ video: "cshmr-Правильна подача" }],
           },
           {
-            id: "block4-lesson6",
+            id: "block4-lesson6-Bonus",
             label: "Урок 6. Малюємо на iPad",
             description: "",
             disabled: false,
