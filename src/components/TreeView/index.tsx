@@ -26,6 +26,7 @@ interface Module {
   disabled?: boolean; // Add 'disabled' property
   children?: Module[];
   start?: string;
+  bonus?: boolean;
 }
 
 const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
@@ -43,7 +44,7 @@ const TreeView: React.FC<TreeViewProps> = ({ courses, rate }) => {
             key={node.id}
             disableGutters={true}
             elevation={0}
-            disabled={node.disabled}
+            disabled={node.disabled || (rate === "Rate1" && node.bonus)}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}

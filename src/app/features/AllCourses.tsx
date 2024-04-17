@@ -27,6 +27,7 @@ export type Block = {
   disabled?: boolean;
   speaker?: string;
   start?: string;
+  bonus?: boolean;
 };
 
 export type TargetAudienceElement = {
@@ -959,12 +960,101 @@ export const courses: AllCourses = [
         label: "Чемпіонат",
         description: "",
         disabled: false,
+        bonus: true,
         children: [
           {
-            id: "block5-lesson1",
-            label: "Урок 1.",
+            id: "block5-lesson1-Bonus",
+            label: "Урок 1. Вступ",
             description: "",
-            disabled: true,
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 1. Вступ",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson2-Bonus",
+            label: "Урок 2. Важливий пункт `Підбір моделі`",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 2. Важливий пункт `Підбір моделі`",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson3-Bonus",
+            label: "Урок 3. Збираємо робоче місце",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 3. Збираємо робоче місце",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson4-Bonus",
+            label: "Урок 4. Зовнішній вигляд майстра",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 4. Зовнішній вигляд майстра",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson5-Bonus",
+            label: "Урок 5. Зовнішній вигляд моделі",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 5. Зовнішній вигляд моделі",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson6-Bonus",
+            label: "Урок 6. Пігменти для чемпіонату",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 6. Пігменти для чемпіонату",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson7-Bonus",
+            label: "Урок 7. Критерії",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 7. Критерії",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson8-Bonus",
+            label: "Урок 8. Підсумки",
+            description: "",
+            disabled: false,
+            video: [
+              {
+                video: "cshmr-Урок 8. Підсумки",
+              },
+            ],
+          },
+          {
+            id: "block5-lesson9-Bonus",
+            label: "Урок 9. Зум з Надією Дмитрієвою",
+            description: "",
+            disabled: false,
           },
         ],
       },
