@@ -1062,7 +1062,7 @@ export const courses: AllCourses = [
         id: "block6",
         label: "Просування в Instagram",
         description: "",
-        disabled: false,
+        disabled: true,
         children: [
           {
             id: "block6-lesson1",
