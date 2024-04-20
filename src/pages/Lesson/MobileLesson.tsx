@@ -203,9 +203,6 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                       attributes: {
                                         controlsList: "nodownload",
                                       },
-                                      forceHLS: /iPad|iPhone|iPod/.test(
-                                        navigator.userAgent
-                                      ),
                                     },
                                   }}
                                   light={video.cover}
