@@ -102,8 +102,6 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
       ? rateHairCourseDemo
       : rateFastEyeliner;
 
-  console.log(courseRate);
-
   const renderTree = (nodes: Module[]) => (
     <>
       {nodes.map((block: any) => (
@@ -205,6 +203,9 @@ const MobileLesson: React.FC<MobileLessonProps> = ({ courses }) => {
                                       attributes: {
                                         controlsList: "nodownload",
                                       },
+                                      forceHLS: /iPad|iPhone|iPod/.test(
+                                        navigator.userAgent
+                                      ),
                                     },
                                   }}
                                   light={video.cover}
