@@ -890,6 +890,16 @@ export const courses: AllCourses = [
             ],
           },
           {
+            id: "block3-lesson5",
+            label: "Урок 5. Корекція",
+            description: "",
+            disabled: false,
+            video: [
+              { video: "cshmr-Урок 5. Корекція-part1" },
+              { video: "cshmr-Урок 5. Корекція-part2" },
+            ],
+          },
+          {
             id: "block3-lesson5-BonusZoom",
             label: "Зум з Вікторією",
             description: "",
